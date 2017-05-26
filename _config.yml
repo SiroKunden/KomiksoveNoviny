@@ -1,7 +1,7 @@
 # Site settings
-title: Kunden
+title: KOMIKSOVÉ NOVINY
 email: siro.kunden@gmail.com
-description: A jekyll template for landing pages, portfolio and blogging
+description: Stránky pořadu Komiksové Noviny, který vám přináší nové informace z komiksového světa.
 
 baseurl: "" # the subpath of your site, e.g. /blog/ (If you use organization leave empty)
 url: "" # the base hostname & protocol for your site
@@ -19,7 +19,9 @@ social:
   #- title: twitter
   #  url: 
   - title: facebook
-    url: https://facebook.com/Kunden
+    url: https://facebook.com/KomiksoveNoviny
+  - title: youtube-play
+    url: https://www.youtube.com/playlist?list=PLN0TXJeqf1iUt_tkQNadY2fsIy975dTdH
   #- title: google-plus
   #  url: 
   #- title: github

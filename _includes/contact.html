@@ -1,11 +1,11 @@
 
-<section id="contact" class="contact bg-primary">
+<section id="kontakt" class="contact bg-primary">
     <div class="container">
-        <h2>We <i class="fa fa-heart"></i> new friends!</h2>
+        <h2>Sledujte nás, kde se dá!</h2>
         <ul class="list-inline list-social">
             {% for network in site.social %}
             <li class="social-{{ network.title }}">
-                <a href="{{ network.url }}" class="btn-social btn-outline"><i class="fa fa-fw fa-{{ network.title }}"></i></a>
+                <a href="{{ network.url }}" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-{{ network.title }}"></i></a>
             </li>
         {% endfor %}
         </ul>
@@ -24,17 +24,6 @@
 </section>
 <footer>
     <div class="container">
-        <p>&copy; 2017 theme by <a rel="nofollow" target="blank" href="https://github.com/jekynewage/jekynewage.github.io">Start Boostrap New Age Theme for Jekyll</a>. All Rights Reserved.</p>
-        <ul class="list-inline">
-            <li>
-                <a href="#">Privacy</a>
-            </li>
-            <li>
-                <a href="#">Terms</a>
-            </li>
-            <li>
-                <a href="#">FAQ</a>
-            </li>
-        </ul>
+        <p>&copy; 2017 theme by <a rel="nofollow" target="blank" href="https://github.com/jekynewage/jekynewage.github.io">Start Boostrap New Age Theme for Jekyll</a>. All Rights Reserved. Created by Kunden</p>
     </div>
 </footer>

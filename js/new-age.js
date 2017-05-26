@@ -26,6 +26,30 @@
         offset: {
             top: 50
         }
-    })
+    });
+    
+    $( document ).ready(function() {
+        
+        setInterval(updateRealese, 1000);
+
+        function updateRealese() {
+            var releaseDate = new Date();
+            releaseDate.setDate(releaseDate.getDate() + (1 + 7 - releaseDate.getDay()) % 7);
+            releaseDate.setHours(20);
+            releaseDate.setMinutes(0);
+            releaseDate.setSeconds(0);
+            var diff = Math.abs(releaseDate - new Date());
+            diff = diff / 1000;
+            var days = Math.floor(diff / 86400);
+            diff = diff - (days * 86400);
+            var hours = Math.floor(diff / 3600);
+            diff = diff - (hours * 3600);
+            var minutes = Math.floor(diff / 60);
+            diff = diff - (minutes * 60);
+           
+            $("#releaseDate").text(days + "d " + hours + "h " + minutes + "m " + diff + "s");
+        }
+        
+    });
 
 })(jQuery); // End of use strict
