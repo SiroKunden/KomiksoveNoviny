@@ -8,7 +8,7 @@ url: "" # the base hostname & protocol for your site
 
 #rewrite
 #rewrite: /
-rewrite: /Firma/
+rewrite: /KomiksoveNoviny/
 
 google_analytics: 
 addthis_id: 
@@ -34,4 +34,3 @@ exclude: ["less","README.md"]
 
 gems: [jekyll-paginate, jekyll-feed]
 # Build settings
-theme: jekyll-theme-hacker
