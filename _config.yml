@@ -34,3 +34,4 @@ exclude: ["less","README.md"]
 
 gems: [jekyll-paginate, jekyll-feed]
 # Build settings
+theme: jekyll-theme-hacker
