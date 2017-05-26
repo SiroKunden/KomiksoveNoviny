@@ -46,8 +46,9 @@
             diff = diff - (hours * 3600);
             var minutes = Math.floor(diff / 60);
             diff = diff - (minutes * 60);
+            var seconds = Math.floor(diff);
            
-            $("#releaseDate").text(days + "d " + hours + "h " + minutes + "m " + diff + "s");
+            $("#releaseDate").text(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
         }
         
     });
