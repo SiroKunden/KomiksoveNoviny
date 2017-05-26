@@ -1,0 +1,36 @@
+# Site settings
+title: Kunden
+email: siro.kunden@gmail.com
+description: A jekyll template for landing pages, portfolio and blogging
+
+baseurl: "" # the subpath of your site, e.g. /blog/ (If you use organization leave empty)
+url: "" # the base hostname & protocol for your site
+
+#rewrite
+#rewrite: /
+rewrite: /Firma/
+
+google_analytics: 
+addthis_id: 
+disqus_account: 
+
+# Social networks usernames (many more available: flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.) see all icon at fontawesome.io
+social:
+  #- title: twitter
+  #  url: 
+  - title: facebook
+    url: https://facebook.com/Kunden
+  #- title: google-plus
+  #  url: 
+  #- title: github
+  #  url: 
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
+# Build settings
