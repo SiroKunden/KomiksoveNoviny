@@ -6,9 +6,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Komiksové Noviny jsou pořadem o komiksových novinkách">
+    <meta name="author" content="Ondřej Šírek">
 
+    <meta property="og:url" content="http://komiksovenoviny.cz/" />
+    <meta property="og:title" content="KOMIKSOVÉ NOVINY" />
+    <meta property="og:description" content="Chce být v obraze ve světě komiksů? Tak chekuj tyhle týpky!" />
+    <meta property="og:image" content="http://komiksovenoviny.cz/img/logo.png" />
+    
+    <!-- Twitter Card--> 
+    <meta name="twitter:card" content="KOMIKSOVÉ NOVINY" /> 
+    <meta name="twitter:site" content="http://komiksovenoviny.cz/" /> 
+    <meta name="twitter:title" content="Chce být v obraze ve světě komiksů? Tak chekuj tyhle týpky!" /> 
+    <meta name="twitter:image" content="http://komiksovenoviny.cz/img/logo.png" />
+    
     <title>KOMIKSOVÉ NOVINY</title>
 
     <!-- Bootstrap Core CSS -->
@@ -40,6 +51,16 @@
 
 
 <body id="page-top">
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.9&appId=1204875242964478";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -55,6 +76,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a class="page-scroll" href="#youtube">Youtube</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#facebook">Facebook</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#kluci">Kluci před kamerou</a>
@@ -110,6 +134,17 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLCSrCwTPUedZDwUOSvfkksAQlJvsl98QI" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
+        <div id="facebook" class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Tohle ti nestačí a chceš nějaký fotky a plky?</h3>
+                <p>Tak to se vrhni na naši FB Page.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fb-page" data-href="https://www.facebook.com/KomiksoveNoviny/" data-tabs="timeline,events,messages" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/KomiksoveNoviny/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/KomiksoveNoviny/">Komiksové Noviny</a></blockquote></div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -140,7 +175,7 @@
                                 <div class="feature-item">
                                     <img src="/img/portfolio/vojta.png"/>
                                     <h3>Vojta</h3>
-                                    <p class="text-muted">Milovník piva a dobrých komiksů. Stejně tak vášnivý hráč takových těch divnách kartiček. Vedoucí týmu co umí zavelet</p>
+                                    <p class="text-muted">Milovník piva a dobrých komiksů. Stejně tak vášnivý hráč takových těch divných kartiček. Vedoucí týmu co umí zavelet</p>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +184,7 @@
                                 <div class="feature-item">
                                     <img src="/img/portfolio/walome.png"/>
                                     <h3>Walome</h3>
-                                    <p class="text-muted">Kluk, který se zrodil pro hejt. Nebo se hejt zrodil pro něj. Lidé v tom pořadí rozcházejí, ale jedno je jisté: Walome nesnáší zastánce obou variant.</p>
+                                    <p class="text-muted">Kluk, který se zrodil pro hejt. Nebo se hejt zrodil pro něj. Lidé se v tom pořadí rozcházejí, ale jedno je jisté: Walome nesnáší zastánce obou variant.</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
