@@ -47,6 +47,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css"/>
+    
 </head>
 
 
@@ -264,6 +267,44 @@
     </div>
 </section>
 
+  <section id="quote" class="download bg-primary text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">Nové komiksy v češtině</h2>
+                <p>Zdroj <a href="https://comicsdb.cz/" target="_blank">comicsdb.cz</a></p>
+                <table id="comics" class="display responsive nowrap" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Obálka</th>
+                            <th>Název</th>
+                            <th>Cena</th>
+                            <th>Vydal</th>
+                            <th>Vydáno</th>
+                            <th>Vazba</th>
+                            <th>Format</th>
+                            <th>Počet stran</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comicsBody"></tbody>
+                    <tfoot style="display: none;">
+                        <tr>
+                            <th>Obálka</th>
+                            <th>Název</th>
+                            <th>Cena</th>
+                            <th>Vydal</th>
+                            <th>Vydáno</th>
+                            <th>Vazba</th>
+                            <th>Format</th>
+                            <th>Počet stran</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
   
 <section id="kontakt" class="contact bg-primary">
     <div class="container">
@@ -321,8 +362,13 @@
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
+
 <!-- Theme JavaScript -->
 <script src="/js/new-age.js"></script>
+<script src="/js/comicsDB.js"></script>
 
 
 
