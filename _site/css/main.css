@@ -495,3 +495,14 @@ td {
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   padding: 0px !important; }
+
+.dataTables_wrapper .dataTables_filter {
+  color: white !important; }
+
+.child {
+  background-color: #ffffff !important; }
+
+.dtr-data, .dtr-data a {
+  max-width: 200px !important;
+  white-space: normal !important;
+  word-wrap: break-word !important; }
