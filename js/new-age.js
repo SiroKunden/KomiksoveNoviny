@@ -59,7 +59,7 @@
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
             },
-            'sDom': 't<"bottom"p>'
+            'sDom': '<"top"f>t<"bottom"p>'
         });
         
         setInterval(updateRealese, 1000);
