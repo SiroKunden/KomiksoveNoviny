@@ -17,14 +17,14 @@
             downloadSourceOfHtml("https://crossorigin.me/https://comicsdb.cz/comicslist.php", "comicslist.php", function(source, url) {
                 var comics = source.match(/comics.php\?id=([0-9]+)/g);
                 
-                if(comics.length < comicsNum) comicsNum = comics.length;
-                
                 for(var i = comics.length - 1; i >= 0 && download < comicsNum; i--) {
                     var find = search(comics[i], comicsDownloaded);
                     if(find !== null) {
                         comics.splice (i, 1);
                     }
                 }
+                
+                if(comics.length < comicsNum) comicsNum = comics.length;
                 
                 for(var i = comics.length - 1; i >= 0 && download < comicsNum; i--) {
                     
