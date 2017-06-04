@@ -62,6 +62,15 @@
             'sDom': '<"top"f>t<"bottom"p>'
         });
         
+        var t = $('#harmonogram-table').DataTable({
+            responsive: true,
+            "order": [],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': 't'
+        });
+        
         setInterval(updateRealese, 1000);
 
     });

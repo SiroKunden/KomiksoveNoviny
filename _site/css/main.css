@@ -353,6 +353,15 @@ footer {
     background-color: #247EBB;
     border-color: #247EBB; }
 
+.btn-outline-oposite {
+  color: white;
+  border-color: white;
+  border: 1px solid; }
+  .btn-outline-oposite:hover, .btn-outline-oposite:focus, .btn-outline-oposite:active, .btn-outline-oposite.active {
+    color: #247EBB;
+    background-color: white;
+    border-color: white; }
+
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   text-transform: uppercase;
