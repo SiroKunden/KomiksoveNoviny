@@ -63,7 +63,12 @@
         });
         
         var t = $('#harmonogram-table').DataTable({
-            responsive: true,
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
             "order": [],
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
