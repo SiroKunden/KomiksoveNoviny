@@ -516,8 +516,5 @@ td {
   white-space: normal !important;
   word-wrap: break-word !important; }
 
-tr.odd {
-  background-color: white !important; }
-
-table {
+table, tr.odd, sorting_1 {
   background-color: white !important; }
