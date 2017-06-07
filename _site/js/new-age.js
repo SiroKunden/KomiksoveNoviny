@@ -82,6 +82,27 @@
 
 })(jQuery); // End of use strict
 
+function getContentTypeOfUrl(url, find, index, callbackFnc) {
+    
+    if(url === "") {
+        callbackFnc("", find, index);
+    }
+    else {
+    
+        url = "https://crossorigin.me/https://comicsdb.cz" + url;
+        var xhttp = new XMLHttpRequest();
+        xhttp.open('HEAD', url);
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == this.DONE) {
+                callbackFnc(this.getResponseHeader("Content-Type"), find, index);
+            }
+        };
+        xhttp.send();
+    
+    }
+    
+}
+
 function downloadSourceOfHtml(url, url_part, callback) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -96,7 +117,7 @@ function downloadSourceOfHtml(url, url_part, callback) {
 function search(urlKey, myArray){
     for (var i=0; i < myArray.length; i++) {
         if (myArray[i].url === urlKey) {
-            return myArray[i];
+            return i;
         }
     }
     return null;
