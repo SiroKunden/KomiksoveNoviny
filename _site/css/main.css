@@ -515,3 +515,9 @@ td {
   max-width: 200px !important;
   white-space: normal !important;
   word-wrap: break-word !important; }
+
+tr.odd {
+  background-color: white !important; }
+
+table {
+  background-color: white !important; }
