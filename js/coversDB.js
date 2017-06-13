@@ -1,8 +1,8 @@
 var coversDB = [
     {
         week: 2,
-        fbPostId: -1,
-        active: false,
+        fbPostId: 442912886081653,
+        active: true,
         covers: [
             {
                 reaction: "sad",

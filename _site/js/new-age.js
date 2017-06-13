@@ -199,6 +199,23 @@ function reloadCovers(index) {
 
             var url = 'https://graph.facebook.com/v2.3/?ids=' + pageID + '_' + coversDB[index].fbPostId + '&fields=' + reactions + '&access_token=' + access_token;
             $.getJSON(url, function(res){
+                var values = [];
+                values.push({selector: "likes", count: defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_like.summary.total_count});
+                values.push({selector: "happy", count: defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_love.summary.total_count});
+                values.push({selector: "sad", count: defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_sad.summary.total_count});
+                values.push({selector: "fml", count: defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_haha.summary.total_count});
+                values.push({selector: "angry", count: defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_angry.summary.total_count});
+                values.push({selector: "shock", count: defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_wow.summary.total_count});
+                
+                values.sort(function(a, b)
+                {
+                    if (a.count === b.count) { return 0; }
+                    if (a.count < b.count) { return 1; }
+                    else { return -1; }
+                });
+                
+                $("." + values[0].selector).addClass("cover-box-winning");
+                
                 v1.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_like.summary.total_count);
                 v2.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_love.summary.total_count);
                 v3.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_sad.summary.total_count);
