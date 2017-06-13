@@ -227,7 +227,7 @@ header {
 }
 
 section {
-  padding: 100px 0;
+  padding: 40px 0;
   h2 {
     font-size: 50px;
   }
@@ -251,7 +251,7 @@ section {
   }
   &.features {
     .section-heading {
-      margin-bottom: 100px;
+      margin-bottom: 40px;
       h2 {
         margin-top: 0;
       }
@@ -261,7 +261,7 @@ section {
     }
     // section-post-heading fatto da Antonio
     .section-post-heading {
-      margin-bottom: 100px;
+      margin-bottom: 40px;
       h2 {
         margin-top: 0;
       }
@@ -712,4 +712,51 @@ table, tr.odd, .sorting_1 {
 
 th {
     color: black !important;
+}
+
+.choose {
+    width: 92%;
+    padding: 10px 5px;
+}
+
+img.emoji  {
+    width:25px;
+    display: inline-block;
+    margin-right:10px;
+}
+
+.counter {
+    text-align: center; 
+    font-size: 2rem; 
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.cover-box {
+    color: white;
+    margin: 10px auto;
+    padding: 15px 5px;
+    background: -webkit-linear-gradient(to left, $head-primary, $head-secondary);
+    background: linear-gradient(to left, $head-primary, $head-secondary);
+    border-radius: 10px;
+}
+
+.cover-title {
+    margin: 0px !important;
+    font-weight: 400 !important;
+}
+
+.rank {
+    //position: absolute;
+    //width: 100%;
+    //bottom: 20px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.bootstrap-select {
+    margin-top: 15px;
 }

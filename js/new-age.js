@@ -79,6 +79,21 @@
             'sDom': 't'
         });
         
+        var defaultCovers = -1;
+        
+        for(var i = 0; i < coversDB.length; i++) {
+            if(coversDB[i].active) {
+                if(defaultCovers == -1) defaultCovers = i;
+                $(".selectpicker").append('<option value="' + i + '">#' + coversDB[i].week + ' Hlasování</option>');
+            }
+        }
+
+        reloadCovers(defaultCovers);
+        
+        $('.selectpicker').on('changed.bs.select', function (event, clickedIndex, newValue, oldValue) {
+            reloadCovers(event.target.value);
+        });
+        
         setInterval(updateRealese, 1000);
 
     });
@@ -124,4 +139,74 @@ function search(urlKey, myArray){
         }
     }
     return null;
+}
+
+function reloadCovers(index) {
+    
+    $("#coversContainer").empty();
+    
+    for(var i = 0; i < coversDB[index].covers.length; i++) {
+        var column = "";
+        if(i == coversDB[index].covers.length - 1) {
+            column = "col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3";
+        }
+        else if(i == coversDB[index].covers.length - 2) {
+            column = "col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-6 col-sm-offset-0";
+        }
+        else {
+            column = "col-lg-4 col-md-4 col-sm-6";
+        }
+        $("#coversContainer").append('<div class="' + column + ' text-center"><div class="cover-box ' + coversDB[index].covers[i].reaction + '"><a href="' + coversDB[index].covers[i].link + '" target="_blank"><img class="choose" src="' + coversDB[index].covers[i].link + '" /></a><h3 class="cover-title">' + coversDB[index].covers[i].comics + '</h3><p>' + coversDB[index].covers[i].author + '</p><div class="rank"><img class="emoji" src="' + siteRewrite + 'img/emojis/' + coversDB[index].covers[i].emoji + '.png"><span class="counter">0</span></div></div></div>');
+    }
+
+    $('#coversContainer').imagesLoaded( function() {
+
+        var maxHeight = 0;
+
+        $(".choose").each(function() {
+            var scale = 400 / $(this).outerHeight();
+            $(this).css("width", ($(this).outerWidth() * scale)  + "px");
+            $(this).css("height", 400  + "px");;
+        });
+
+        $(".cover-box").each(function() {
+            if($(this).outerHeight() > maxHeight) maxHeight = $(this).outerHeight();
+        });
+
+        $(".cover-box").each(function() {
+            $(this).css("height", maxHeight + "px");
+        });
+
+    });
+
+    var access_token = '1335593173145160|slQ8coHyj5qzQzfa9-Kw1saCziQ'; // PASTE HERE YOUR FACEBOOK ACCESS TOKEN
+    var pageID = '434506730255602'; // PASTE HERE YOUR POST ID 
+    var defaultCount = 0; // Default count to start with
+    
+    var reactions = ['LIKE', 'LOVE', 'WOW', 'HAHA', 'SAD', 'ANGRY'].map(function (e) {
+        var code = 'reactions_' + e.toLowerCase();
+        return 'reactions.type(' + e + ').limit(0).summary(total_count).as(' + code + ')'
+    }).join(',');
+    
+    var v1 = $('.likes .counter'),
+        v2 = $('.happy .counter'),
+        v3 = $('.sad .counter'),
+        v4 = $('.fml .counter'),
+        v5 = $('.angry .counter'),
+        v6 = $('.shock .counter');
+
+        if(coversDB[index].fbPostId > -1) {
+
+            var url = 'https://graph.facebook.com/v2.3/?ids=' + pageID + '_' + coversDB[index].fbPostId + '&fields=' + reactions + '&access_token=' + access_token;
+            $.getJSON(url, function(res){
+                v1.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_like.summary.total_count);
+                v2.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_love.summary.total_count);
+                v3.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_sad.summary.total_count);
+                v4.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_haha.summary.total_count);
+                v5.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_angry.summary.total_count);
+                v6.text(defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_wow.summary.total_count);
+            });
+    
+        }
+    
 }
