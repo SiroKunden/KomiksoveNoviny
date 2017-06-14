@@ -197,7 +197,7 @@ function reloadCovers(index) {
 
         if(coversDB[index].fbPostId > -1) {
 
-            var url = 'https://graph.facebook.com/v2.3/?ids=' + pageID + '_' + coversDB[index].fbPostId + '&fields=' + reactions + '&access_token=' + access_token;
+            var url = 'https://graph.facebook.com/v2.9/?ids=' + pageID + '_' + coversDB[index].fbPostId + '&fields=' + reactions + '&access_token=' + access_token;
             $.getJSON(url, function(res){
                 var values = [];
                 values.push({selector: "likes", count: defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_like.summary.total_count});
