@@ -132,7 +132,7 @@ for($x = count($comics) - 1; $x >= 0 && $download < $comicsNum; $x--) {
                 file_put_contents($comicsDBFile, "var comicsDownloaded = " . json_encode($comicsDownloaded));
                 exec('git --git-dir=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/.git add . 2>&1', $output_text);
                 exec('git --git-dir=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/.git commit -m "comics update" 2>&1', $output_text);
-                //exec('git --git-dir=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/.git push 2>&1', $output_text);
+                exec('git --git-dir=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/.git push 2>&1', $output_text);
                 echo "var comicsDownloaded = " . json_encode($comicsDownloaded);
             }
         }
