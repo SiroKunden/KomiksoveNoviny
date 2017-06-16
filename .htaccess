@@ -1,0 +1,11 @@
+
+# /path/to/www_root should be the same value as wpath in view.conf
+# !!! SEE ALL LINES !!! Change this path in RewriteBase and RewriteCond
+
+RewriteEngine On     
+
+#RewriteBase /
+RewriteBase /KomiksoveNovinyAdmin
+RewriteRule ^generate$ index.php [QSA,L]
+#RewriteRule ^generate/server$ index.php?generate_file=1&server=1 [QSA,L]
+RewriteRule ^$ index.php [QSA,L]
