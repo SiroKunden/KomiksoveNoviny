@@ -147,10 +147,10 @@ function reloadCovers(index) {
     
     for(var i = 0; i < coversDB[index].covers.length; i++) {
         var column = "";
-        if(i == coversDB[index].covers.length - 1) {
+        if(i == coversDB[index].covers.length - 1 && coversDB[index].covers.length == 5) {
             column = "col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3";
         }
-        else if(i == coversDB[index].covers.length - 2) {
+        else if(i == coversDB[index].covers.length - 2 && coversDB[index].covers.length == 5) {
             column = "col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-6 col-sm-offset-0";
         }
         else {
