@@ -50,7 +50,7 @@
     $( document ).ready(function() {
         
         for(var i = 0; i < comicsDownloaded.length; i++) {
-            $("#comicsBody").append('<tr><td><img src="https://comicsdb.cz' + comicsDownloaded[i].cover + '" height="100px" /></td><td>' + comicsDownloaded[i].url + '</td><td><a href="https://comicsdb.cz/' + comicsDownloaded[i].url + '" target="_blank">' + comicsDownloaded[i].name + '</a></td><td>' + comicsDownloaded[i].price + '</td><td>' + comicsDownloaded[i].publisher + '</td><td>' + comicsDownloaded[i].publish + '</td><td>' + comicsDownloaded[i].type + '</td><td>' + comicsDownloaded[i].format + '</td><td>' + comicsDownloaded[i].pages + '</td></tr>');
+            $("#comicsBody").append('<tr><td><img src="https://comicsdb.cz' + (comicsDownloaded[i].cover === "" ? "/piccomics/noicon.gif" : comicsDownloaded[i].cover) + '" height="100px" /></td><td>' + comicsDownloaded[i].url + '</td><td><a href="https://comicsdb.cz/' + comicsDownloaded[i].url + '" target="_blank">' + comicsDownloaded[i].name + '</a></td><td>' + comicsDownloaded[i].price + '</td><td>' + comicsDownloaded[i].publisher + '</td><td>' + comicsDownloaded[i].publish + '</td><td>' + comicsDownloaded[i].type + '</td><td>' + comicsDownloaded[i].format + '</td><td>' + comicsDownloaded[i].pages + '</td></tr>');
         }
         
         var t = $('#comics').DataTable({
@@ -147,16 +147,16 @@ function reloadCovers(index) {
     
     for(var i = 0; i < coversDB[index].covers.length; i++) {
         var column = "";
-        if(i == coversDB[index].covers.length - 1) {
+        if(i == coversDB[index].covers.length - 1 && coversDB[index].covers.length == 5) {
             column = "col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3";
         }
-        else if(i == coversDB[index].covers.length - 2) {
+        else if(i == coversDB[index].covers.length - 2 && coversDB[index].covers.length == 5) {
             column = "col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-6 col-sm-offset-0";
         }
         else {
             column = "col-lg-4 col-md-4 col-sm-6";
         }
-        $("#coversContainer").append('<div class="' + column + ' text-center"><div class="cover-box ' + coversDB[index].covers[i].reaction + '"><a href="' + coversDB[index].covers[i].link + '" target="_blank"><img class="choose" src="' + coversDB[index].covers[i].link + '" /></a><h3 class="cover-title">' + coversDB[index].covers[i].comics + '</h3><p>' + coversDB[index].covers[i].author + '</p><div class="rank"><img class="emoji" src="' + siteRewrite + 'img/emojis/' + coversDB[index].covers[i].emoji + '.png"><span class="counter">0</span></div></div></div>');
+        $("#coversContainer").append('<div class="' + column + ' text-center"><div class="cover-box ' + coversDB[index].covers[i].reaction + '"><a href="' + coversDB[index].covers[i].link + '" target="_blank"><img class="choose" src="/img/covers/' + coversDB[index].week + "/" + coversDB[index].covers[i].emoji + '.jpg" /></a><h3 class="cover-title">' + coversDB[index].covers[i].comics + '</h3><p>' + coversDB[index].covers[i].author + '</p><div class="rank"><img class="emoji" src="' + siteRewrite + 'img/emojis/' + coversDB[index].covers[i].emoji + '.png"><span class="counter">0</span></div></div></div>');
     }
 
     $('#coversContainer').imagesLoaded( function() {
@@ -197,7 +197,7 @@ function reloadCovers(index) {
 
         if(coversDB[index].fbPostId > -1) {
 
-            var url = 'https://graph.facebook.com/v2.3/?ids=' + pageID + '_' + coversDB[index].fbPostId + '&fields=' + reactions + '&access_token=' + access_token;
+            var url = 'https://graph.facebook.com/v2.9/?ids=' + pageID + '_' + coversDB[index].fbPostId + '&fields=' + reactions + '&access_token=' + access_token;
             $.getJSON(url, function(res){
                 var values = [];
                 values.push({selector: "likes", count: defaultCount + res[pageID + '_' + coversDB[index].fbPostId].reactions_like.summary.total_count});

@@ -34,5 +34,5 @@ permalink: pretty
 paginate: 5
 exclude: ["less","README.md"]
 
-gems: [jekyll-paginate, jekyll-feed]
+gems: [jekyll-paginate, jekyll-feed, jekyll-sitemap]
 # Build settings

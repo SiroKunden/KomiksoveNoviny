@@ -44,7 +44,16 @@
                                 downloadSourceOfHtml("https://crossorigin.me/https://comicsdb.cz/" + comics[i], comics[i], function(comicsSource, comicsUrl) {
                                     comicsSource = comicsSource.replace(/(\r\n|\n|\r)/gm,"");
 
-                                    var cover = comicsSource.substring(comicsSource.indexOf('data-title="Obálka"><img src="') + 30, comicsSource.indexOf('" alt="Obálka"'));
+                                    var cover = ""; 
+                                    if(comicsSource.indexOf('data-title="Obálka"><img src="') > 0 && comicsSource.indexOf('" alt="Obálka"') > 0) {
+                                        cover = comicsSource.substring(comicsSource.indexOf('data-title="Obálka"><img src="') + 30, comicsSource.indexOf('" alt="Obálka"'));
+                                    }
+                                    if(comicsSource.indexOf('data-title="Obálka české verze"><img src="') > 0 && comicsSource.indexOf('" alt="Obálka české verze"') > 0) {
+                                        cover = comicsSource.substring(comicsSource.indexOf('data-title="Obálka české verze"><img src="') + 42, comicsSource.indexOf('" alt="Obálka české verze"'));
+                                    }
+                                    else {
+                                        cover = "";
+                                    }
                                     var name = comicsSource.substring(comicsSource.indexOf('<H5>') + 4, comicsSource.indexOf('</H5>'));
 
                                     var match = comicsSource.match(/Vydal:((?!<br \/>).)*<br \/>/g);
