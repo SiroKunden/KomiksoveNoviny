@@ -771,4 +771,9 @@ img.emoji  {
         zoom: 0.5;
         -moz-transform: scale(0.5);
     }
+    section {
+        &.cta {
+            background-image: url('../img/bg-cta-mobile.png');
+        }
+    }
 }

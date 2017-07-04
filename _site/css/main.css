@@ -563,4 +563,7 @@ img.emoji {
 @media only screen and (max-width: 768px) {
   .clock {
     zoom: 0.5;
-    -moz-transform: scale(0.5); } }
+    -moz-transform: scale(0.5); }
+
+  section.cta {
+    background-image: url("../img/bg-cta-mobile.png"); } }
