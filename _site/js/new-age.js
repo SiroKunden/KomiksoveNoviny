@@ -28,7 +28,7 @@
         }
     });
     
-    function updateRealese() {
+    function getSecondsToRelease() {
         var releaseDate = new Date();
         releaseDate.setDate(releaseDate.getDate() + (1 + 7 - releaseDate.getDay()) % 7);
         releaseDate.setHours(20);
@@ -36,6 +36,12 @@
         releaseDate.setSeconds(0);
         var diff = Math.abs(releaseDate - new Date());
         diff = diff / 1000;
+        
+        return diff;
+    }
+    
+    function updateRealese() {
+        var diff = getSecondsToRelease();
         var days = Math.floor(diff / 86400);
         diff = diff - (days * 86400);
         var hours = Math.floor(diff / 3600);
@@ -45,6 +51,42 @@
         var seconds = Math.floor(diff);
 
         $("#releaseDate").text(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+    }
+    
+    function updateRealeseFlipClock() {
+        var clock;
+
+        FlipClock.Lang.Czech = {
+
+            'years'   : 'Roky',
+            'months'  : 'Měsíce',
+            'days'    : 'Dny',
+            'hours'   : 'Hodiny',
+            'minutes' : 'Minuty',
+            'seconds' : 'Sekundy'
+
+        };
+
+        /* Create various aliases for convenience */
+
+        FlipClock.Lang['cs']      = FlipClock.Lang.Czech;
+        FlipClock.Lang['cs-cz']   = FlipClock.Lang.Czech;
+        FlipClock.Lang['czech'] = FlipClock.Lang.Czech;
+
+        clock = $('.clock').FlipClock({
+            clockFace: 'DailyCounter',
+            autoStart: false,
+            language: "cs",
+            callbacks: {
+                    stop: function() {
+                            $('.message').html('The clock has stopped!')
+                    }
+            }
+        });
+
+        clock.setTime(getSecondsToRelease());
+        clock.setCountdown(true);
+        clock.start();
     }
     
     $( document ).ready(function() {
@@ -94,7 +136,9 @@
             reloadCovers(event.target.value);
         });
         
-        setInterval(updateRealese, 1000);
+        //setInterval(updateRealese, 1000);
+        
+        updateRealeseFlipClock();
 
     });
 

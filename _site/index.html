@@ -40,6 +40,7 @@
     <!-- Custom CSS
     <link rel="stylesheet" href="css/main.css" type="text/css"> -->
     <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/flipclock.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -111,10 +112,7 @@
 
   <section class="cta">
     <div class="cta-content">
-        <div class="container">
-            <h2>Do příštího dílu zbývá:<br/><span id='releaseDate'>Těžko říct</span></h2>
-            <p style="color: white;">(Předpokládáme, že to bude v pondělí ve 20:00)</p>
-            <a href="/#youtube" class="btn btn-outline btn-xl page-scroll">ČEKUJ VIDEO!</a>
+        <div class="container" style="min-height: 300px">
         </div>
     </div>
     <div class="overlay"></div>
@@ -122,6 +120,13 @@
 
   <section id="youtube" class="download bg-primary text-center">
     <div class="container">
+        <div class="row" style='margin-bottom: 20px;'>
+            <div class="col-md-8 col-md-offset-2" style='padding: 0;'>
+                <h2 style='font-size: 30px;'>Do příštího dílu zbývá:</h2>
+                <p style="margin-bottom: 30px;">(Předpokládáme, že to bude v pondělí ve 20:00)</p>
+                <div class="clock"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>Už jsi viděl/a nejnovější díl pořadu <strong>KOMIKSOVÉ NOVINY?</strong></h3>
@@ -203,11 +208,20 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="feature-item">
+                                    <img src="/img/portfolio/port.png"/>
+                                    <h3>Port</h3>
+                                    <p class="text-muted">Sice přišel poslední, ale s ním přisla pořádná kvalita (Vojta neslouhlasně exuje pivo). Ví o čem mluví a má to všechno na háku. A má jen o malinko lepší vous než Walome.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
                                     <img src="/img/portfolio/walome.png"/>
                                     <h3>Walome</h3>
                                     <p class="text-muted">Kluk, který se zrodil pro hejt. Nebo se hejt zrodil pro něj. Lidé se v tom pořadí rozcházejí, ale jedno je jisté: Walome nesnáší zastánce obou variant.</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="feature-item">
                                     <img src="/img/portfolio/kuba.png"/>
@@ -215,9 +229,7 @@
                                     <p class="text-muted">Tenhle kluk má super Image. Jako jediný z nás na kameře vypadá vždy skvěle (Vojta právě rozbil klávesnici), stejně jako má skvělý výběr čtiva.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3">
+                            <div class="col-md-6">
                                 <div class="feature-item">
                                     <img src="/img/portfolio/ondra.png"/>
                                     <h3>Ten Člověk</h3>
@@ -411,6 +423,7 @@
 
 <!-- Theme JavaScript -->
 <script src="/js/new-age.js"></script>
+<script src="/js/flipclock.min.js"></script>
 <script src="/js/comicsDB.js"></script>
 <script src="/js/coversDB.js"></script>
 
