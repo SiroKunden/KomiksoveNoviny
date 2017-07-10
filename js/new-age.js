@@ -124,7 +124,7 @@
         var defaultCovers = -1;
         
         for(var i = 0; i < coversDB.length; i++) {
-            if(coversDB[i].active || coversDB[i].active === "true") {
+            if(coversDB[i].active === "true") {
                 if(defaultCovers == -1) defaultCovers = i;
                 $(".selectpicker").append('<option value="' + i + '">#' + coversDB[i].week + ' Hlasování</option>');
             }
