@@ -92,7 +92,7 @@
     $( document ).ready(function() {
         
         for(var i = 0; i < comicsDownloaded.length; i++) {
-            $("#comicsBody").append('<tr><td><img src="https://comicsdb.cz' + (comicsDownloaded[i].cover === "" ? "/piccomics/noicon.gif" : comicsDownloaded[i].cover) + '" height="100px" /></td><td>' + comicsDownloaded[i].url + '</td><td><a href="https://comicsdb.cz/' + comicsDownloaded[i].url + '" target="_blank">' + comicsDownloaded[i].name + '</a></td><td>' + comicsDownloaded[i].price + '</td><td>' + comicsDownloaded[i].publisher + '</td><td>' + comicsDownloaded[i].publish + '</td><td>' + comicsDownloaded[i].type + '</td><td>' + comicsDownloaded[i].format + '</td><td>' + comicsDownloaded[i].pages + '</td></tr>');
+            $("#comicsBody").append('<tr><td><img src="https://comicsdb.cz' + (comicsDownloaded[i].cover === "" ? "/piccomics/noicon.gif" : comicsDownloaded[i].cover) + '" height="100px" /></td><td>' + comicsDownloaded[i].url + '</td><td><a href="https://comicsdb.cz/' + comicsDownloaded[i].url + '" target="_blank">' + comicsDownloaded[i].name + '</a>' + (typeof(comicsDownloaded[i].audio) !== "undefined" && comicsDownloaded[i].audio !== null ? '<br /><audio controls controlsList="nodownload"><source src="/audio/' + comicsDownloaded[i].audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + comicsDownloaded[i].price + '</td><td>' + comicsDownloaded[i].publisher + '</td><td>' + comicsDownloaded[i].publish + '</td><td>' + comicsDownloaded[i].type + '</td><td>' + comicsDownloaded[i].format + '</td><td>' + comicsDownloaded[i].pages + '</td></tr>');
         }
         
         var t = $('#comics').DataTable({
@@ -124,7 +124,7 @@
         var defaultCovers = -1;
         
         for(var i = 0; i < coversDB.length; i++) {
-            if(coversDB[i].active) {
+            if(coversDB[i].active === "true") {
                 if(defaultCovers == -1) defaultCovers = i;
                 $(".selectpicker").append('<option value="' + i + '">#' + coversDB[i].week + ' Hlasování</option>');
             }
