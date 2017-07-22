@@ -221,7 +221,7 @@ section {
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url("../img/bg-cta.png");
+    background-image: url("../img/bg-cta.jpg");
     padding: 100px 0; }
     section.cta .cta-content {
       position: relative;
@@ -566,4 +566,4 @@ img.emoji {
     -moz-transform: scale(0.5); }
 
   section.cta {
-    background-image: url("../img/bg-cta-mobile.png"); } }
+    background-image: url("../img/bg-cta-mobile.jpg"); } }

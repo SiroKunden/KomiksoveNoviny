@@ -92,7 +92,7 @@
     $( document ).ready(function() {
         
         for(var i = 0; i < comicsDownloaded.length; i++) {
-            $("#comicsBody").append('<tr><td><img src="https://comicsdb.cz' + (comicsDownloaded[i].cover === "" ? "/piccomics/noicon.gif" : comicsDownloaded[i].cover) + '" height="100px" /></td><td>' + comicsDownloaded[i].url + '</td><td><a href="https://comicsdb.cz/' + comicsDownloaded[i].url + '" target="_blank">' + comicsDownloaded[i].name + '</a>' + (typeof(comicsDownloaded[i].audio) !== "undefined" && comicsDownloaded[i].audio !== null ? '<br /><audio controls controlsList="nodownload"><source src="/audio/' + comicsDownloaded[i].audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + comicsDownloaded[i].price + '</td><td>' + comicsDownloaded[i].publisher + '</td><td>' + comicsDownloaded[i].publish + '</td><td>' + comicsDownloaded[i].type + '</td><td>' + comicsDownloaded[i].format + '</td><td>' + comicsDownloaded[i].pages + '</td></tr>');
+            $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (comicsDownloaded[i].cover === "" ? "/piccomics/noicon.gif" : comicsDownloaded[i].cover) + '" height="100px" /></td><td>' + comicsDownloaded[i].url + '</td><td><a href="https://comicsdb.cz/' + comicsDownloaded[i].url + '" target="_blank">' + comicsDownloaded[i].name + '</a>' + (typeof(comicsDownloaded[i].audio) !== "undefined" && comicsDownloaded[i].audio !== null ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + comicsDownloaded[i].audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + comicsDownloaded[i].price + '</td><td>' + comicsDownloaded[i].publisher + '</td><td>' + comicsDownloaded[i].publish + '</td><td>' + comicsDownloaded[i].type + '</td><td>' + comicsDownloaded[i].format + '</td><td>' + comicsDownloaded[i].pages + '</td></tr>');
         }
         
         var t = $('#comics').DataTable({
@@ -101,7 +101,10 @@
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
             },
-            'sDom': '<"top"f>t<"bottom"p>'
+            'sDom': '<"top"f>t<"bottom"p>',
+            "drawCallback": function() {
+                $("img.lazy").lazyload();
+            }
         });
         
         var column = t.column(1);
