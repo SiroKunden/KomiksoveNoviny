@@ -274,3 +274,46 @@ function reloadCovers(index) {
         }
     
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    var div, n,
+        v = document.getElementsByClassName("youtube-player");
+    for (n = 0; n < v.length; n++) {
+        div = document.createElement("div");
+        div.setAttribute("data-id", v[n].dataset.id);
+        var objects = [];
+        objects.push(v[n]);
+        objects.push(div);
+        labnolThumb(v[n].dataset.id, objects, function(html, objects) {
+            objects[1].innerHTML = html;
+            objects[1].onclick = labnolIframe;
+            objects[0].appendChild(objects[1]);
+        });
+    }
+});
+
+function labnolThumb(id, objects, callback) {
+    
+    downloadSourceOfHtml("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=" + id + "&key=AIzaSyANeJwlrDHnL1mfvTjjUhxDKU5AU6S9ysA", objects, function(source, objects) {
+        
+        //var url = "https://i.ytimg.com/vi/ID/hqdefault.jpg";
+        //url.replace("ID", id);
+        var url = JSON.parse(source).items[0].snippet.thumbnails.standard.url;
+        
+        var thumb = '<img src="' + url + '">',
+            play = '<div class="play"></div>';
+        callback(thumb + play, objects);
+        
+    });
+    
+}
+
+function labnolIframe() {
+    var iframe = document.createElement("iframe");
+    var embed = "https://www.youtube.com/embed/videoseries?list=ID&autoplay=1";
+    //var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+    iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "1");
+    this.parentNode.replaceChild(iframe, this);
+}
