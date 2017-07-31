@@ -529,7 +529,9 @@ th {
 img.emoji {
   width: 25px;
   display: inline-block;
-  margin-right: 10px; }
+  margin-right: 10px;
+  border: 1px #aaa solid;
+  border-radius: 50%; }
 
 .counter {
   text-align: center;
@@ -538,16 +540,13 @@ img.emoji {
   vertical-align: middle; }
 
 .cover-box {
-  color: white;
+  color: #22A0F3;
   margin: 10px auto;
   padding: 15px 5px;
-  background: -webkit-linear-gradient(to left, #7b4397, #dc2430);
-  background: linear-gradient(to left, #7b4397, #dc2430);
-  border-radius: 10px; }
+  background: #DFE367; }
 
 .cover-box-winning {
-  background: -webkit-linear-gradient(to left, #D4AF37, #AE8913) !important;
-  background: linear-gradient(to left, #D4AF37, #AE8913) !important; }
+  background: #8AFF4F; }
 
 .cover-title {
   margin: 0px !important;

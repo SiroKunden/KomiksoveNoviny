@@ -723,6 +723,8 @@ img.emoji  {
     width:25px;
     display: inline-block;
     margin-right:10px;
+    border: 1px #aaa solid;
+    border-radius: 50%;
 }
 
 .counter {
@@ -733,17 +735,19 @@ img.emoji  {
 }
 
 .cover-box {
-    color: white;
+    color: #22A0F3;
     margin: 10px auto;
     padding: 15px 5px;
-    background: -webkit-linear-gradient(to left, $head-primary, $head-secondary);
-    background: linear-gradient(to left, $head-primary, $head-secondary);
-    border-radius: 10px;
+    //background: -webkit-linear-gradient(to left, $head-primary, $head-secondary);
+    //background: linear-gradient(to left, $head-primary, $head-secondary);
+    background:#DFE367;
+    //border-radius: 10px;
 }
 
 .cover-box-winning {
-    background: -webkit-linear-gradient(to left, #D4AF37, #AE8913) !important;
-    background: linear-gradient(to left, #D4AF37, #AE8913) !important;
+    //background: -webkit-linear-gradient(to left, #D4AF37, #AE8913) !important;
+    //background: linear-gradient(to left, #D4AF37, #AE8913) !important;
+    background: #8AFF4F;
 }
 
 .cover-title {
