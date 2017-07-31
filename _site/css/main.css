@@ -527,15 +527,22 @@ th {
   padding: 10px 5px; }
 
 img.emoji {
-  width: 25px;
+  width: 40px;
   display: inline-block;
   margin-right: 10px;
-  border: 1px #aaa solid;
+  border: 5px #22A0F3 solid;
+  background: #22A0F3;
   border-radius: 50%; }
+
+.rank {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0; }
 
 .counter {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   vertical-align: middle; }
 

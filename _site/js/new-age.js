@@ -217,7 +217,7 @@ function reloadCovers(index) {
         });
 
         $(".cover-box").each(function() {
-            if($(this).outerHeight() > maxHeight) maxHeight = $(this).outerHeight();
+            if($(this).outerHeight() > maxHeight) maxHeight = $(this).outerHeight() + 50;
         });
 
         $(".cover-box").each(function() {
