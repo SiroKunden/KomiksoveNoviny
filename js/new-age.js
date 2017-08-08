@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function labnolThumb(id, objects, callback) {
     
-    downloadSourceOfHtml("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=" + id + "&key=AIzaSyANeJwlrDHnL1mfvTjjUhxDKU5AU6S9ysA", objects, function(source, objects) {
+    downloadSourceOfHtml("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=" + id + "&key=AIzaSyAZXbPZGV_3ZmR-aIPeB8H1XdY8OCqgsw0", objects, function(source, objects) {
         
         //var url = "https://i.ytimg.com/vi/ID/hqdefault.jpg";
         //url.replace("ID", id);
