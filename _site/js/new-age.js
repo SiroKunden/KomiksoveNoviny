@@ -91,38 +91,43 @@
     
     $( document ).ready(function() {
         
-        for(var i = 0; i < comicsDownloaded.length; i++) {
-            $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (comicsDownloaded[i].cover === "" ? "/piccomics/noicon.gif" : comicsDownloaded[i].cover) + '" height="100px" /></td><td>' + comicsDownloaded[i].url + '</td><td><a href="https://comicsdb.cz/' + comicsDownloaded[i].url + '" target="_blank">' + comicsDownloaded[i].name + '</a>' + (typeof(comicsDownloaded[i].audio) !== "undefined" && comicsDownloaded[i].audio !== null ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + comicsDownloaded[i].audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + comicsDownloaded[i].price + '</td><td>' + comicsDownloaded[i].publisher + '</td><td>' + comicsDownloaded[i].publish + '</td><td>' + comicsDownloaded[i].type + '</td><td>' + comicsDownloaded[i].format + '</td><td>' + comicsDownloaded[i].pages + '</td></tr>');
-        }
+        var loadFromSpreadSheet = true;
         
-        var t = $('#comics').DataTable({
-            responsive: true,
-            "order": [[ 1, "desc" ]],
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
-            },
-            'sDom': '<"top"f>t<"bottom"p>',
-            "drawCallback": function() {
-                $("img.lazy").lazyload();
+        if(loadFromSpreadSheet) {
+        
+        var url = "https://docs.google.com/spreadsheets/pub?key=1kbeDv93WTK6KOR2W0fH29JTJFNp9tw9H8q_rPT-FVwA&output=html";
+        var googleSpreadsheet = new GoogleSpreadsheet();
+        googleSpreadsheet.url(url);
+        googleSpreadsheet.load(function(result) {
+            
+            for(var i = 0; i < result.items.length; i++) {
+                
+                var item = result.items[i];
+                
+                if(typeof(item.name) !== "undefined") item.name = item.name.replace(/<comma>/gm,",");
+                if(typeof(item.description) !== "undefined") item.description = item.description.replace(/<comma>/gm,",");
+                if(typeof(item.type) !== "undefined") item.type = item.type.replace(/<comma>/gm,",");
+                
+                $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (item.cover === "null" ? "/piccomics/noicon.gif" : item.cover) + '" style="max-width: 100px; max-height: 100px;" /></td><td>' + item.id + '</td><td><a href="https://comicsdb.cz/' + item.id + '" target="_blank">' + item.name + '</a>' + (false ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + item.audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + (item.price !== "null" ? item.price : "") + '</td><td>' + (item.publisher !== "null" ? item.publisher : "") + '</td><td>' + (item.publish !== "null" ? item.publish : "") + '</td><td>' + (item.type !== "null" ? item.type : "") + '</td><td>' + (item.format !== "null" ? item.format : "") + '</td><td>' + (item.pages !== "null" ? item.pages : "") + '</td><td><a href="https://comicsdb.cz/' + item.id + '" target="_blank">' + item.comments + '</a></td></tr>');
             }
+            
+            initDataTables();
+            
         });
         
-        var column = t.column(1);
-        column.visible(! column.visible());
+        }
+        else {
         
-        var t = $('#harmonogram-table').DataTable({
-            responsive: {
-                details: {
-                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
-                    type: ''
-                }
-            },
-            "order": [],
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
-            },
-            'sDom': 't'
-        });
+            for(var i = 0; i < comicsDownloaded.length; i++) {
+                
+                var item = comicsDownloaded[i];
+                
+                $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (item.cover === "" ? "/piccomics/noicon.gif" : item.cover) + '" style="max-width: 100px; max-height: 100px;" /></td><td>' + item.url + '</td><td><a href="https://comicsdb.cz/' + item.url + '" target="_blank">' + item.name + '</a>' + (typeof(item.audio) !== "undefined" && item.audio !== null ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + item.audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + item.price + '</td><td>' + item.publisher + '</td><td>' + item.publish + '</td><td>' + item.type + '</td><td>' + item.format + '</td><td>' + item.pages + '</td><td><a href="https://comicsdb.cz/' + item.url + '" target="_blank">' + (typeof(item.comments) !== "undefined" ? item.comments : 0) + '</a></td></tr>');
+            }
+            
+            initDataTables();
+        
+        }
         
         var defaultCovers = -1;
         
@@ -146,6 +151,39 @@
     });
 
 })(jQuery); // End of use strict
+
+function initDataTables() {
+    
+    var t = $('#comics').DataTable({
+        responsive: true,
+        "order": [[ 1, "desc" ]],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+        },
+        'sDom': '<"top"f>t<"bottom"p>',
+        "drawCallback": function() {
+            $("img.lazy").lazyload();
+        }
+    });
+
+    var column = t.column(1);
+    column.visible(! column.visible());
+
+    var t = $('#harmonogram-table').DataTable({
+        responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                type: ''
+            }
+        },
+        "order": [],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+        },
+        'sDom': 't'
+    });
+    
+}
 
 function getContentTypeOfUrl(url, find, index, callbackFnc) {
     
@@ -294,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function labnolThumb(id, objects, callback) {
     
-    downloadSourceOfHtml("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=" + id + "&key=AIzaSyANeJwlrDHnL1mfvTjjUhxDKU5AU6S9ysA", objects, function(source, objects) {
+    downloadSourceOfHtml("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=" + id + "&key=AIzaSyAZXbPZGV_3ZmR-aIPeB8H1XdY8OCqgsw0", objects, function(source, objects) {
         
         //var url = "https://i.ytimg.com/vi/ID/hqdefault.jpg";
         //url.replace("ID", id);
