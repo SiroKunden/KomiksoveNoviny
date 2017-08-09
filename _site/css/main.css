@@ -622,3 +622,8 @@ img.emoji {
   position: absolute;
   background: url("//i.imgur.com/TxzC70f.png") no-repeat;
   cursor: pointer; }
+
+.jgallery {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px !important; }

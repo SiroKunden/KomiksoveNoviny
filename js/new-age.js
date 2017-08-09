@@ -1,3 +1,5 @@
+var isMobile = false;
+        
 (function($) {
     "use strict"; // Start of use strict
 
@@ -91,6 +93,8 @@
     
     $( document ).ready(function() {
         
+        if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) isMobile = true;
+    
         var loadFromSpreadSheet = true;
         var withAudio = false;
         
@@ -105,8 +109,14 @@
                 
                 var item = result.items[i];
                 
-                if(typeof(item.name) !== "undefined") item.name = item.name.replace(/<comma>/gm,",");
-                if(typeof(item.description) !== "undefined") item.description = item.description.replace(/<comma>/gm,",");
+                if(typeof(item.name) !== "undefined") { 
+                    item.name = item.name.replace(/<comma>/gm,",");
+                    item.name = item.name.replace(/<colon>/gm,":");
+                }
+                if(typeof(item.description) !== "undefined") { 
+                    item.description = item.description.replace(/<comma>/gm,",");
+                    item.description = item.description.replace(/<colon>/gm,":");
+                }
                 if(typeof(item.type) !== "undefined") item.type = item.type.replace(/<comma>/gm,",");
                 
                 if(withAudio) {
@@ -166,6 +176,8 @@
         //setInterval(updateRealese, 1000);
         
         updateRealeseFlipClock();
+        
+        initGaleries();
 
     });
 
@@ -273,7 +285,88 @@ function search(urlKey, myArray){
     return null;
 }
 
+function initGaleries() {
+    
+    if($( "#gallery" ).length == 0) return;
+    
+    var albums = [];
+    
+    var url = "https://docs.google.com/spreadsheets/pub?key=1nS0HRoXlLDilySgiYqtPvnCvz1LUDar9Sn8CGWwRYZ0&gid=1&output=html";
+    var googleSpreadsheet = new GoogleSpreadsheet();
+    googleSpreadsheet.url(url);
+    googleSpreadsheet.load(function(result) {
+
+        var url = "https://docs.google.com/spreadsheets/pub?key=1nS0HRoXlLDilySgiYqtPvnCvz1LUDar9Sn8CGWwRYZ0&gid=2&output=html";
+        var googleSpreadsheet = new GoogleSpreadsheet();
+        googleSpreadsheet.url(url);
+        googleSpreadsheet.load(function(resultImages) {
+            
+            for(var i = 0; i < result.items.length; i++) {
+
+                var albumId = result.items[i].id;
+                var albumImages = [];
+                
+                for(var j = resultImages.items.length - 1; j >= 0; j--) {
+                    
+                    if(resultImages.items[j].albumid === albumId) {
+                        
+                        resultImages.items[j].name = resultImages.items[j].name.replace(/<comma>/gm,",");
+                        resultImages.items[j].name = resultImages.items[j].name.replace(/<colon>/gm,":");
+                        resultImages.items[j].name = resultImages.items[j].name.replace(/Scénář/gm,"<br />Scénář");
+                        resultImages.items[j].name = resultImages.items[j].name.replace(/Video/gm,"<br />Video");
+                        resultImages.items[j].name = resultImages.items[j].name.replace(/Koupit/gm,"<br />Koupit");
+                        
+                        albumImages.push({
+                            url: resultImages.items[j].picture,
+                            thumbUrl: resultImages.items[j].picture,
+                            title: resultImages.items[j].name
+                        });
+                    }
+                    
+                }
+                
+                result.items[i].name = result.items[i].name.replace(/<comma>/gm,",");
+                result.items[i].name = result.items[i].name.replace(/<colon>/gm,":");
+                        
+                
+                albums.push({
+                    title: result.items[i].name,
+                    images: albumImages
+                });
+
+            }
+            
+            $( "#gallery" ).jGallery( {
+                "transition":"moveToLeftEasing_moveFromRight",
+                "transitionBackward":"moveToRightEasing_moveFromLeft",
+                "transitionCols":"1",
+                "transitionRows":"1",
+                "thumbnailsPosition":"bottom",
+                "thumbType":"image",
+                "backgroundColor":"337AB7",
+                "textColor":"FFFFFF",
+                "mode":"standard",
+                canChangeMode: false,
+                canMinimalizeThumbnails: false,
+                titleExpanded: true,
+                tooltipSeeAllPhotos: 'Zobrazit všechny fotky',
+                tooltipSeeOtherAlbums: 'Zobrazit další čtenářské deníky',
+                width: isMobile ? '100%' : '90%',
+                height: "750px",
+                items: albums,
+                browserHistory: false,
+                swipeEvents: isMobile
+            } );
+            
+        });
+
+    });
+    
+}
+
 function reloadCovers(index) {
+    
+    if($("#coversContainer").length === 0) return;
     
     $("#coversContainer").empty();
     
