@@ -337,6 +337,7 @@ function initGaleries() {
             }
             
             $( "#gallery" ).jGallery( {
+                autostart: false,
                 "transition":"moveToLeftEasing_moveFromRight",
                 "transitionBackward":"moveToRightEasing_moveFromLeft",
                 "transitionCols":"1",
