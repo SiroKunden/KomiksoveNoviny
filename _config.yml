@@ -4,7 +4,7 @@ email: siro.kunden@gmail.com
 description: Stránky pořadu Komiksové Noviny, který vám přináší nové informace z komiksového světa.
 
 baseurl: "" # the subpath of your site, e.g. /blog/ (If you use organization leave empty)
-url: "" # the base hostname & protocol for your site
+url: "http://komiksovenoviny.cz" # the base hostname & protocol for your site
 
 #rewrite
 rewrite: /
