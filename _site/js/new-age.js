@@ -92,6 +92,7 @@
     $( document ).ready(function() {
         
         var loadFromSpreadSheet = true;
+        var withAudio = true;
         
         if(loadFromSpreadSheet) {
         
@@ -108,10 +109,28 @@
                 if(typeof(item.description) !== "undefined") item.description = item.description.replace(/<comma>/gm,",");
                 if(typeof(item.type) !== "undefined") item.type = item.type.replace(/<comma>/gm,",");
                 
-                $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (item.cover === "null" ? "/piccomics/noicon.gif" : item.cover) + '" style="max-width: 100px; max-height: 100px;" /></td><td>' + item.id + '</td><td><a href="https://comicsdb.cz/' + item.id + '" target="_blank">' + item.name + '</a>' + (false ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + item.audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + (item.price !== "null" ? item.price : "") + '</td><td>' + (item.publisher !== "null" ? item.publisher : "") + '</td><td>' + (item.publish !== "null" ? item.publish : "") + '</td><td>' + (item.type !== "null" ? item.type : "") + '</td><td>' + (item.format !== "null" ? item.format : "") + '</td><td>' + (item.pages !== "null" ? item.pages : "") + '</td><td><a href="https://comicsdb.cz/' + item.id + '" target="_blank">' + item.comments + '</a></td></tr>');
+                if(withAudio) {
+                
+                    urlExists(window.location.origin + '/audio/' + item.audio, item, i, function(audioExist, item, pos) {
+
+                        addRow(item, loadFromSpreadSheet, audioExist);
+
+                        if(pos === result.items.length - 1) {
+                            initDataTables();
+                        }
+
+                    });
+                
+                }
+                else {
+                    
+                    addRow(item, loadFromSpreadSheet, withAudio);
+                    if(i === result.items.length - 1) {
+                        initDataTables();
+                    }
+                }
+                
             }
-            
-            initDataTables();
             
         });
         
@@ -121,8 +140,8 @@
             for(var i = 0; i < comicsDownloaded.length; i++) {
                 
                 var item = comicsDownloaded[i];
+                addRow(item, loadFromSpreadSheet, false);
                 
-                $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (item.cover === "" ? "/piccomics/noicon.gif" : item.cover) + '" style="max-width: 100px; max-height: 100px;" /></td><td>' + item.url + '</td><td><a href="https://comicsdb.cz/' + item.url + '" target="_blank">' + item.name + '</a>' + (typeof(item.audio) !== "undefined" && item.audio !== null ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + item.audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + item.price + '</td><td>' + item.publisher + '</td><td>' + item.publish + '</td><td>' + item.type + '</td><td>' + item.format + '</td><td>' + item.pages + '</td><td><a href="https://comicsdb.cz/' + item.url + '" target="_blank">' + (typeof(item.comments) !== "undefined" ? item.comments : 0) + '</a></td></tr>');
             }
             
             initDataTables();
@@ -183,6 +202,34 @@ function initDataTables() {
         'sDom': 't'
     });
     
+}
+
+function addRow(item, spreadSheet, audioExist) {
+    
+    if(spreadSheet) {
+    
+        $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (item.cover === "null" ? "/piccomics/noicon.gif" : item.cover) + '" style="max-width: 100px; max-height: 100px;" /></td><td>' + item.id + '</td><td><a href="https://comicsdb.cz/' + item.id + '" target="_blank">' + item.name + '</a>' + (audioExist ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + item.audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + (item.price !== "null" ? item.price : "") + '</td><td>' + (item.publisher !== "null" ? item.publisher : "") + '</td><td>' + (item.publish !== "null" ? item.publish : "") + '</td><td>' + (item.type !== "null" ? item.type : "") + '</td><td>' + (item.format !== "null" ? item.format : "") + '</td><td>' + (item.pages !== "null" ? item.pages : "") + '</td><td><a href="https://comicsdb.cz/' + item.id + '" target="_blank">' + item.comments + '</a></td></tr>');
+    
+    }
+    else {
+        
+        $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (item.cover === "" ? "/piccomics/noicon.gif" : item.cover) + '" style="max-width: 100px; max-height: 100px;" /></td><td>' + item.url + '</td><td><a href="https://comicsdb.cz/' + item.url + '" target="_blank">' + item.name + '</a>' + (typeof(item.audio) !== "undefined" && item.audio !== null ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + item.audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + item.price + '</td><td>' + item.publisher + '</td><td>' + item.publish + '</td><td>' + item.type + '</td><td>' + item.format + '</td><td>' + item.pages + '</td><td><a href="https://comicsdb.cz/' + item.url + '" target="_blank">' + (typeof(item.comments) !== "undefined" ? item.comments : 0) + '</a></td></tr>');
+        
+    }
+    
+}
+
+function urlExists(url, item, pos, callback){
+  $.ajax({
+    type: 'HEAD',
+    url: url,
+    success: function(){
+      callback(true, item, pos);
+    },
+    error: function() {
+      callback(false, item, pos);
+    }
+  });
 }
 
 function getContentTypeOfUrl(url, find, index, callbackFnc) {
