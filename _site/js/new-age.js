@@ -94,55 +94,57 @@ var isMobile = false;
     $( document ).ready(function() {
         
         if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) isMobile = true;
+        
+        initCoverGame();
     
         var loadFromSpreadSheet = true;
         var withAudio = false;
         
         if(loadFromSpreadSheet) {
         
-        var url = "https://docs.google.com/spreadsheets/pub?key=1kbeDv93WTK6KOR2W0fH29JTJFNp9tw9H8q_rPT-FVwA&output=html";
-        var googleSpreadsheet = new GoogleSpreadsheet();
-        googleSpreadsheet.url(url);
-        googleSpreadsheet.load(function(result) {
-            
-            for(var i = 0; i < result.items.length; i++) {
-                
-                var item = result.items[i];
-                
-                if(typeof(item.name) !== "undefined") { 
-                    item.name = item.name.replace(/<comma>/gm,",");
-                    item.name = item.name.replace(/<colon>/gm,":");
-                }
-                if(typeof(item.description) !== "undefined") { 
-                    item.description = item.description.replace(/<comma>/gm,",");
-                    item.description = item.description.replace(/<colon>/gm,":");
-                }
-                if(typeof(item.type) !== "undefined") item.type = item.type.replace(/<comma>/gm,",");
-                
-                if(withAudio) {
-                
-                    urlExists(window.location.origin + '/audio/' + item.audio, item, i, function(audioExist, item, pos) {
+            var url = "https://docs.google.com/spreadsheets/pub?key=1kbeDv93WTK6KOR2W0fH29JTJFNp9tw9H8q_rPT-FVwA&output=html";
+            var googleSpreadsheet = new GoogleSpreadsheet();
+            googleSpreadsheet.url(url);
+            googleSpreadsheet.load(function(result) {
 
-                        addRow(item, loadFromSpreadSheet, audioExist);
+                for(var i = 0; i < result.items.length; i++) {
 
-                        if(pos === result.items.length - 1) {
+                    var item = result.items[i];
+
+                    if(typeof(item.name) !== "undefined") { 
+                        item.name = item.name.replace(/<comma>/gm,",");
+                        item.name = item.name.replace(/<colon>/gm,":");
+                    }
+                    if(typeof(item.description) !== "undefined") { 
+                        item.description = item.description.replace(/<comma>/gm,",");
+                        item.description = item.description.replace(/<colon>/gm,":");
+                    }
+                    if(typeof(item.type) !== "undefined") item.type = item.type.replace(/<comma>/gm,",");
+
+                    if(withAudio) {
+
+                        urlExists(window.location.origin + '/audio/' + item.audio, item, i, function(audioExist, item, pos) {
+
+                            addRow(item, loadFromSpreadSheet, audioExist);
+
+                            if(pos === result.items.length - 1) {
+                                initDataTables();
+                            }
+
+                        });
+
+                    }
+                    else {
+
+                        addRow(item, loadFromSpreadSheet, withAudio);
+                        if(i === result.items.length - 1) {
                             initDataTables();
                         }
-
-                    });
-                
-                }
-                else {
-                    
-                    addRow(item, loadFromSpreadSheet, withAudio);
-                    if(i === result.items.length - 1) {
-                        initDataTables();
                     }
+
                 }
-                
-            }
-            
-        });
+
+            });
         
         }
         else {
@@ -178,41 +180,103 @@ var isMobile = false;
         updateRealeseFlipClock();
         
         initGaleries();
-
+        
     });
 
 })(jQuery); // End of use strict
 
 function initDataTables() {
     
-    var t = $('#comics').DataTable({
-        responsive: true,
-        "order": [[ 1, "desc" ]],
-        "language": {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
-        },
-        'sDom': '<"top"f>t<"bottom"p>',
-        "drawCallback": function() {
-            $("img.lazy").lazyload();
-        }
-    });
-
-    var column = t.column(1);
-    column.visible(! column.visible());
-
-    var t = $('#harmonogram-table').DataTable({
-        responsive: {
-            details: {
-                display: $.fn.dataTable.Responsive.display.childRowImmediate,
-                type: ''
+    if($('#comics').length > 0) {
+    
+        var t = $('#comics').DataTable({
+            responsive: true,
+            "order": [[ 1, "desc" ]],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': '<"top"f>t<"bottom"p>',
+            "drawCallback": function() {
+                $("img.lazy").lazyload();
             }
-        },
-        "order": [],
-        "language": {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
-        },
-        'sDom': 't'
-    });
+        });
+
+        var column = t.column(1);
+        column.visible(! column.visible());
+    
+    }
+
+    if($('#harmonogram-table').length > 0) {
+
+        var t = $('#harmonogram-table').DataTable({
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            "order": [],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': 't'
+        });
+    
+    }
+    
+    if($('#cover-plan-table').length > 0) {
+    
+        var t = $('#cover-plan-table').DataTable({
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            "order": [],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': 't<"bottom"p>'
+        });
+    
+    }
+    
+    if($('#cover-week-points-table').length > 0) {
+    
+        var t = $('#cover-week-points-table').DataTable({
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            "order": [],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': 't<"bottom"p>'
+        });
+    
+    }
+    
+    if($('#cover-all-points-table').length > 0) {
+    
+        var t = $('#cover-all-points-table').DataTable({
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            "order": [],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': 't'
+        });
+    
+    }
     
 }
 
@@ -450,6 +514,88 @@ function reloadCovers(index) {
             });
     
         }
+    
+}
+
+function initCoverGame() {
+    
+    if($("#cover-plan-table").length === 0) return;
+    
+    var weekOfYear = function(){
+        var d = new Date();
+        d.setHours(0,0,0);
+        d.setDate(d.getDate()+4-(d.getDay()||7));
+        return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+    };
+
+    var week = weekOfYear();
+
+    $("#actual-week").text(week);
+    
+    var url = "https://docs.google.com/spreadsheets/pub?key=1qDHWMYtiPr0TbU9BtfRKhyhLp9EwwnQY00iajhVR10w&gid=2&output=html";
+    var googleSpreadsheet = new GoogleSpreadsheet();
+    googleSpreadsheet.url(url);
+    googleSpreadsheet.load(function(result) {
+
+        for(var i = 0; i < result.items.length; i++) {
+
+            if(result.items[i].id === result.items[i].week2) {
+                var className = ((parseInt(result.items[i].id) - parseInt(result.items[i].year)) === week) ? ' class="voting-first"' : '';
+                
+                $("#coverPlanBody").append('<tr><td' + className + '>' + (parseInt(result.items[i].id) - parseInt(result.items[i].year)) + "/" + result.items[i].year + '</td><td' + className + '>' + result.items[i].group1.replace(/;/gm,", ") + '</td></tr>');
+            }
+            else {
+                var className = ((parseInt(result.items[i].week2) - parseInt(result.items[i].year)) === week) ? ' class="voting-first"' : '';
+                
+                $("#coverPlanBody").append('<tr><td' + className + '>' + (parseInt(result.items[i].week2) - parseInt(result.items[i].year)) + "/" + result.items[i].year + '</td><td' + className + '>' + result.items[i].group2.replace(/;/gm,", ") + '</td></tr>');
+                
+                var className = ((parseInt(result.items[i].id) - parseInt(result.items[i].year)) === week) ? ' class="voting-first"' : '';
+                
+                $("#coverPlanBody").append('<tr><td' + className + '>' + (parseInt(result.items[i].id) - parseInt(result.items[i].year)) + "/" + result.items[i].year + '</td><td' + className + '>' + result.items[i].group1.replace(/;/gm,", ") + '</td></tr>');
+            }
+
+        }
+            
+    });
+    
+    var url = "https://docs.google.com/spreadsheets/pub?key=1qDHWMYtiPr0TbU9BtfRKhyhLp9EwwnQY00iajhVR10w&gid=1&output=html";
+    var googleSpreadsheet = new GoogleSpreadsheet();
+    googleSpreadsheet.url(url);
+    googleSpreadsheet.load(function(result) {
+
+        var portyAll = 0;
+        var jakubAll = 0;
+        var honzaAll = 0;
+        var vojtaAll = 0;
+        var ondřejAll = 0;
+        var walomeAll = 0;
+        var shialAll = 0;
+
+        for(var i = 0; i < result.items.length; i++) {
+
+            portyAll += parseInt(result.items[i].portybody);
+            jakubAll += parseInt(result.items[i].jakubbody);
+            honzaAll += parseInt(result.items[i].honzabody);
+            vojtaAll += parseInt(result.items[i].vojtabody);
+            ondřejAll += parseInt(result.items[i].ondřejbody);
+            walomeAll += parseInt(result.items[i].walomebody);
+            shialAll += parseInt(result.items[i].shialbody);
+
+            var portyClass = (parseInt(result.items[i].portybody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].portybody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].portybody) === 1 ? ' class="voting-third"' : '')));
+            var jakubClass = (parseInt(result.items[i].jakubbody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].jakubbody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].jakubbody) === 1 ? ' class="voting-third"' : '')));
+            var honzaClass = (parseInt(result.items[i].honzabody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].honzabody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].honzabody) === 1 ? ' class="voting-third"' : '')));
+            var vojtaClass = (parseInt(result.items[i].vojtabody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].vojtabody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].vojtabody) === 1 ? ' class="voting-third"' : '')));
+            var ondřejClass = (parseInt(result.items[i].ondřejbody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].ondřejbody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].ondřejbody) === 1 ? ' class="voting-third"' : '')));
+            var walomeClass = (parseInt(result.items[i].walomebody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].walomebody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].walomebody) === 1 ? ' class="voting-third"' : '')));
+            var shialClass = (parseInt(result.items[i].shialbody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].shialbody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].shialbody) === 1 ? ' class="voting-third"' : '')));
+            
+            $("#coverWeekPointsBody").append('<tr><td>' + result.items[i].id + '</td><td' + portyClass + '>Hlasy: ' + (result.items[i].porty === "-1" ? "N/A" : result.items[i].porty) + '<br />Body: ' + result.items[i].portybody + '</td><td' + jakubClass + '>Hlasy: ' + (result.items[i].jakub === "-1" ? "N/A" : result.items[i].jakub) + '<br />Body: ' + result.items[i].jakubbody + '</td><td' + honzaClass + '>Hlasy: ' + (result.items[i].honza === "-1" ? "N/A" : result.items[i].honza) + '<br />Body: ' + result.items[i].honzabody + '</td><td' + vojtaClass + '>Hlasy: ' + (result.items[i].vojta === "-1" ? "N/A" : result.items[i].vojta) + '<br />Body: ' + result.items[i].vojtabody + '</td><td' + ondřejClass + '>Hlasy: ' + (result.items[i].ondřej === "-1" ? "N/A" : result.items[i].ondřej) + '<br />Body: ' + result.items[i].ondřejbody + '</td><td' + walomeClass + '>Hlasy: ' + (result.items[i].walome === "-1" ? "N/A" : result.items[i].walome) + '<br />Body: ' + result.items[i].walomebody + '</td><td' + shialClass + '>Hlasy: ' + (result.items[i].shial === "-1" ? "N/A" : result.items[i].shial) + '<br />Body: ' + result.items[i].shialbody + '</td></tr>');
+            
+        }
+        
+        $("#coverAllPointsBody").append('<tr><td>' + portyAll + ' b.</td><td>' + jakubAll + ' b.</td><td>' + honzaAll + ' b.</td><td>' + vojtaAll + ' b.</td><td>' + ondřejAll + ' b.</td><td>' + walomeAll + ' b.</td><td>' + shialAll + ' b.</td></tr>');
+            
+    });
     
 }
 
