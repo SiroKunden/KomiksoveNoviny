@@ -278,6 +278,24 @@ function initDataTables() {
     
     }
     
+    if($('#cover-all-fair-points-table').length > 0) {
+    
+        var t = $('#cover-all-fair-points-table').DataTable({
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            "order": [],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': 't'
+        });
+    
+    }
+    
 }
 
 function addRow(item, spreadSheet, audioExist) {
@@ -570,8 +588,26 @@ function initCoverGame() {
         var ondřejAll = 0;
         var walomeAll = 0;
         var shialAll = 0;
+        
+        var portyAllFair = 0;
+        var jakubAllFair = 0;
+        var honzaAllFair = 0;
+        var vojtaAllFair = 0;
+        var ondřejAllFair = 0;
+        var walomeAllFair = 0;
+        var shialAllFair = 0;
 
         for(var i = 0; i < result.items.length; i++) {
+
+            if(parseInt(result.items[i].id) >= 8) {
+                portyAllFair += parseInt(result.items[i].portybody);
+                jakubAllFair += parseInt(result.items[i].jakubbody);
+                honzaAllFair += parseInt(result.items[i].honzabody);
+                vojtaAllFair += parseInt(result.items[i].vojtabody);
+                ondřejAllFair += parseInt(result.items[i].ondřejbody);
+                walomeAllFair += parseInt(result.items[i].walomebody);
+                shialAllFair += parseInt(result.items[i].shialbody);
+            }
 
             portyAll += parseInt(result.items[i].portybody);
             jakubAll += parseInt(result.items[i].jakubbody);
@@ -594,6 +630,8 @@ function initCoverGame() {
         }
         
         $("#coverAllPointsBody").append('<tr><td>' + portyAll + ' b.</td><td>' + jakubAll + ' b.</td><td>' + honzaAll + ' b.</td><td>' + vojtaAll + ' b.</td><td>' + ondřejAll + ' b.</td><td>' + walomeAll + ' b.</td><td>' + shialAll + ' b.</td></tr>');
+        
+        $("#coverAllFairPointsBody").append('<tr><td>' + portyAllFair + ' b.</td><td>' + jakubAllFair + ' b.</td><td>' + honzaAllFair + ' b.</td><td>' + vojtaAllFair + ' b.</td><td>' + ondřejAllFair + ' b.</td><td>' + walomeAllFair + ' b.</td><td>' + shialAllFair + ' b.</td></tr>');
             
     });
     
