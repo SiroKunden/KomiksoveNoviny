@@ -394,9 +394,20 @@ function initGaleries() {
                         
                         resultImages.items[j].name = resultImages.items[j].name.replace(/<comma>/gm,",");
                         resultImages.items[j].name = resultImages.items[j].name.replace(/<colon>/gm,":");
+                        
+                        var youtubeStart = resultImages.items[j].name.indexOf("Video: ") + 7;
+                        var youtubeEnd = resultImages.items[j].name.indexOf("Koupit: ");
+                        var buyStart = resultImages.items[j].name.indexOf("Koupit: ") + 8;
+                        
+                        var youtubeText = resultImages.items[j].name.substring(youtubeStart, youtubeEnd);
+                        var buyText = resultImages.items[j].name.substring(buyStart);
+                        
                         resultImages.items[j].name = resultImages.items[j].name.replace(/Scénář/gm,"<br />Scénář");
                         resultImages.items[j].name = resultImages.items[j].name.replace(/Video/gm,"<br />Video");
                         resultImages.items[j].name = resultImages.items[j].name.replace(/Koupit/gm,"<br />Koupit");
+                        
+                        resultImages.items[j].name = resultImages.items[j].name.replace(youtubeText,'<a href=' + youtubeText + ' target="_blank">' + youtubeText + '</a>');
+                        resultImages.items[j].name = resultImages.items[j].name.replace(buyText,'<a href=' + buyText + ' target="_blank">' + buyText + '</a>');
                         
                         albumImages.push({
                             url: resultImages.items[j].picture,
