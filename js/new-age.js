@@ -485,7 +485,7 @@ function reloadGallery(index) {
         items: albums[index == null ? 0 : index - 1].images,
         browserHistory: false,
         swipeEvents: isMobile,
-        showPhoto: function() {
+        afterLoadPhoto: function() {
             $('img').off('dragstart');
             $('img').on('dragstart', function(event) { 
                 event.preventDefault(); 
