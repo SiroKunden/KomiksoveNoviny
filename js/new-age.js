@@ -484,7 +484,11 @@ function reloadGallery(index) {
         autostartAtAlbum: index == null ? 1 : index,
         items: albums[index == null ? 0 : index - 1].images,
         browserHistory: false,
-        swipeEvents: isMobile
+        swipeEvents: isMobile,
+        showPhoto: function() {
+            $('img').off('dragstart');
+            $('img').on('dragstart', function(event) { event.preventDefault(); });
+        }
     } );
     
 }
