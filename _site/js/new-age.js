@@ -654,6 +654,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (n = 0; n < v.length; n++) {
         div = document.createElement("div");
         div.setAttribute("data-id", v[n].dataset.id);
+        div.setAttribute("data-name", v[n].dataset.name);
         var objects = [];
         objects.push(v[n]);
         objects.push(div);
@@ -688,5 +689,12 @@ function labnolIframe() {
     iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute("allowfullscreen", "1");
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Youtube Videos',
+        eventAction: 'play',
+        eventLabel: this.dataset.name
+    });
+    
     this.parentNode.replaceChild(iframe, this);
 }
