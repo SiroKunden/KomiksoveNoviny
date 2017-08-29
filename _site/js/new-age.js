@@ -95,6 +95,13 @@ var isMobile = false;
         
         if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) isMobile = true;
         
+        $("a").off("click");
+        $("a").on("click" ,function(e) {
+            if(e.currentTarget.href.indexOf(location.host) == -1) {
+                handleOutboundLinkClicks(e);
+            }
+        });
+        
         initCoverGame();
     
         var loadFromSpreadSheet = true;
@@ -198,6 +205,12 @@ function initDataTables() {
             'sDom': '<"top"f>t<"bottom"p>',
             "drawCallback": function() {
                 $("img.lazy").lazyload();
+                $("a").off("click");
+                $("a").on("click" ,function(e) {
+                    if(e.currentTarget.href.indexOf(location.host) == -1) {
+                        handleOutboundLinkClicks(e);
+                    }
+                });
             }
         });
 
@@ -543,6 +556,13 @@ function reloadCovers(index) {
             });
     
         }
+        
+    $("a").off("click");
+    $("a").on("click" ,function(e) {
+        if(e.currentTarget.href.indexOf(location.host) == -1) {
+            handleOutboundLinkClicks(e);
+        }
+    });
     
 }
 
@@ -697,4 +717,13 @@ function labnolIframe() {
     });
     
     this.parentNode.replaceChild(iframe, this);
+}
+
+function handleOutboundLinkClicks(event) {
+  ga('send', 'event', {
+    eventCategory: 'Outbound Link',
+    eventAction: 'click',
+    eventLabel: event.target.href,
+    transport: 'beacon'
+  });
 }
