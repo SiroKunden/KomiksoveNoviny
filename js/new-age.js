@@ -172,13 +172,13 @@ var isMobile = false;
         for(var i = 0; i < coversDB.length; i++) {
             if(coversDB[i].active === "true") {
                 if(defaultCovers == -1) defaultCovers = i;
-                $(".selectpicker").append('<option value="' + i + '">#' + coversDB[i].week + ' Hlasování</option>');
+                $("#covery").append('<option value="' + i + '">#' + coversDB[i].week + ' Hlasování</option>');
             }
         }
 
         reloadCovers(defaultCovers);
         
-        $('.selectpicker').on('changed.bs.select', function (event, clickedIndex, newValue, oldValue) {
+        $('#covery').on('changed.bs.select', function (event, clickedIndex, newValue, oldValue) {
             reloadCovers(event.target.value);
         });
         
@@ -380,11 +380,13 @@ function search(urlKey, myArray){
     return null;
 }
 
+var albums = null;
+
 function initGaleries() {
     
     if($( "#gallery" ).length == 0) return;
-    
-    var albums = [];
+        
+    albums = [];
     
     var url = "https://docs.google.com/spreadsheets/pub?key=1nS0HRoXlLDilySgiYqtPvnCvz1LUDar9Sn8CGWwRYZ0&gid=1&output=html";
     var googleSpreadsheet = new GoogleSpreadsheet();
@@ -433,40 +435,57 @@ function initGaleries() {
                 
                 result.items[i].name = result.items[i].name.replace(/<comma>/gm,",");
                 result.items[i].name = result.items[i].name.replace(/<colon>/gm,":");
-                        
                 
                 albums.push({
                     title: result.items[i].name,
                     images: albumImages
                 });
 
+                $("#deniky").append('<option value="' + i + '">' + result.items[i].name + '</option>');
+
             }
             
-            $( "#gallery" ).jGallery( {
-                "transition":"moveToLeftEasing_moveFromRight",
-                "transitionBackward":"moveToRightEasing_moveFromLeft",
-                "transitionCols":"1",
-                "transitionRows":"1",
-                "thumbnailsPosition":"bottom",
-                "thumbType":"image",
-                "backgroundColor":"337AB7",
-                "textColor":"FFFFFF",
-                "mode":"standard",
-                canChangeMode: false,
-                canMinimalizeThumbnails: false,
-                titleExpanded: true,
-                tooltipSeeAllPhotos: 'Zobrazit všechny fotky',
-                tooltipSeeOtherAlbums: 'Zobrazit další čtenářské deníky',
-                width: isMobile ? '100%' : '90%',
-                height: "750px",
-                items: albums,
-                browserHistory: false,
-                swipeEvents: isMobile
-            } );
+            reloadGallery(null);
+            
+            $('#deniky').on('changed.bs.select', function (event, clickedIndex, newValue, oldValue) {
+                reloadGallery(parseInt(event.target.value) + 1);
+            });
+            $('#deniky').on('loaded.bs.select', function() {
+                $(".btn-group.bootstrap-select").css("width", "80%");
+            });
             
         });
 
     });
+    
+}
+
+function reloadGallery(index) {
+    
+    if(index !== null) $( '#gallery' ).jGallery().destroy();
+    
+    $( "#gallery" ).jGallery( {
+        "transition":"moveToLeftEasing_moveFromRight",
+        "transitionBackward":"moveToRightEasing_moveFromLeft",
+        "transitionCols":"1",
+        "transitionRows":"1",
+        "thumbnailsPosition":"bottom",
+        "thumbType":"image",
+        "backgroundColor":"337AB7",
+        "textColor":"FFFFFF",
+        "mode":"standard",
+        canChangeMode: false,
+        canMinimalizeThumbnails: false,
+        titleExpanded: true,
+        tooltipSeeAllPhotos: 'Zobrazit všechny fotky',
+        tooltipSeeOtherAlbums: 'Zobrazit další čtenářské deníky',
+        width: isMobile ? '100%' : '90%',
+        height: "750px",
+        autostartAtAlbum: index == null ? 1 : index,
+        items: albums[index == null ? 0 : index - 1].images,
+        browserHistory: false,
+        swipeEvents: isMobile
+    } );
     
 }
 
