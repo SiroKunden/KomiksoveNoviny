@@ -487,7 +487,9 @@ function reloadGallery(index) {
         swipeEvents: isMobile,
         showPhoto: function() {
             $('img').off('dragstart');
-            $('img').on('dragstart', function(event) { event.preventDefault(); });
+            $('img').on('dragstart', function(event) { 
+                event.preventDefault(); 
+            });
         }
     } );
     
