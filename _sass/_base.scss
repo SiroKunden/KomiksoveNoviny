@@ -1,15 +1,13 @@
 .heading-font {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
 }
 
 .body-font {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
+  font-family: 'Roboto', sans-serif;
 }
 
 .alt-font {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -22,7 +20,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -46,7 +44,6 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
 }
@@ -63,12 +60,10 @@ p {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
   .navbar-header {
     .navbar-brand {
-      font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
       font-weight: 200;
       letter-spacing: 1px;
       color: $theme-primary;
@@ -84,7 +79,6 @@ p {
   }
   .nav > li {
     > a {
-      font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 11px;
@@ -493,7 +487,6 @@ footer {
 }
 
 .btn {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 300px;
@@ -610,7 +603,6 @@ body {
     font-size: 24px;
     line-height: 1.1;
     display: block;
-    font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
     font-weight: 300;
     margin: 10px 0 0;
   }
@@ -623,13 +615,11 @@ body {
       display: block;
     }
     .subheading {
-      font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
       font-size: 24px;
       margin: 10px 0 30px;
       font-weight: 600;
     }
     .meta {
-      font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
       font-style: italic;
       font-weight: 300;
       font-size: 20px;
