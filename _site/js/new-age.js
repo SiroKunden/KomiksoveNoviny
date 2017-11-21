@@ -522,7 +522,8 @@ function reloadCovers(index) {
         $(".choose").each(function() {
             var scale = 400 / $(this).outerHeight();
             $(this).css("width", ($(this).outerWidth() * scale)  + "px");
-            $(this).css("height", 400  + "px");;
+            $(this).css("height", 400  + "px");
+            $(this).css("max-width", "100%");
         });
 
         $(".cover-box").each(function() {

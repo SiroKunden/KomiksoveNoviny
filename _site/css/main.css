@@ -1,13 +1,11 @@
 .heading-font {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   font-weight: 200;
   letter-spacing: 1px; }
 
 .body-font {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif'; }
+  font-family: 'Russo One', sans-serif; }
 
 .alt-font {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   text-transform: uppercase;
   letter-spacing: 2px; }
 
@@ -18,7 +16,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif'; }
+  font-family: 'Russo One', sans-serif; }
 
 a {
   -webkit-transition: all 0.35s;
@@ -37,7 +35,6 @@ hr {
     border-color: white; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   font-weight: 200;
   letter-spacing: 1px; }
 
@@ -52,11 +49,9 @@ p {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   font-weight: 200;
   letter-spacing: 1px; }
   .navbar-default .navbar-header .navbar-brand {
-    font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
     font-weight: 200;
     letter-spacing: 1px;
     color: #247EBB; }
@@ -67,7 +62,6 @@ p {
     color: #222222;
     padding: 8px 10px; }
   .navbar-default .nav > li > a {
-    font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 11px;
@@ -221,7 +215,7 @@ section {
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url("../img/bg-cta.jpg");
+    background-image: url("../img/bg-cta-rip.jpg");
     padding: 100px 0; }
     section.cta .cta-content {
       position: relative;
@@ -363,7 +357,6 @@ footer {
     border-color: white; }
 
 .btn {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 300px; }
@@ -450,7 +443,6 @@ body {
     font-size: 24px;
     line-height: 1.1;
     display: block;
-    font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
     font-weight: 300;
     margin: 10px 0 0; }
   .intro-header .post-heading h1 {
@@ -459,12 +451,10 @@ body {
     line-height: 1.1;
     display: block; }
   .intro-header .post-heading .subheading {
-    font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
     font-size: 24px;
     margin: 10px 0 30px;
     font-weight: 600; }
   .intro-header .post-heading .meta {
-    font-family: 'Open Sans', 'Helvetica Neue', 'Sans-serif';
     font-style: italic;
     font-weight: 300;
     font-size: 20px; }
@@ -572,7 +562,7 @@ img.emoji {
     -moz-transform: scale(0.5); }
 
   section.cta {
-    background-image: url("../img/bg-cta-mobile.jpg"); } }
+    background-image: url("../img/bg-cta-mobile-rip.jpg"); } }
 .youtube-player {
   position: relative;
   padding-bottom: 56.23%;
@@ -639,3 +629,10 @@ img.emoji {
 
 .btn-group.bootstrap-select {
   width: 100%; }
+
+.div-line-through {
+  color: red;
+  text-decoration: line-through; }
+
+.text-line-through {
+  color: #333; }
