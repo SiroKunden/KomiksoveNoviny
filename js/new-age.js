@@ -718,7 +718,7 @@ function labnolThumb(id, objects, callback) {
         
         //var url = "https://i.ytimg.com/vi/ID/hqdefault.jpg";
         //url.replace("ID", id);
-        var url = JSON.parse(source).items[0].snippet.thumbnails.standard.url;
+        var url = JSON.parse(source).items[0].snippet.thumbnails.default.url;
         
         var thumb = '<img src="' + url + '">',
             play = '<div class="play"></div>';
