@@ -250,7 +250,7 @@ function initDataTables() {
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
             },
-            'sDom': 't<"bottom"p>'
+            'sDom': '<"top"l>t<"bottom"p>'
         });
     
     }
@@ -268,7 +268,7 @@ function initDataTables() {
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
             },
-            'sDom': 't<"bottom"p>'
+            'sDom': '<"top"l>t<"bottom"p>'
         });
     
     }
