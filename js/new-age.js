@@ -237,9 +237,9 @@ function initDataTables() {
     
     }
     
-    if($('#cover-plan-table').length > 0) {
+    if($('.cover-plan-table').length > 0) {
     
-        var t = $('#cover-plan-table').DataTable({
+        var t = $('.cover-plan-table').DataTable({
             responsive: {
                 details: {
                     display: $.fn.dataTable.Responsive.display.childRowImmediate,
@@ -255,9 +255,9 @@ function initDataTables() {
     
     }
     
-    if($('#cover-week-points-table').length > 0) {
+    if($('.cover-week-points-table').length > 0) {
     
-        var t = $('#cover-week-points-table').DataTable({
+        var t = $('.cover-week-points-table').DataTable({
             responsive: {
                 details: {
                     display: $.fn.dataTable.Responsive.display.childRowImmediate,
@@ -273,9 +273,9 @@ function initDataTables() {
     
     }
     
-    if($('#cover-all-points-table').length > 0) {
+    if($('.cover-all-points-table').length > 0) {
     
-        var t = $('#cover-all-points-table').DataTable({
+        var t = $('.cover-all-points-table').DataTable({
             responsive: {
                 details: {
                     display: $.fn.dataTable.Responsive.display.childRowImmediate,
@@ -291,9 +291,9 @@ function initDataTables() {
     
     }
     
-    if($('#cover-all-fair-points-table').length > 0) {
+    if($('.cover-all-fair-points-table').length > 0) {
     
-        var t = $('#cover-all-fair-points-table').DataTable({
+        var t = $('.cover-all-fair-points-table').DataTable({
             responsive: {
                 details: {
                     display: $.fn.dataTable.Responsive.display.childRowImmediate,
@@ -607,7 +607,7 @@ function initCoverGame() {
 
     $("#actual-week").text(week);
     
-    var url = "https://docs.google.com/spreadsheets/pub?key=1qDHWMYtiPr0TbU9BtfRKhyhLp9EwwnQY00iajhVR10w&gid=2&output=html";
+    var url = "https://docs.google.com/spreadsheets/pub?key=" + spreadSheetId + "&gid=2&output=html";
     var googleSpreadsheet = new GoogleSpreadsheet();
     googleSpreadsheet.url(url);
     googleSpreadsheet.load(function(result) {
@@ -633,7 +633,7 @@ function initCoverGame() {
             
     });
     
-    var url = "https://docs.google.com/spreadsheets/pub?key=1qDHWMYtiPr0TbU9BtfRKhyhLp9EwwnQY00iajhVR10w&gid=1&output=html";
+    var url = "https://docs.google.com/spreadsheets/pub?key=" + spreadSheetId + "&gid=1&output=html";
     var googleSpreadsheet = new GoogleSpreadsheet();
     googleSpreadsheet.url(url);
     googleSpreadsheet.load(function(result) {
@@ -682,13 +682,14 @@ function initCoverGame() {
             var walomeClass = (parseInt(result.items[i].walomebody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].walomebody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].walomebody) === 1 ? ' class="voting-third"' : '')));
             var shialClass = (parseInt(result.items[i].shialbody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].shialbody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].shialbody) === 1 ? ' class="voting-third"' : '')));
             
-            $("#coverWeekPointsBody").append('<tr><td>' + result.items[i].id + '</td><td' + portyClass + '>Hlasy: ' + (result.items[i].porty === "-1" ? "N/A" : result.items[i].porty) + '<br />Body: ' + result.items[i].portybody + '</td><td' + jakubClass + '>Hlasy: ' + (result.items[i].jakub === "-1" ? "N/A" : result.items[i].jakub) + '<br />Body: ' + result.items[i].jakubbody + '</td><td' + honzaClass + '>Hlasy: ' + (result.items[i].honza === "-1" ? "N/A" : result.items[i].honza) + '<br />Body: ' + result.items[i].honzabody + '</td><td' + vojtaClass + '>Hlasy: ' + (result.items[i].vojta === "-1" ? "N/A" : result.items[i].vojta) + '<br />Body: ' + result.items[i].vojtabody + '</td><td' + ondřejClass + '>Hlasy: ' + (result.items[i].ondřej === "-1" ? "N/A" : result.items[i].ondřej) + '<br />Body: ' + result.items[i].ondřejbody + '</td><td' + walomeClass + '>Hlasy: ' + (result.items[i].walome === "-1" ? "N/A" : result.items[i].walome) + '<br />Body: ' + result.items[i].walomebody + '</td><td' + shialClass + '>Hlasy: ' + (result.items[i].shial === "-1" ? "N/A" : result.items[i].shial) + '<br />Body: ' + result.items[i].shialbody + '</td></tr>');
+            $("#coverWeekPointsBody").append('<tr><td>' + result.items[i].id + '</td><td' + portyClass + '>Hlasy: ' + (result.items[i].porty === "-1" ? "N/A" : result.items[i].porty) + '<br />Body: ' + result.items[i].portybody + '</td><td' + jakubClass + '>Hlasy: ' + (result.items[i].jakub === "-1" ? "N/A" : result.items[i].jakub) + '<br />Body: ' + result.items[i].jakubbody + '</td>' + ( hasLosser ?
+'<td' + honzaClass + '>Hlasy: ' + (result.items[i].honza === "-1" ? "N/A" : result.items[i].honza) + '<br />Body: ' + result.items[i].honzabody + '</td>' : '<td' + shialClass + '>Hlasy: ' + (result.items[i].shial === "-1" ? "N/A" : result.items[i].shial) + '<br />Body: ' + result.items[i].shialbody + '</td>' ) + '<td' + vojtaClass + '>Hlasy: ' + (result.items[i].vojta === "-1" ? "N/A" : result.items[i].vojta) + '<br />Body: ' + result.items[i].vojtabody + '</td><td' + ondřejClass + '>Hlasy: ' + (result.items[i].ondřej === "-1" ? "N/A" : result.items[i].ondřej) + '<br />Body: ' + result.items[i].ondřejbody + '</td><td' + walomeClass + '>Hlasy: ' + (result.items[i].walome === "-1" ? "N/A" : result.items[i].walome) + '<br />Body: ' + result.items[i].walomebody + '</td>' + (hasLosser ? '<td' + shialClass + '>Hlasy: ' + (result.items[i].shial === "-1" ? "N/A" : result.items[i].shial) + '<br />Body: ' + result.items[i].shialbody + '</td></tr>' : "" ));
             
         }
         
-        $("#coverAllPointsBody").append('<tr><td>' + portyAll + ' b.</td><td>' + jakubAll + ' b.</td><td>' + honzaAll + ' b.</td><td>' + vojtaAll + ' b.</td><td>' + ondřejAll + ' b.</td><td>' + walomeAll + ' b.</td><td>' + shialAll + ' b.</td></tr>');
+        $("#coverAllPointsBody").append('<tr><td>' + portyAll + ' b.</td><td>' + jakubAll + ' b.</td>' + ( hasLosser ? '<td>' + honzaAll + ' b.</td>' : '<td>' + shialAll + ' b.</td>') + '<td>' + vojtaAll + ' b.</td><td>' + ondřejAll + ' b.</td><td>' + walomeAll + ' b.</td>' + ( hasLosser ? '<td>' + shialAll + ' b.</td>' : '') + '</tr>');
         
-        $("#coverAllFairPointsBody").append('<tr><td>' + portyAllFair + ' b.</td><td>' + jakubAllFair + ' b.</td><td>' + honzaAllFair + ' b.</td><td>' + vojtaAllFair + ' b.</td><td>' + ondřejAllFair + ' b.</td><td>' + walomeAllFair + ' b.</td><td>' + shialAllFair + ' b.</td></tr>');
+        $("#coverAllFairPointsBody").append('<tr><td>' + portyAllFair + ' b.</td><td>' + jakubAllFair + ' b.</td>' + ( hasLosser ? '<td>' + honzaAllFair + ' b.</td>' : '<td>' + shialAllFair + ' b.</td>') + '<td>' + vojtaAllFair + ' b.</td><td>' + ondřejAllFair + ' b.</td><td>' + walomeAllFair + ' b.</td>' + ( hasLosser ? '<td>' + shialAllFair + ' b.</td>' : '') + '</tr>');
             
     });
     
