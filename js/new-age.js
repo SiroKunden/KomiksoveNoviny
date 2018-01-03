@@ -102,9 +102,11 @@ var isMobile = false;
             }
         });
         
-        initCoverGame();
-        initCoverGameFans();
-    
+        if(typeof(spreadSheetId) != "undefined") {
+            initCoverGame();
+            initCoverGameFans();
+        }
+     
         var loadFromSpreadSheet = true;
         var withAudio = false;
         
