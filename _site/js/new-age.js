@@ -103,6 +103,7 @@ var isMobile = false;
         });
         
         initCoverGame();
+        initCoverGameFans();
     
         var loadFromSpreadSheet = true;
         var withAudio = false;
@@ -305,6 +306,24 @@ function initDataTables() {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
             },
             'sDom': 't'
+        });
+    
+    }
+    
+    if($('.cover-tydne-hra-table').length > 0) {
+    
+        var t = $('.cover-tydne-hra-table').DataTable({
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            "order": [[ 1, "desc" ]],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': '<"top"lf>t<"bottom"p>'
         });
     
     }
@@ -683,13 +702,51 @@ function initCoverGame() {
             var shialClass = (parseInt(result.items[i].shialbody) === 5 ? ' class="voting-first"' : (parseInt(result.items[i].shialbody) === 3 ? ' class="voting-second"' : (parseInt(result.items[i].shialbody) === 1 ? ' class="voting-third"' : '')));
             
             $("#coverWeekPointsBody").append('<tr><td>' + result.items[i].id + '</td><td' + portyClass + '>Hlasy: ' + (result.items[i].porty === "-1" ? "N/A" : result.items[i].porty) + '<br />Body: ' + result.items[i].portybody + '</td><td' + jakubClass + '>Hlasy: ' + (result.items[i].jakub === "-1" ? "N/A" : result.items[i].jakub) + '<br />Body: ' + result.items[i].jakubbody + '</td>' + ( hasLosser ?
-'<td' + honzaClass + '>Hlasy: ' + (result.items[i].honza === "-1" ? "N/A" : result.items[i].honza) + '<br />Body: ' + result.items[i].honzabody + '</td>' : '<td' + shialClass + '>Hlasy: ' + (result.items[i].shial === "-1" ? "N/A" : result.items[i].shial) + '<br />Body: ' + result.items[i].shialbody + '</td>' ) + '<td' + vojtaClass + '>Hlasy: ' + (result.items[i].vojta === "-1" ? "N/A" : result.items[i].vojta) + '<br />Body: ' + result.items[i].vojtabody + '</td><td' + ondřejClass + '>Hlasy: ' + (result.items[i].ondřej === "-1" ? "N/A" : result.items[i].ondřej) + '<br />Body: ' + result.items[i].ondřejbody + '</td><td' + walomeClass + '>Hlasy: ' + (result.items[i].walome === "-1" ? "N/A" : result.items[i].walome) + '<br />Body: ' + result.items[i].walomebody + '</td>' + (hasLosser ? '<td' + shialClass + '>Hlasy: ' + (result.items[i].shial === "-1" ? "N/A" : result.items[i].shial) + '<br />Body: ' + result.items[i].shialbody + '</td></tr>' : "" ));
+'<td' + honzaClass + '>Hlasy: ' + (result.items[i].honza === "-1" ? "N/A" : result.items[i].honza) + '<br />Body: ' + result.items[i].honzabody + '</td>' : '<td' + shialClass + '>Hlasy: ' + (result.items[i].shial === "-1" ? "N/A" : result.items[i].shial) + '<br />Body: ' + result.items[i].shialbody + '</td>' ) + '<td' + vojtaClass + '>Hlasy: ' + (result.items[i].vojta === "-1" ? "N/A" : result.items[i].vojta) + '<br />Body: ' + result.items[i].vojtabody + '</td><td' + ondřejClass + '>Hlasy: ' + (result.items[i].ondřej === "-1" ? "N/A" : result.items[i].ondřej) + '<br />Body: ' + result.items[i].ondřejbody + '</td><td' + walomeClass + '>Hlasy: ' + (result.items[i].walome === "-1" ? "N/A" : result.items[i].walome) + '<br />Body: ' + result.items[i].walomebody + '</td>' + (hasLosser ? '<td' + shialClass + '>Hlasy: ' + (result.items[i].shial === "-1" ? "N/A" : result.items[i].shial) + '<br />Body: ' + result.items[i].shialbody + '</td>' : "" ) + '</tr>');
             
         }
         
         $("#coverAllPointsBody").append('<tr><td>' + portyAll + ' b.</td><td>' + jakubAll + ' b.</td>' + ( hasLosser ? '<td>' + honzaAll + ' b.</td>' : '<td>' + shialAll + ' b.</td>') + '<td>' + vojtaAll + ' b.</td><td>' + ondřejAll + ' b.</td><td>' + walomeAll + ' b.</td>' + ( hasLosser ? '<td>' + shialAll + ' b.</td>' : '') + '</tr>');
         
         $("#coverAllFairPointsBody").append('<tr><td>' + portyAllFair + ' b.</td><td>' + jakubAllFair + ' b.</td>' + ( hasLosser ? '<td>' + honzaAllFair + ' b.</td>' : '<td>' + shialAllFair + ' b.</td>') + '<td>' + vojtaAllFair + ' b.</td><td>' + ondřejAllFair + ' b.</td><td>' + walomeAllFair + ' b.</td>' + ( hasLosser ? '<td>' + shialAllFair + ' b.</td>' : '') + '</tr>');
+            
+    });
+    
+}
+
+var weekOfYear = function(){
+    var d = new Date();
+    d.setHours(0,0,0);
+    d.setDate(d.getDate()+4-(d.getDay()||7));
+    return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+};
+
+function initCoverGameFans() {
+    
+    var week = weekOfYear();
+    
+    for(var i = 1; i <= week; i++) {
+        $(".cover-tydne-hra-header-row").append('<th>Týden č.' + i + '</th>');
+    }
+    
+    var url = "https://docs.google.com/spreadsheets/pub?key=" + spreadSheetId + "&gid=1&output=html";
+    var googleSpreadsheet = new GoogleSpreadsheet();
+    googleSpreadsheet.url(url);
+    googleSpreadsheet.load(function(result) {
+
+        var week = weekOfYear();
+        
+        for(var i = 0; i < result.items.length; i++) {
+
+            var tr = '<tr><td>' + result.items[i].name + '</td><td>' + result.items[i].points + '</td>';
+
+            for(var j = 1; j <= week; j++) {
+                tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')</td>';
+            }
+            
+            $("#coverTydneHraBody").append(tr + '</tr>');
+            
+        }
             
     });
     
