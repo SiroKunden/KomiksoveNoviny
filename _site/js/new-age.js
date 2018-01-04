@@ -102,9 +102,11 @@ var isMobile = false;
             }
         });
         
-        initCoverGame();
-        initCoverGameFans();
-    
+        if(typeof(spreadSheetId) != "undefined") {
+            initCoverGame();
+            initCoverGameFans();
+        }
+     
         var loadFromSpreadSheet = true;
         var withAudio = false;
         
@@ -734,17 +736,22 @@ function initCoverGameFans() {
     googleSpreadsheet.url(url);
     googleSpreadsheet.load(function(result) {
 
-        var week = weekOfYear();
+        var week = weekOfYear(); 
+        var redakce = ["10213754007157583", "434506730255602", "10213641481503428", "10215261634565099", "313638978791624", "100002100348592", "1261958149", "1465858284"];
         
         for(var i = 0; i < result.items.length; i++) {
 
-            var tr = '<tr><td>' + result.items[i].name + '</td><td>' + result.items[i].points + '</td>';
+            if(redakce.indexOf(result.items[i].id) == -1) {
 
-            for(var j = 1; j <= week; j++) {
-                tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')</td>';
-            }
+                var tr = '<tr><td>' + result.items[i].name + '</td><td>' + result.items[i].points + '</td>';
+
+                for(var j = 1; j <= week; j++) {
+                    tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " Sdíleno" : "") + '</td>';
+                }
+
+                $("#coverTydneHraBody").append(tr + '</tr>');
             
-            $("#coverTydneHraBody").append(tr + '</tr>');
+            }
             
         }
             
