@@ -725,18 +725,19 @@ var weekOfYear = function(){
 
 function initCoverGameFans() {
     
-    var week = weekOfYear();
-    
-    for(var i = 1; i <= week; i++) {
-        $(".cover-tydne-hra-header-row").append('<th>Týden č.' + i + '</th>');
-    }
-    
     var url = "https://docs.google.com/spreadsheets/pub?key=" + spreadSheetId + "&gid=1&output=html";
     var googleSpreadsheet = new GoogleSpreadsheet();
     googleSpreadsheet.url(url);
     googleSpreadsheet.load(function(result) {
 
         var week = weekOfYear(); 
+        
+        for(var i = 1; i <= week; i++) {
+            if(typeof(result.items[0]["pointsweek" + i]) !== "undefined" && typeof(result.items[0]["week" + i]) !== "undefined") {
+                $(".cover-tydne-hra-header-row").append('<th>Týden č.' + i + '</th>');
+            }
+        }
+
         var redakce = ["10213754007157583", "434506730255602", "10213641481503428", "10215261634565099", "313638978791624", "100002100348592", "1261958149", "1465858284"];
         
         for(var i = 0; i < result.items.length; i++) {
@@ -746,7 +747,9 @@ function initCoverGameFans() {
                 var tr = '<tr><td>' + result.items[i].name + '</td><td>' + result.items[i].points + '</td>';
 
                 for(var j = 1; j <= week; j++) {
-                    tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " Sdíleno" : "") + '</td>';
+                    if(typeof(result.items[i]["pointsweek" + j]) !== "undefined" && typeof(result.items[i]["week" + j]) !== "undefined") {
+                        tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " Sdíleno" : "") + '</td>';
+                    }
                 }
 
                 $("#coverTydneHraBody").append(tr + '</tr>');
