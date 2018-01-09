@@ -731,10 +731,17 @@ function initCoverGameFans() {
     googleSpreadsheet.load(function(result) {
 
         var week = weekOfYear(); 
-        
-        for(var i = 1; i <= week; i++) {
+        var firstNotNull = false;
+        var numberOfCols = 0;
+        for(var i = 1; i <= 13; i++) {
+            var notNull = false;
             if(typeof(result.items[0]["pointsweek" + i]) !== "undefined" && typeof(result.items[0]["week" + i]) !== "undefined") {
+                firstNotNull = true;
+                notNull = true;
+            }
+            if(!firstNotNull || notNull) {
                 $(".cover-tydne-hra-header-row").append('<th>Týden č.' + i + '</th>');
+                numberOfCols++;
             }
         }
 
@@ -746,9 +753,12 @@ function initCoverGameFans() {
 
                 var tr = '<tr><td>' + result.items[i].name + '</td><td>' + result.items[i].points + '</td>';
 
-                for(var j = 1; j <= week; j++) {
+                for(var j = 1; j <= numberOfCols; j++) {
                     if(typeof(result.items[i]["pointsweek" + j]) !== "undefined" && typeof(result.items[i]["week" + j]) !== "undefined") {
                         tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " Sdíleno" : "") + '</td>';
+                    }
+                    else {
+                        tr += '<td>Nezůčastnil se</td>';
                     }
                 }
 
