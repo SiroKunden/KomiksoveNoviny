@@ -758,7 +758,7 @@ function initCoverGameFans() {
                         tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " Sdíleno" : "") + '</td>';
                     }
                     else {
-                        tr += '<td>Nezůčastnil se</td>';
+                        tr += '<td>Nezůčastnil(a) se</td>';
                     }
                 }
 
