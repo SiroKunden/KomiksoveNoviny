@@ -755,7 +755,7 @@ function initCoverGameFans() {
 
                 for(var j = 1; j <= numberOfCols; j++) {
                     if(typeof(result.items[i]["pointsweek" + j]) !== "undefined" && typeof(result.items[i]["week" + j]) !== "undefined") {
-                        tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " Sdíleno" : "") + '</td>';
+                        tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " +1 Sdíleno" : "") + '</td>';
                     }
                     else {
                         tr += '<td>Nezůčastnil(a) se</td>';
