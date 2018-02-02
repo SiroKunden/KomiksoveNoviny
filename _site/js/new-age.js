@@ -745,7 +745,7 @@ function initCoverGameFans() {
             }
         }
 
-        var redakce = ["10213754007157583", "434506730255602", "10213641481503428", "10215261634565099", "313638978791624", "100002100348592", "1261958149", "1465858284"];
+        var redakce = ["10213754007157583", "434506730255602", "10213641481503428", "10215261634565099", "313638978791624", "100002100348592", "1261958149", "1465858284", "1034570829939685", "671273816397927"];
         
         for(var i = 0; i < result.items.length; i++) {
 
@@ -755,10 +755,10 @@ function initCoverGameFans() {
 
                 for(var j = 1; j <= numberOfCols; j++) {
                     if(typeof(result.items[i]["pointsweek" + j]) !== "undefined" && typeof(result.items[i]["week" + j]) !== "undefined") {
-                        tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " Sdíleno" : "") + '</td>';
+                        tr += '<td>Body: ' + result.items[i]["pointsweek" + j] + " (" + result.items[i]["week" + j] + ')' + (result.items[i]["sharedweek" + j] == 1 ? " +1 Sdíleno" : "") + '</td>';
                     }
                     else {
-                        tr += '<td>Nezůčastnil se</td>';
+                        tr += '<td>Nezůčastnil(a) se</td>';
                     }
                 }
 

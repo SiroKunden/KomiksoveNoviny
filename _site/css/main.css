@@ -639,3 +639,13 @@ img.emoji {
 
 .dataTables_length {
   color: white !important; }
+
+.cover-awards-page a {
+  color: white; }
+
+.cover-awards a {
+  font-weight: bold;
+  font-size: 16pt; }
+
+.mt40 {
+  margin-top: 40px; }
