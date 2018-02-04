@@ -31,14 +31,16 @@
             'komiksoveNovinky': 'rgb(255, 0, 0)',
             'marvelackeZpravy': 'rgb(0, 255, 0)',
             'cernyKun': 'rgb(0, 0, 0)',
-            'jorskuvSvet': 'rgb(0, 0, 255)'
+            'jorskuvSvet': 'rgb(0, 0, 255)',
+            'volejteReditelum': 'rgb(0, 255, 255)'
         };
         
         var chartColorsDislike = {
             'komiksoveNovinky': 'rgb(255, 170, 170)',
             'marvelackeZpravy': 'rgb(170, 255, 170)',
             'cernyKun': 'rgb(170, 170, 170)',
-            'jorskuvSvet': 'rgb(170, 170, 255)'
+            'jorskuvSvet': 'rgb(170, 170, 255)',
+            'volejteReditelum': 'rgb(170, 255, 255)'
         };
 
         function getColor(showName, type) {
@@ -52,6 +54,8 @@
                         return chartColorsDislike.cernyKun;
                     case 'Jorsskův svět akčních figurek':
                         return chartColorsDislike.jorskuvSvet;
+                    case 'Volejte ředitelům':
+                        return chartColorsDislike.volejteReditelum;
                 }
             }
             else {
@@ -64,6 +68,8 @@
                         return chartColors.cernyKun;
                     case 'Jorsskův svět akčních figurek':
                         return chartColors.jorskuvSvet;
+                    case 'Volejte ředitelům':
+                        return chartColors.volejteReditelum;
                 }
             }
         }
