@@ -170,6 +170,24 @@ var isMobile = false;
         
         }
         
+        var url = "https://docs.google.com/spreadsheets/pub?key=1PDgWlo7kMCTcBAgG7e_6fe5lwRyUaTALYypRoFJfPDk&output=html";
+        var googleSpreadsheet = new GoogleSpreadsheet();
+        googleSpreadsheet.url(url);
+        googleSpreadsheet.load(function(result) {
+
+            for(var i = 0; i < result.items.length; i++) {
+
+                var item = result.items[i];
+
+                addRowIncoming(item);
+                if(i === result.items.length - 1) {
+                    initDataTablesIncoming();
+                }
+
+            }
+
+        });
+        
         var defaultCovers = -1;
         
         for(var i = 0; i < coversDB.length; i++) {
@@ -194,6 +212,26 @@ var isMobile = false;
     });
 
 })(jQuery); // End of use strict
+
+function initDataTablesIncoming() {
+    
+    if($('#incomingComics').length > 0) {
+    
+        var t = $('#incomingComics').DataTable({
+            responsive: true,
+            "order": [[ 1, "asc" ]],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Czech.json"
+            },
+            'sDom': '<"top"f>t<"bottom"p>'
+        });
+
+        var column = t.column(1);
+        column.visible(! column.visible());
+    
+    }
+    
+}
 
 function initDataTables() {
     
@@ -329,6 +367,15 @@ function initDataTables() {
         });
     
     }
+    
+}
+
+function addRowIncoming(item) {
+    
+    var myDate = item.datumkdyvyjde.split(".");
+    var newDate = myDate[1]+"/"+myDate[0]+"/"+myDate[2];
+    
+    $("#incomingComicsBody").append('<tr><td>' + item.id + '</td><td>' + new Date(newDate).getTime() + '</td><td>' + item.datumvydání + '</td><td>' + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? ('<a href="' + item.odkaz + '" target="_blank">') : '') + item.nakladatelství + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? '</a>' : '') + '</td><td>' + item.pročsetěšíme + '</td><td>' + (typeof(item.série) !== "undefined" && item.série.length > 0 ? item.série : '') + '</td></tr>');
     
 }
 

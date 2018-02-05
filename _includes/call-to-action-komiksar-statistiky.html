@@ -22,7 +22,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům'];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům'/*, "US News", "Dobrá Image" */];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -32,7 +32,9 @@
             'marvelackeZpravy': 'rgb(0, 255, 0)',
             'cernyKun': 'rgb(0, 0, 0)',
             'jorskuvSvet': 'rgb(0, 0, 255)',
-            'volejteReditelum': 'rgb(0, 255, 255)'
+            'volejteReditelum': 'rgb(0, 255, 255)',
+            'usNews': 'rgb(255, 0, 255)',
+            'dobraImage': 'rgb(255, 255, 0)'
         };
         
         var chartColorsDislike = {
@@ -40,7 +42,9 @@
             'marvelackeZpravy': 'rgb(170, 255, 170)',
             'cernyKun': 'rgb(170, 170, 170)',
             'jorskuvSvet': 'rgb(170, 170, 255)',
-            'volejteReditelum': 'rgb(170, 255, 255)'
+            'volejteReditelum': 'rgb(170, 255, 255)',
+            'usNews': 'rgb(255, 170, 255)',
+            'dobraImage': 'rgb(255, 255, 170)'
         };
 
         function getColor(showName, type) {
@@ -48,28 +52,50 @@
                 switch(showName) {
                     case 'Komiksové novinky':
                         return chartColorsDislike.komiksoveNovinky;
+                        break;
                     case 'Marvelácké zprávy':
                         return chartColorsDislike.marvelackeZpravy;
+                        break;
                     case 'Černý kůň':
                         return chartColorsDislike.cernyKun;
+                        break;
                     case 'Jorsskův svět akčních figurek':
                         return chartColorsDislike.jorskuvSvet;
+                        break;
                     case 'Volejte ředitelům':
                         return chartColorsDislike.volejteReditelum;
+                        break;
+                    case 'US News':
+                        return chartColorsDislike.usNews;
+                        break;
+                    case 'Dobrá Image':
+                        return chartColorsDislike.dobraImage;
+                        break;
                 }
             }
             else {
             switch(showName) {
                     case 'Komiksové novinky':
                         return chartColors.komiksoveNovinky;
+                        break;
                     case 'Marvelácké zprávy':
                         return chartColors.marvelackeZpravy;
+                        break;
                     case 'Černý kůň':
                         return chartColors.cernyKun;
+                        break;
                     case 'Jorsskův svět akčních figurek':
                         return chartColors.jorskuvSvet;
+                        break;
                     case 'Volejte ředitelům':
+                        return chartColors.usNews;
+                        break;
+                    case 'US News':
                         return chartColors.volejteReditelum;
+                        break;
+                    case 'Dobrá Image':
+                        return chartColors.dobraImage;
+                        break;
                 }
             }
         }
