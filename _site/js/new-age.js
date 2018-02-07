@@ -188,6 +188,21 @@ var isMobile = false;
 
         });
         
+        var url = "https://docs.google.com/spreadsheets/pub?key=1imS2rixK8aw_wS6BAz9iFjchtBd2nfkkc9-0fMHQP5U&output=html";
+        var googleSpreadsheet = new GoogleSpreadsheet();
+        googleSpreadsheet.url(url);
+        googleSpreadsheet.load(function(result) {
+
+            for(var i = 0; i < result.items.length; i++) {
+
+                var item = result.items[i];
+
+                addCoverAwards(item);
+                
+            }
+
+        });
+        
         var defaultCovers = -1;
         
         for(var i = 0; i < coversDB.length; i++) {
@@ -375,7 +390,7 @@ function addRowIncoming(item) {
     var myDate = item.datumkdyvyjde.split(".");
     var newDate = myDate[1]+"/"+myDate[0]+"/"+myDate[2];
     
-    $("#incomingComicsBody").append('<tr><td>' + item.id + '</td><td>' + new Date(newDate).getTime() + '</td><td>' + item.datumvydání + '</td><td>' + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? ('<a href="' + item.odkaz + '" target="_blank">') : '') + item.nakladatelství + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? '</a>' : '') + '</td><td>' + item.pročsetěšíme + '</td><td>' + (typeof(item.série) !== "undefined" && item.série.length > 0 ? item.série : '') + '</td></tr>');
+    $("#incomingComicsBody").append('<tr><td>' + item.id + '</td><td>' + new Date(newDate).getTime() + '</td><td>' + item.datumvydání + '</td><td>' + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? ('<a href="' + item.odkaz + '" target="_blank">') : '') + item.nakladatelství + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? '</a>' : '') + '</td><td>' + (typeof(item.pročsetěšíme) !== "undefined" && item.pročsetěšíme.length > 0 ? item.pročsetěšíme : "") + '</td><td>' + (typeof(item.série) !== "undefined" && item.série.length > 0 ? item.série : '') + '</td></tr>');
     
 }
 
@@ -390,6 +405,19 @@ function addRow(item, spreadSheet, audioExist) {
         
         $("#comicsBody").append('<tr><td><img class="lazy" data-original="https://comicsdb.cz' + (item.cover === "" ? "/piccomics/noicon.gif" : item.cover) + '" style="max-width: 100px; max-height: 100px;" /></td><td>' + item.url + '</td><td><a href="https://comicsdb.cz/' + item.url + '" target="_blank">' + item.name + '</a>' + (typeof(item.audio) !== "undefined" && item.audio !== null ? '<br /><audio controls controlsList="nodownload" preload="none"><source src="/audio/' + item.audio + '" type="audio/mpeg">Your browser does not support the audio element.</audio>' : '') + '</td><td>' + item.price + '</td><td>' + item.publisher + '</td><td>' + item.publish + '</td><td>' + item.type + '</td><td>' + item.format + '</td><td>' + item.pages + '</td><td><a href="https://comicsdb.cz/' + item.url + '" target="_blank">' + (typeof(item.comments) !== "undefined" ? item.comments : 0) + '</a></td></tr>');
         
+    }
+    
+}
+
+function addCoverAwards(item) {
+    
+    if(typeof(item.zveřejněno) !== "undefined" && item.zveřejněno.length > 0 && item.zveřejněno === "Ano") {
+    
+        var award = '<li>' + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? '<a href="' + item.odkaz + '" target="_blank">' : '') + item.id + " - " + item.poskytnul + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? '</a>' : '') + (typeof(item.video) !== "undefined" && item.video.length > 0 ? ' <a href="' + item.video + '" target="_blank">(video)</a>' : '') + '</li>';
+
+        $(".cover-awards-footer").append(award);
+        $(".cover-awards").append(award);
+    
     }
     
 }
