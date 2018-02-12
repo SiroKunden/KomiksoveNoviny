@@ -390,7 +390,17 @@ function addRowIncoming(item) {
     var myDate = item.datumkdyvyjde.split(".");
     var newDate = myDate[1]+"/"+myDate[0]+"/"+myDate[2];
     
-    $("#incomingComicsBody").append('<tr><td>' + item.id + '</td><td>' + new Date(newDate).getTime() + '</td><td>' + item.datumvydání + '</td><td>' + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? ('<a href="' + item.odkaz + '" target="_blank">') : '') + item.nakladatelství + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? '</a>' : '') + '</td><td>' + (typeof(item.pročsetěšíme) !== "undefined" && item.pročsetěšíme.length > 0 ? item.pročsetěšíme : "") + '</td><td>' + (typeof(item.série) !== "undefined" && item.série.length > 0 ? item.série : '') + '</td></tr>');
+    var d1 = new Date(myDate[2]+"-"+myDate[1]+"-"+myDate[0]);
+    var d = new Date();
+    var m = d.getMonth() + 1;
+    var y = d.getFullYear();
+    var d2 = new Date(y+"-"+m+"-01");
+    
+    if(d1.getTime() >= d2.getTime()) {
+    
+        $("#incomingComicsBody").append('<tr><td>' + item.id + '</td><td>' + new Date(newDate).getTime() + '</td><td>' + item.datumvydání + '</td><td>' + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? ('<a href="' + item.odkaz + '" target="_blank">') : '') + item.nakladatelství + (typeof(item.odkaz) !== "undefined" && item.odkaz.length > 0 ? '</a>' : '') + '</td><td>' + (typeof(item.pročsetěšíme) !== "undefined" && item.pročsetěšíme.length > 0 ? item.pročsetěšíme : "") + '</td><td>' + (typeof(item.série) !== "undefined" && item.série.length > 0 ? item.série : '') + '</td></tr>');
+    
+    }
     
 }
 

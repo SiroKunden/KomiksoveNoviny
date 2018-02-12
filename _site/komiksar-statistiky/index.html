@@ -190,7 +190,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS"/*, "Dobrá Image" */];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image" ];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -202,7 +202,8 @@
             'jorskuvSvet': 'rgb(0, 0, 255)',
             'volejteReditelum': 'rgb(0, 255, 255)',
             'usNews': 'rgb(255, 0, 255)',
-            'dobraImage': 'rgb(255, 255, 0)'
+            'mudrovani': 'rgb(255, 255, 0)',
+            'dobraImage': 'rgb(255, 165, 0)'
         };
         
         var chartColorsDislike = {
@@ -212,7 +213,8 @@
             'jorskuvSvet': 'rgb(170, 170, 255)',
             'volejteReditelum': 'rgb(170, 255, 255)',
             'usNews': 'rgb(255, 170, 255)',
-            'dobraImage': 'rgb(255, 255, 170)'
+            'mudrovani': 'rgb(255, 255, 170)',
+            'dobraImage': 'rgb(255, 200, 130)'
         };
 
         function getColor(showName, type) {
@@ -235,6 +237,9 @@
                         break;
                     case 'US NEWS':
                         return chartColorsDislike.usNews;
+                        break;
+                    case 'Mudrovanie o komiksoch':
+                        return chartColorsDislike.mudrovani;
                         break;
                     case 'Dobrá Image':
                         return chartColorsDislike.dobraImage;
@@ -260,6 +265,9 @@
                         break;
                     case 'US NEWS':
                         return chartColors.usNews;
+                        break;
+                    case 'Mudrovanie o komiksoch':
+                        return chartColors.mudrovani;
                         break;
                     case 'Dobrá Image':
                         return chartColors.dobraImage;
