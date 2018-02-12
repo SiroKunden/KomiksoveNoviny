@@ -388,13 +388,13 @@ function initDataTables() {
 function addRowIncoming(item) {
     
     var myDate = item.datumkdyvyjde.split(".");
-    var newDate = myDate[1]+"/"+myDate[0]+"/"+myDate[2];
+    var newDate = (myDate[1].length === 1 ? "0" + myDate[1] : myDate[1])+"/"+(myDate[0].length === 1 ? "0" + myDate[0] : myDate[0])+"/"+myDate[2];
     
-    var d1 = new Date(myDate[2]+"-"+myDate[1]+"-"+myDate[0]);
+    var d1 = new Date(myDate[2]+"-"+(myDate[1].length === 1 ? "0" + myDate[1] : myDate[1])+"-"+(myDate[0].length === 1 ? "0" + myDate[0] : myDate[0]));
     var d = new Date();
     var m = d.getMonth() + 1;
     var y = d.getFullYear();
-    var d2 = new Date(y+"-"+m+"-01");
+    var d2 = new Date(y.toString()+"-"+(m.toString().length === 1 ? "0" + m.toString() : m.toString())+"-01");
     
     if(d1.getTime() >= d2.getTime()) {
     
