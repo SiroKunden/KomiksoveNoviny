@@ -35,7 +35,8 @@
             'volejteReditelum': 'rgb(0, 255, 255)',
             'usNews': 'rgb(255, 0, 255)',
             'mudrovani': 'rgb(255, 255, 0)',
-            'dobraImage': 'rgb(255, 165, 0)'
+            'dobraImage': 'rgb(255, 165, 0)',
+            'komiksbox': 'rgb(140,70,20)'
         };
         
         var chartColorsDislike = {
@@ -46,7 +47,8 @@
             'volejteReditelum': 'rgb(170, 255, 255)',
             'usNews': 'rgb(255, 170, 255)',
             'mudrovani': 'rgb(255, 255, 170)',
-            'dobraImage': 'rgb(255, 200, 130)'
+            'dobraImage': 'rgb(255, 200, 130)',
+            'komiksbox': 'rgb(200, 120, 60)'
         };
 
         function getColor(showName, type) {
@@ -76,6 +78,9 @@
                     case 'Dobrá Image':
                         return chartColorsDislike.dobraImage;
                         break;
+                    case 'KomiksBox':
+                        return chartColorsDislike.komiksbox;
+                        break;
                 }
             }
             else {
@@ -103,6 +108,9 @@
                         break;
                     case 'Dobrá Image':
                         return chartColors.dobraImage;
+                        break;
+                    case 'KomiksBox':
+                        return chartColors.komiksbox;
                         break;
                 }
             }
