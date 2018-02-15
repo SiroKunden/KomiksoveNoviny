@@ -22,7 +22,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who"];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?"];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -83,7 +83,7 @@
                     case 'KomiksBox':
                         return chartColorsDislike.komiksbox;
                         break;
-                    case 'Kdo je Doctor Who':
+                    case 'Kdo je Doctor Who?':
                         return chartColorsDislike.kdojedoktor;
                         break;
                 }
@@ -117,7 +117,7 @@
                     case 'KomiksBox':
                         return chartColors.komiksbox;
                         break;
-                    case 'Kdo je Doctor Who':
+                    case 'Kdo je Doctor Who?':
                         return chartColors.kdojedoktor;
                         break;
                 }
@@ -133,7 +133,7 @@
                 googleSpreadsheet.url(url);
                 googleSpreadsheet.load(function(result) {
 
-                    komiksarData[sheets.indexOf(result.items[0].blok.replace("?", ""))] = result.items;
+                    komiksarData[sheets.indexOf(result.items[0].blok)] = result.items;
                     
                     dataLoaded++;
                     

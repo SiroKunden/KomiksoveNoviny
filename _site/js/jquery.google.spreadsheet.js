@@ -23,7 +23,7 @@ var GoogleSpreadsheet = (function($) {
         googleUrl.key = googleUrl.url.match(/(cells|list)\/(.*?)\//)[2];
       }
       try {
-        googleUrl.gid = googleUrl.url.match(/gid=(.?)/)[1];
+        googleUrl.gid = googleUrl.url.match(/gid=(\d{1,5})/)[1];
         if(googleUrl.gid!=='0'){
           var num = parseInt(googleUrl.gid,10);
           googleUrl.gid = num.toString();
