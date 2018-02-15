@@ -19,6 +19,11 @@
         </div>
         <div class="row graph-row doughnuts pt40 pb40">
         </div>
+        <style>
+            #komiksarChartLine, #komiksarChartStacked {
+                min-height: 600px;
+            }
+        </style>
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
@@ -212,6 +217,7 @@
                             },
                             options: {
                                 responsive: true,
+                                maintainAspectRatio: false,
                                 title:{
                                     display:true,
                                     text:'Porovnání views Komiksáře'
@@ -261,6 +267,7 @@
                                     intersect: false
                                 },
                                 responsive: true,
+                                maintainAspectRatio: false,
                                 scales: {
                                     xAxes: [{
                                         stacked: true,
@@ -283,6 +290,7 @@
                                 },
                                 options: {
                                     responsive: true,
+                                    maintainAspectRatio: false,
                                     legend: {
                                         position: 'top'
                                     },
