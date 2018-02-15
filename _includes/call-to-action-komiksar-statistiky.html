@@ -22,7 +22,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox"];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?"];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -36,7 +36,8 @@
             'usNews': 'rgb(255, 0, 255)',
             'mudrovani': 'rgb(255, 255, 0)',
             'dobraImage': 'rgb(255, 165, 0)',
-            'komiksbox': 'rgb(140,70,20)'
+            'komiksbox': 'rgb(140,70,20)',
+            'kdojedoktor': 'rgb(50, 130, 20)'
         };
         
         var chartColorsDislike = {
@@ -48,7 +49,8 @@
             'usNews': 'rgb(255, 170, 255)',
             'mudrovani': 'rgb(255, 255, 170)',
             'dobraImage': 'rgb(255, 200, 130)',
-            'komiksbox': 'rgb(200, 120, 60)'
+            'komiksbox': 'rgb(200, 120, 60)',
+            'kdojedoktor': 'rgb(70, 170, 20)'
         };
 
         function getColor(showName, type) {
@@ -81,6 +83,9 @@
                     case 'KomiksBox':
                         return chartColorsDislike.komiksbox;
                         break;
+                    case 'Kdo je Doctor Who?':
+                        return chartColorsDislike.kdojedoktor;
+                        break;
                 }
             }
             else {
@@ -111,6 +116,9 @@
                         break;
                     case 'KomiksBox':
                         return chartColors.komiksbox;
+                        break;
+                    case 'Kdo je Doctor Who?':
+                        return chartColors.kdojedoktor;
                         break;
                 }
             }
