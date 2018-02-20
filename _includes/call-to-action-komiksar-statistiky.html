@@ -162,9 +162,11 @@
                             var dataLikes = [];
                             var dataDislikes = [];
                             for(var l = 0; l < komiksarData[d].length; l++) {
-                                data.push(komiksarData[d][l]["views"]);
-                                dataLikes.push(komiksarData[d][l]["likes"]);
-                                dataDislikes.push(-1 * komiksarData[d][l]["dislikes"]);
+                                if(typeof(komiksarData[d][l]) !== "undefined") {
+                                    data.push(komiksarData[d][l]["views"]);
+                                    dataLikes.push(komiksarData[d][l]["likes"]);
+                                    dataDislikes.push(-1 * komiksarData[d][l]["dislikes"]);
+                                }
                             }
                             dataset['data'] = data;
                             datasets.push(dataset);
@@ -193,9 +195,11 @@
                             var colors = [];
                             var data = [];
                             for(var d = 0; d < komiksarData.length; d++) {
-                                data.push(komiksarData[d][l]["views"]);
-                                labels.push(komiksarData[d][l]["blok"]);
-                                colors.push(getColor(komiksarData[d][l]["blok"]));
+                                if(typeof(komiksarData[d][l]) !== "undefined") {
+                                    data.push(komiksarData[d][l]["views"]);
+                                    labels.push(komiksarData[d][l]["blok"]);
+                                    colors.push(getColor(komiksarData[d][l]["blok"]));
+                                }
                             }
                             doughnut['datasets'] = [{
                                 data: data,
