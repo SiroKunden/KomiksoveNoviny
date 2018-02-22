@@ -147,7 +147,7 @@
                         var labelsGraph = [];
                         for(var l = 0; l < komiksarData[0].length; l++) {
                             labelsGraph.push(komiksarData[0][l]["komiksarnumber"]);
-                            $(".doughnuts").append('<div class="col-sm-4' + ((l % 2) == 0 ? 'col-sm-offset-2' : '') + '"><canvas id="komiksarChartDoughnut' + komiksarData[0][l]["komiksarnumber"].toLowerCase().replace("komiksář ", "") + '" width="400" height="400"></canvas></div>');
+                            $(".doughnuts").append('<div class="col-sm-4' + ((l % 2) == 0 ? ' col-sm-offset-2' : '') + '"><canvas id="komiksarChartDoughnut' + komiksarData[0][l]["komiksarnumber"].toLowerCase().replace("komiksář ", "") + '" width="400" height="400"></canvas></div>');
                         }
                         
                         var datasets = [];
