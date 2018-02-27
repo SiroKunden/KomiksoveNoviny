@@ -160,6 +160,13 @@
                         
                         var datasets = [];
                         var datasetsLikesDislikes = [];
+                        
+                        var maxLikesLength = 0;
+                        
+                        for(var d = 0; d < komiksarData.length; d++) {
+                            if(komiksarData[d].length > maxLikesLength) maxLikesLength = komiksarData[d].length;
+                        }
+                        
                         for(var d = 0; d < komiksarData.length; d++) {
                             var dataset = {};
                             dataset['label'] = sheets[d];
@@ -169,11 +176,15 @@
                             var data = [];
                             var dataLikes = [];
                             var dataDislikes = [];
-                            for(var l = 0; l < komiksarData[d].length; l++) {
+                            for(var l = 0; l < maxLikesLength; l++) {
                                 if(typeof(komiksarData[d][l]) !== "undefined") {
                                     data.push(komiksarData[d][l]["views"]);
                                     dataLikes.push(komiksarData[d][l]["likes"]);
                                     dataDislikes.push(-1 * komiksarData[d][l]["dislikes"]);
+                                }
+                                else {
+                                    dataLikes.push(0);
+                                    dataDislikes.push(0);
                                 }
                             }
                             dataset['data'] = data;

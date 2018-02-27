@@ -195,7 +195,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?"];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok"];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -210,7 +210,8 @@
             'mudrovani': 'rgb(255, 255, 0)',
             'dobraImage': 'rgb(255, 165, 0)',
             'komiksbox': 'rgb(140,70,20)',
-            'kdojedoktor': 'rgb(50, 130, 20)'
+            'kdojedoktor': 'rgb(50, 130, 20)',
+            'animeamanga': 'rgb(150, 0, 0)'
         };
         
         var chartColorsDislike = {
@@ -223,7 +224,8 @@
             'mudrovani': 'rgb(255, 255, 170)',
             'dobraImage': 'rgb(255, 200, 130)',
             'komiksbox': 'rgb(200, 120, 60)',
-            'kdojedoktor': 'rgb(70, 170, 20)'
+            'kdojedoktor': 'rgb(70, 170, 20)',
+            'animeamanga': 'rgb(190, 70, 70)'
         };
 
         function getColor(showName, type) {
@@ -259,6 +261,9 @@
                     case 'Kdo je Doctor Who?':
                         return chartColorsDislike.kdojedoktor;
                         break;
+                    case 'Anime a Manga blok':
+                        return chartColorsDislike.animeamanga;
+                        break;
                 }
             }
             else {
@@ -293,6 +298,9 @@
                     case 'Kdo je Doctor Who?':
                         return chartColors.kdojedoktor;
                         break;
+                    case 'Anime a Manga blok':
+                        return chartColorsDislike.animeamanga;
+                        break;
                 }
             }
         }
@@ -315,11 +323,18 @@
                         var labelsGraph = [];
                         for(var l = 0; l < komiksarData[0].length; l++) {
                             labelsGraph.push(komiksarData[0][l]["komiksarnumber"]);
-                            $(".doughnuts").append('<div class="col-sm-4 col-sm-offset-2"><canvas id="komiksarChartDoughnut' + komiksarData[0][l]["komiksarnumber"].toLowerCase().replace("komiksář ", "") + '" width="400" height="400"></canvas></div>');
+                            $(".doughnuts").append('<div class="col-sm-4' + ((l % 2) == 0 ? ' col-sm-offset-2' : '') + '"><canvas id="komiksarChartDoughnut' + komiksarData[0][l]["komiksarnumber"].toLowerCase().replace("komiksář ", "") + '" width="400" height="400"></canvas></div>');
                         }
                         
                         var datasets = [];
                         var datasetsLikesDislikes = [];
+                        
+                        var maxLikesLength = 0;
+                        
+                        for(var d = 0; d < komiksarData.length; d++) {
+                            if(komiksarData[d].length > maxLikesLength) maxLikesLength = komiksarData[d].length;
+                        }
+                        
                         for(var d = 0; d < komiksarData.length; d++) {
                             var dataset = {};
                             dataset['label'] = sheets[d];
@@ -329,11 +344,15 @@
                             var data = [];
                             var dataLikes = [];
                             var dataDislikes = [];
-                            for(var l = 0; l < komiksarData[d].length; l++) {
+                            for(var l = 0; l < maxLikesLength; l++) {
                                 if(typeof(komiksarData[d][l]) !== "undefined") {
                                     data.push(komiksarData[d][l]["views"]);
                                     dataLikes.push(komiksarData[d][l]["likes"]);
                                     dataDislikes.push(-1 * komiksarData[d][l]["dislikes"]);
+                                }
+                                else {
+                                    dataLikes.push(0);
+                                    dataDislikes.push(0);
                                 }
                             }
                             dataset['data'] = data;
