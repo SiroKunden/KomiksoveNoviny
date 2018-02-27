@@ -94,15 +94,36 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="/">KOMIKSOVÉ NOVINY</a>
+            <a class="navbar-brand page-scroll" href="#page-top">KOMIKSOVÉ NOVINY</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li>
-                  <a href="/">Domů</a>
-              </li>
+                <li>
+                    <a class="page-scroll" href="/#youtube">Youtube</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/#facebook">Facebook</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/#kluci">Kluci před kamerou</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/#vyslo">Co vychází</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/#cover">Cover týdne</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/#kontakt">Kde nás najdete</a>
+                </li>
+                <li>
+                    <a href="/soutez"><strong>Soutěž!</strong></a>
+                </li>
+                <!--<li>
+                    <a href="/blog/">Blog</a>
+                </li>-->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -171,7 +192,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 class="section-heading">Komiksář statistiky</h2>
-                <p>Prohlédni si jak si vedou jednotlivé pořady v Komiksáři</p>
+                <p>Zajímá tě jak si vedou jednotlivé pořady v Komiksáři a podrobná čísla jejich úspěchu? Tak to jsi na správném místě! Zde jsou automaticky aktualizovaná čísla k jednotlivých dílům Komiksáře.</p>
             </div>
         </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
@@ -188,8 +209,11 @@
         <div class="row graph-row doughnuts pt40 pb40">
         </div>
         <style>
-            #komiksarChartLine, #komiksarChartStacked {
+            #komiksarChartLine {
                 min-height: 600px;
+            }
+            #komiksarChartStacked {
+                min-height: 800px;
             }
         </style>
         <script>
