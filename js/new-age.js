@@ -188,7 +188,7 @@ var isMobile = false;
 
         });
         
-        var url = "https://docs.google.com/spreadsheets/pub?key=1imS2rixK8aw_wS6BAz9iFjchtBd2nfkkc9-0fMHQP5U&output=html";
+        var url = "https://docs.google.com/spreadsheets/pub?key=" + coverAwardsSpreadSheetId + "&output=html";
         var googleSpreadsheet = new GoogleSpreadsheet();
         googleSpreadsheet.url(url);
         googleSpreadsheet.load(function(result) {
