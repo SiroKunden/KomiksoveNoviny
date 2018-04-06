@@ -46,6 +46,9 @@
 <loc>http://localhost:4000/komiksar-statistiky/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/losovani/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/posts-by-categories/</loc>
 </url>
 <url>
