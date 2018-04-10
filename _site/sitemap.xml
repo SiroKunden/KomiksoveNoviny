@@ -52,6 +52,9 @@
 <loc>http://localhost:4000/posts-by-categories/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/redakce-covery/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/redakce/</loc>
 </url>
 <url>

@@ -105,6 +105,7 @@ var isMobile = false;
         if(typeof(spreadSheetId) != "undefined") {
             initCoverGame();
             initCoverGameFans();
+            initCoversRedakce();
         }
      
         var loadFromSpreadSheet = true;
@@ -188,20 +189,22 @@ var isMobile = false;
 
         });
         
-        var url = "https://docs.google.com/spreadsheets/pub?key=" + coverAwardsSpreadSheetId + "&output=html";
-        var googleSpreadsheet = new GoogleSpreadsheet();
-        googleSpreadsheet.url(url);
-        googleSpreadsheet.load(function(result) {
+        if(typeof(coverAwardsSpreadSheetId) !== "undefined") {
+            var url = "https://docs.google.com/spreadsheets/pub?key=" + coverAwardsSpreadSheetId + "&output=html";
+            var googleSpreadsheet = new GoogleSpreadsheet();
+            googleSpreadsheet.url(url);
+            googleSpreadsheet.load(function(result) {
 
-            for(var i = 0; i < result.items.length; i++) {
+                for(var i = 0; i < result.items.length; i++) {
 
-                var item = result.items[i];
+                    var item = result.items[i];
 
-                addCoverAwards(item);
-                
-            }
+                    addCoverAwards(item);
 
-        });
+                }
+
+            });
+        }
         
         var defaultCovers = -1;
         
@@ -830,7 +833,7 @@ function initCoverGameFans() {
             }
         }
 
-        var redakce = ["10213754007157583" /*sirek*/, "434506730255602" /*noviny*/, "10213641481503428" /*kviz*/, "313638978791624" /*geekcave*/, "10215261634565099" /*rabynanuk*/, "1034570829939685" /*dcfans*/, "10211442069828386" /*shial*/, "671273816397927" /*walome*/, "1612011702212159" /*hartman*/, "1570494416603103" /*putovni*/];
+        var redakce = ["10213754007157583" /*sirek*/, "434506730255602" /*noviny*/, "10213641481503428" /*kviz*/, "313638978791624" /*geekcave*/, "10215261634565099" /*rabynanuk*/, "1034570829939685" /*dcfans*/, "10211442069828386" /*shial*/, "671273816397927" /*walome*/, "1612011702212159" /*hartman*/, "1570494416603103" /*putovni*/, "10210532726009698" /*venca*/];
         
         for(var i = 0; i < result.items.length; i++) {
 
@@ -854,6 +857,36 @@ function initCoverGameFans() {
         }
             
     });
+    
+}
+
+function initCoversRedakce() {
+    
+    var redakce = ["portyCovers", "jakubCovers", "honzaCovers", "vojtaCovers", "kundenCovers", "walomeCovers", "shialCovers"]
+    
+    for(var r = 0; r < redakce.length; r++) {
+    
+        (function(r) {
+
+            var url = "https://docs.google.com/spreadsheets/pub?key=" + spreadSheetId + "&gid=" + (r + 1) + "&output=html";
+            var googleSpreadsheet = new GoogleSpreadsheet();
+            googleSpreadsheet.url(url);
+            googleSpreadsheet.load(function(result) {
+
+                for(var i = 0; i < result.items.length; i++) {
+
+                    var column = "col-lg-3 col-md-3 col-sm-4";
+
+                    $("#" + redakce[r]).append('<div class="' + column + ' text-center"><div class="cover-box"><a href="' + result.items[i].link + '" target="_blank"><img class="choose" src="' + result.items[i].image + '" style="max-height: 300px; width: auto;" /></a></div></div>');
+
+
+                }
+
+            });
+
+        })(r);
+    
+    }
     
 }
 

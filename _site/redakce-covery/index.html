@@ -76,11 +76,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Stránky pořadu Komiksové Noviny, který vám přináší nové informace z komiksového světa." />
 <meta property="og:description" content="Stránky pořadu Komiksové Noviny, který vám přináší nové informace z komiksového světa." />
-<link rel="canonical" href="http://localhost:4000/losovani/" />
-<meta property="og:url" content="http://localhost:4000/losovani/" />
+<link rel="canonical" href="http://localhost:4000/redakce-covery/" />
+<meta property="og:url" content="http://localhost:4000/redakce-covery/" />
 <meta property="og:site_name" content="KOMIKSOVÉ NOVINY" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"KOMIKSOVÉ NOVINY","author":{"@type":"Person","name":"Ondřej Šírek"},"description":"Stránky pořadu Komiksové Noviny, který vám přináší nové informace z komiksového světa.","url":"http://localhost:4000/losovani/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"KOMIKSOVÉ NOVINY","author":{"@type":"Person","name":"Ondřej Šírek"},"description":"Stránky pořadu Komiksové Noviny, který vám přináší nové informace z komiksového světa.","url":"http://localhost:4000/redakce-covery/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -139,141 +139,57 @@
     <div class="overlay"></div>
 </section>
 
-  <script src="../losovani_sources/TweenMax.min.js"></script>
-<link rel="stylesheet" media="all" href="../losovani_sources/application.css" data-turbolinks-track="false">
-<script src="../losovani_sources/application.js"></script>
-<script src="../losovani_sources/common.js"></script>
-<script src="../losovani_sources/spin_wheel.js"></script>
-  
-<div class="container">
-      
-    <div class="row" style="margin: 20px;">
-          
-        <div class="content fixed-fixed">
-            <div class="col-lg-12">
-      
-                <div class="row">
-                    <div class="col-xs-12">
-                        <script>
-                          window._db_name_set = null;
-                        </script>
-                        <div id="main">
-                            <div class="centered the_wheel">
-                                <canvas id="canvas" class="canvas" width="500" height="500">
-                                    Canvas not supported, use another browser.
-                                </canvas>
-                            </div>
-                            <div id="winner-container" class="centered">
-                                <div class="btn-group winner-btn-group centered" role="group" aria-label="Basic example">
-                                    <span class="winner">Vítěz je ...</span>&nbsp;&nbsp;
-                                    <span><button class="btn btn-sm btn-primary remove-name">Odstranit Vítěze</button></span>
-                                </div>
-                            </div>
-
-                            <div class="centered">
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a title="Vrátit se na Noviny" href="/" class="btn btn-responsive btn-success">Komiksové Noviny</a>
-                                    <button title="Přidej nebo uprav jména" class="btn btn-responsive btn-success modal-trigger">Nastav Jména</button>
-                                    <button title="Odstraň víteze a dej zpátky jména" class="btn btn-responsive btn-success reset-name">Resetuj Jména</button>
-                                    <button title="Nastav rychlost točení" class="btn btn-responsive btn-success options">Rychlost</button>
-                                    <button title="Roztoč kolo!" class="btn btn-responsive btn-success spin-trigger">Zatoč</button>
-                                </div>
-                            </div>
-
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-md">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Nastav Jména</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <p>
-                                                        Napiš jména a ulož to kliknutím na 'Save'. Prázdné řádky budou ignorovány.
-                                                        <br>
-                                                        Jména se uloží v prohlížeči a budou dostupná pro příští návštěvě.
-                                                    </p>
-                                                    <p>
-                                                        <strong>Klikni na Nastav jména pro jejich nastavení do kola.</strong><br>
-                                                    </p>
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <div class="centered">
-                                                                <select id="dial" class="form-control" style="height:100%" size="12">
-                                                                      <option value="0">Jména #1</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-9">
-                                                            <div class="centered">
-                                                                <textarea id="display" rows="10" class="form-control participants" placeholder="Type name here..."></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Uložit &amp; Zavřít</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-      
-                            <div class="modal fade" id="myOptionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                <div class="modal-dialog modal-md">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Rychlost točení</h4>
-                                        </div>
-                                      <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div id="popover-content" class="centered">
-                                                        <label class="radio-inline"><input type="radio" id="normal-speed" name="sw_speed" value="1" checked="true">Normalní</label>
-                                                        <label class="radio-inline"><input type="radio" id="fast-speed" name="sw_speed" value="2">Rychlá</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Uložit &amp; Zavřít</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        
-</div> <!-- /container -->
-      
-
   <script>
-    var coverAwardsSpreadSheetId = "1IuIQDGvZmxLD2di6X57Usn2K02K9stjBy4OA4HeGufA";
+    var spreadSheetId = "1ENPA5G5w9wgwQAj0irBPDqtjV-ErtynTc5crm-pxkjg";
 </script>
 
-<section id="soutez" class="download">
-    <div class="container">
+<section id="redakce-covery" class="download bg-primary text-center">
+    <div>
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h2 class="section-heading text-center">Soutěž s Cover Týdne!</h2>
-                <p class='text-center'>Chceš se zapojit do čtvrtletní soutěže o věcné ceny? Nebo již soutěžíš a chceš si ověřit jak je na to tvé bodové konto? Pak přejdi na <br /><a href="/soutez">SOUTĚŽ s Cover Týdne</a></p>
-                <p>O co se hraje tento kvartál? (Seznam není kompletní)</p>
-                <ul class="cover-awards-footer">
-                </ul>
+            <div class="col-md-12">
+                <h2 class="section-heading">Porty</h2>
             </div>
         </div>
+        <div id="portyCovers" class="row"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">Jakub</h2>
+            </div>
+        </div>
+        <div id="jakubCovers" class="row"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">Honza</h2>
+            </div>
+        </div>
+        <div id="honzaCovers" class="row"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">Vojta</h2>
+            </div>
+        </div>
+        <div id="vojtaCovers" class="row"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">Kunden</h2>
+            </div>
+        </div>
+        <div id="kundenCovers" class="row"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">Walome</h2>
+            </div>
+        </div>
+        <div id="walomeCovers" class="row"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">Shial</h2>
+            </div>
+        </div>
+        <div id="shialCovers" class="row"></div>
     </div>
 </section>
-
-<section id="kontakt" class="contact bg-primary">
+  <section id="kontakt" class="contact bg-primary">
     <div class="container">
         <h2>Sleduj nás, kde se dá!</h2>
         <ul class="list-inline list-social">
