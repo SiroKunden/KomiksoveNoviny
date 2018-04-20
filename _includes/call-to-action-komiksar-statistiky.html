@@ -30,7 +30,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok"];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok", "Jakubov Mini Komiksár"];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -46,7 +46,8 @@
             'dobraImage': 'rgb(255, 165, 0)',
             'komiksbox': 'rgb(140,70,20)',
             'kdojedoktor': 'rgb(50, 130, 20)',
-            'animeamanga': 'rgb(150, 0, 0)'
+            'animeamanga': 'rgb(150, 0, 0)',
+            'minikomiksar': 'rgb(150, 50, 50)'
         };
         
         var chartColorsDislike = {
@@ -60,7 +61,8 @@
             'dobraImage': 'rgb(255, 200, 130)',
             'komiksbox': 'rgb(200, 120, 60)',
             'kdojedoktor': 'rgb(70, 170, 20)',
-            'animeamanga': 'rgb(190, 70, 70)'
+            'animeamanga': 'rgb(170, 90, 70)',
+            'minikomiksar': 'rgb(130, 70, 50)'
         };
 
         function getColor(showName, type) {
@@ -99,6 +101,9 @@
                     case 'Anime a Manga blok':
                         return chartColorsDislike.animeamanga;
                         break;
+                    case 'Jakubov Mini Komiksár':
+                        return chartColorsDislike.minikomiksar;
+                        break;
                 }
             }
             else {
@@ -134,7 +139,10 @@
                         return chartColors.kdojedoktor;
                         break;
                     case 'Anime a Manga blok':
-                        return chartColorsDislike.animeamanga;
+                        return chartColors.animeamanga;
+                        break;
+                    case 'Jakubov Mini Komiksár':
+                        return chartColors.minikomiksar;
                         break;
                 }
             }
