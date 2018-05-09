@@ -208,9 +208,17 @@
         </div>
         <div class="row graph-row doughnuts pt40 pb40">
         </div>
+        <div class="row graph-row pt40">
+            <div class="col-md-12" style="width: 80%; margin: 0 auto; float: none;">
+                <canvas id="komiksarChartLineAll" width="400" height="200"></canvas>
+            </div>
+        </div>
         <style>
             #komiksarChartLine {
                 min-height: 600px;
+            }
+            #komiksarChartLineAll {
+                min-height: 400px;
             }
             #komiksarChartStacked {
                 min-height: 800px;
@@ -219,7 +227,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok", "Jakubov Mini Komiksár"];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok", "Jakubov Mini Komiksár", "Součet"];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -346,7 +354,12 @@
                 googleSpreadsheet.url(url);
                 googleSpreadsheet.load(function(result) {
 
-                    komiksarData[sheets.indexOf(result.items[0].blok)] = result.items;
+                    if(typeof(result.items[0].favoritesall) !== "undefined") {
+                        komiksarData[sheets.length - 1] = result.items;
+                    }
+                    else {
+                        komiksarData[sheets.indexOf(result.items[0].blok)] = result.items;
+                    }
                     
                     dataLoaded++;
                     
@@ -360,14 +373,15 @@
                         
                         var datasets = [];
                         var datasetsLikesDislikes = [];
+                        var datasetsAll = [];
                         
                         var maxLikesLength = 0;
                         
-                        for(var d = 0; d < komiksarData.length; d++) {
+                        for(var d = 0; d < komiksarData.length - 1; d++) {
                             if(komiksarData[d].length > maxLikesLength) maxLikesLength = komiksarData[d].length;
                         }
                         
-                        for(var d = 0; d < komiksarData.length; d++) {
+                        for(var d = 0; d < komiksarData.length - 1; d++) {
                             var dataset = {};
                             dataset['label'] = sheets[d];
                             dataset['backgroundColor'] = getColor(sheets[d]);
@@ -407,13 +421,27 @@
                             datasetsLikesDislikes.push(datasetDislikes);
                         }
                         
+                        var dataset = {};
+                        dataset['label'] = "Komiksář";
+                        dataset['backgroundColor'] = chartColors.komiksoveNovinky;
+                        dataset['borderColor'] = chartColors.komiksoveNovinky;
+                        dataset['fill'] = false;
+                        var data = [];
+                        for(var l = 0; l < komiksarData[komiksarData.length - 1].length; l++) {
+                            if(komiksarData[komiksarData.length - 1][l].id.indexOf("Row") === -1) {
+                                data.push(komiksarData[komiksarData.length - 1][l]["views"]);
+                            }
+                        }
+                        dataset['data'] = data;
+                        datasetsAll.push(dataset);
+                        
                         var doughnuts = [];
                         for(var l = 0; l < komiksarData[0].length; l++) {
                             var doughnut = {};
                             var labels = [];
                             var colors = [];
                             var data = [];
-                            for(var d = 0; d < komiksarData.length; d++) {
+                            for(var d = 0; d < komiksarData.length - 1; d++) {
                                 if(typeof(komiksarData[d][l]) !== "undefined") {
                                     data.push(komiksarData[d][l]["views"]);
                                     labels.push(komiksarData[d][l]["blok"]);
@@ -472,6 +500,46 @@
                             }
                         });
                         
+                        var ctxLineAll = document.getElementById("komiksarChartLineAll");
+                        var komiksarChartLineAll = new Chart(ctxLineAll, {
+                            type: 'line',
+                            data: {
+                                labels: labelsGraph,
+                                datasets: datasetsAll
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                title:{
+                                    display:true,
+                                    text:'Porovnání jednotlivých dílů Komiksáře (views)'
+                                },
+                                tooltips: {
+                                    mode: 'index',
+                                    intersect: false,
+                                },
+                                hover: {
+                                    mode: 'nearest',
+                                    intersect: true
+                                },
+                                scales: {
+                                    xAxes: [{
+                                        display: true,
+                                        scaleLabel: {
+                                            display: true,
+                                            labelString: 'Komiksář #'
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        display: true,
+                                        scaleLabel: {
+                                            display: true,
+                                            labelString: 'Views'
+                                        }
+                                    }]
+                                }
+                            }
+                        });
                         
                         var ctxStacked = document.getElementById("komiksarChartStacked");
                         var komiksarChartStacked = new Chart(ctxStacked, {
