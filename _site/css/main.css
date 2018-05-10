@@ -3,7 +3,7 @@
   letter-spacing: 1px; }
 
 .body-font {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Montserrat', sans-serif; }
 
 .alt-font {
   text-transform: uppercase;
@@ -16,7 +16,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Montserrat', sans-serif; }
 
 a {
   -webkit-transition: all 0.35s;
