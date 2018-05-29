@@ -644,7 +644,7 @@ img.emoji {
 .cover-awards-page a {
   color: white; }
 
-.cover-awards a, .cover-awards {
+.cover-awards a, .cover-awards, .kvartals a, .kvartals {
   font-weight: bold;
   font-size: 16pt; }
 
@@ -662,3 +662,53 @@ img.emoji {
 
 .graph-row {
   background: white; }
+
+/* goodreads */
+div[class^='gr_custom_container_'], div[class*='gr_custom_container_'] {
+  /* customize your Goodreads widget container here*/
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0px 5px 10px 5px;
+  background-color: #FFF;
+  color: #000; }
+
+h2[class^='gr_custom_header_'], h2[class*='gr_custom_header_'] {
+  /* customize your Goodreads header here*/
+  border-bottom: 1px solid gray;
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 200%; }
+
+div[class^='gr_custom_each_container_'], div[class*='gr_custom_each_container_'] {
+  /* customize each individual book container here */
+  width: 100%;
+  clear: both;
+  margin-bottom: 10px;
+  overflow: auto;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #aaa; }
+
+div[class^='gr_custom_book_container_'], div[class*='gr_custom_book_container_'] {
+  /* customize your book covers here */
+  overflow: hidden;
+  height: 60px;
+  float: left;
+  margin-right: 4px;
+  width: 39px; }
+
+div[class^='gr_custom_author_'], div[class*='gr_custom_author_'] {
+  /* customize your author names here */
+  font-size: 10px; }
+
+div[class^='gr_custom_tags_'], div[class*='gr_custom_tags_'] {
+  /* customize your tags here */
+  font-size: 10px;
+  color: gray; }
+
+div[class^='gr_custom_rating_'], div[class*='gr_custom_rating_'] {
+  /* customize your rating stars here */
+  float: right; }
+
+div[id^='gr_custom_widget_'], div[id*='gr_custom_widget_'] {
+  margin-top: 20px; }
