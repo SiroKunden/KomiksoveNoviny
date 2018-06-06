@@ -645,7 +645,7 @@ function reloadCovers(index) {
 
     });
 
-    var access_token = '1335593173145160|slQ8coHyj5qzQzfa9-Kw1saCziQ'; // PASTE HERE YOUR FACEBOOK ACCESS TOKEN
+    var access_token = 'EAASZBtwSmVkgBAMHVtPgW3PrADc4nJkP5q4ZCBCitxXy2ICjXLwqeU1QmG2Lid2fozkZCto8VAXszadaxep0rM7XXSsDyqxGHscX92Y3ZAZBCD5xmavwLVZB9poVeMTWIPyfjR6Pg1Ptzpf2Fz5JzwXhseyFo5mv2zMdjRpMvbvtzcvp61kNiY'; // PASTE HERE YOUR FACEBOOK ACCESS TOKEN
     var pageID = '434506730255602'; // PASTE HERE YOUR POST ID 
     var defaultCount = 0; // Default count to start with
     
