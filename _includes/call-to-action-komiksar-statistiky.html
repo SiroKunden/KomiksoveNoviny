@@ -38,7 +38,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok", "Jakubov Mini Komiksár", "Součet"];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok", "Jakubov Mini Komiksár", "DC NEWS", "Součet"];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -55,7 +55,8 @@
             'komiksbox': 'rgb(140,70,20)',
             'kdojedoktor': 'rgb(50, 130, 20)',
             'animeamanga': 'rgb(150, 0, 0)',
-            'minikomiksar': 'rgb(150, 50, 50)'
+            'minikomiksar': 'rgb(150, 50, 50)',
+            'dcnews': 'rgb(255, 210, 250)'
         };
         
         var chartColorsDislike = {
@@ -70,7 +71,8 @@
             'komiksbox': 'rgb(200, 120, 60)',
             'kdojedoktor': 'rgb(70, 170, 20)',
             'animeamanga': 'rgb(170, 90, 70)',
-            'minikomiksar': 'rgb(130, 70, 50)'
+            'minikomiksar': 'rgb(130, 70, 50)',
+            'dcnews': 'rgb(235, 230, 250)'
         };
 
         function getColor(showName, type) {
@@ -112,6 +114,9 @@
                     case 'Jakubov Mini Komiksár':
                         return chartColorsDislike.minikomiksar;
                         break;
+                    case 'DC NEWS':
+                        return chartColorsDislike.dcnews;
+                        break;
                 }
             }
             else {
@@ -151,6 +156,9 @@
                         break;
                     case 'Jakubov Mini Komiksár':
                         return chartColors.minikomiksar;
+                        break;
+                    case 'DC NEWS':
+                        return chartColors.dcnews;
                         break;
                 }
             }
