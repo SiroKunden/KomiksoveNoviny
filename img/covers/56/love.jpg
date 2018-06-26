@@ -1,0 +1,3626 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+
+
+
+ 
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+
+<script language="javascript">
+
+function setshippingaddress(val)
+{
+	
+	if (document.getElementById("cn_shippinginfo")!=null)
+	{
+		if (parseInt(val)==40 || parseInt(val)==45 || parseInt(val)==64 || parseInt(val)==24)
+		{
+				document.getElementById("cn_shippinginfo").style.display="none";
+		}
+		else
+		{
+				document.getElementById("cn_shippinginfo").style.display="block";
+			}
+	
+	}
+	
+	
+	}
+
+</script>
+
+
+<script language="javascript">
+
+/*function CheckCountry(country,page)
+{
+	page = page.toLowerCase();
+	
+	if (page.indexOf('shippingr.asp') > -1)
+	{
+		document.frm.CountryName.value = country;
+		document.frm.action='shippingr.asp';
+		document.frm.submit();
+	}
+	else if (page.indexOf('xcheckout.asp') > -1)
+	{
+		//alert(page.indexOf('xcheckout.asp'))
+		document.frmxcheckout.CountryName.value = country; //This Country name is actually the SA_ID
+		document.frmxcheckout.action='xcheckout.asp';
+		document.frmxcheckout.submit();
+	}
+
+}
+*/
+
+
+
+</script>
+
+
+
+
+<!--<script type="text/javascript" src="https://www.midtowncomics.com/sc/jquery.js"></script> -->
+<script type="text/javascript" src="https://www.midtowncomics.com/sc/jquery/jquery-3.3.1.min.js?a=1"></script>
+
+<!--<script type="text/javascript" src="https://www.midtowncomics.com/sc/jquery.tabs2.pack.js?a=1"></script>-->
+<script type="text/javascript" src="https://www.midtowncomics.com/sc/RemoteFileLoader.js?a=1"></script>
+<script type="text/javascript" src="https://www.midtowncomics.com/sc/jqcorner/jquery.corner.js?a=1"></script>
+<script type="text/javascript" src="https://www.midtowncomics.com/sc/jqui/jquery-ui.js?a=1"></script>
+<script type="text/javascript" src="https://www.midtowncomics.com/sc/jqhint/jquery.hint.js?a=1"></script>
+
+<script type="text/javascript" src="https://www.midtowncomics.com/sc/common.js?a=1"></script>
+<script type="text/javascript" src="https://www.midtowncomics.com/sc/jquery.hoverIntent.minified.js?a=1"></script> 
+<script src="https://www.midtowncomics.com/sc/jqfancybox/jquery.fancybox.min.js?a=1" type="text/javascript"></script>
+
+<link type="text/css" rel="stylesheet" href="https://www.midtowncomics.com/css/midtowncomic.css?a=1"  media="print, projection, screen">
+<link type="text/css" rel="stylesheet" href="https://www.midtowncomics.com/uncached/20180620.css?a=1"  media="print, projection, screen">
+
+<!--<script src="https://www.midtowncomics.com/sc/fancybox-1.3.1/jquery.fancybox-1.3.1.pack.js" type="text/javascript"></script>-->
+<link type="text/css" rel="stylesheet" href="https://www.midtowncomics.com/sc/jqfancybox/jquery.fancybox.min.css?a=1"  media="print, projection, screen">
+
+
+<script type="text/javascript"> 
+	$(function(){
+    $("div.rounded").corner("round 8px");
+    $("div.roundtop").corner("round top 8px");
+    $("div.roundbottom").corner("round bottom 8px");	
+    $("div.roundtr0").corner("round tl bottom 8px");		
+    $("div.roundleft").corner("round tl bl 8px");
+    $("div.roundright").corner("round tr br 8px");	
+	});
+    $(function() {
+                $('#tabs_about').tabs({ fxFade: true, fxSpeed: 'fast' });
+		        $('#tabs_feeds').tabs({ fxFade: true, fxSpeed: 'fast' });
+                $('#tabs_newsletter').tabs({ fxFade: true, fxSpeed: 'fast' });
+                $('#tabs_orders').tabs({ fxFade: true, fxSpeed: 'fast' });
+                $('#tabs_rankings').tabs({ fxFade: true, fxSpeed: 'fast' });
+                $('#tabs_subs').tabs({ fxFade: true, fxSpeed: 'fast' });
+                $('#tabs_wishlist').tabs({ fxFade: true, fxSpeed: 'fast' });
+                $('#tabs-ajax').tabs({ remote: true });
+            });			
+	$(document).ready( function(){
+		$('input[title!=""]').hint();
+	});
+
+$(function() {
+    $('#slideshow').cycle({
+		auto: true,
+        fx:     'scrollDown',
+        speed:  1000,
+        timeout: 6500,
+        pager:  '#nav',
+        pagerAnchorBuilder: function(idx, slide) {
+            // return sel string for existing anchor
+            return '#nav div:eq(' + (idx) + ') a';
+        }
+    });
+});
+</script> 
+
+<script type="text/javascript"> 
+$(document).ready(function() {
+ // hides the togglebox as soon as the DOM is ready
+ // (a little sooner than page load)
+  $('#togglebox').hide();
+ // shows the togglebox on clicking the noted link
+  $('a#toggle-show').click(function() {
+ $('#togglebox').show('fast');
+ return false;
+  });
+
+ $('#toggletrack').hide();
+ $('a#track-toggle').click(function() {
+ $('#toggletrack').toggle(400);
+ return false;
+  });
+
+$('#toggletrack p').hover(function() {
+  $(this).addClass('hover1');
+}, function() {
+  $(this).css('hover1');
+});
+
+  
+ $('#toggletrackb').hide();
+ $('a#track-toggleb').click(function() {
+ $('#toggletrackb').toggle(400);
+ return false;
+  });
+  
+
+});
+
+
+$(document).ready(function(){
+	$(".toggle_container").show();
+	$("div.trigger").toggle(function(){
+		$(this).css({'background' : 'url(https://www.midtowncomics.com/images/leftnav_arrow_for_search.gif) no-repeat scroll left top'});	
+		}, function () {
+		$(this).css({'background' : 'url(https://www.midtowncomics.com/images/leftnav_arrow-down_search.gif) no-repeat scroll left top'});			
+	});
+	$("div.trigger").click(function(){
+		$(this).next(".toggle_container").slideToggle("slow,");
+	});
+});
+
+$(document).ready(function(){
+	$(".toggle_container0").hide();
+	$("div.trigger0").toggle(function(){
+		$(this).css({'background' : 'url(https://www.midtowncomics.com/images/leftnav_arrow-down_search.gif) no-repeat scroll left top'});	
+		}, function () {
+		$(this).css({'background' : 'url(https://www.midtowncomics.com/images/leftnav_arrow_for_search.gif) no-repeat scroll left top'});			
+	});
+	$("div.trigger0").click(function(){
+		$(this).next(".toggle_container0").slideToggle("slow,");
+	});
+	
+	$(".toggle_container-1").hide();
+	$("div.trigger-1").toggle(function(){
+		$(this).css({'background' : 'url(https://www.midtowncomics.com/images/leftnav_arrow-down_search.gif) no-repeat scroll left top'});	
+		}, function () {
+		$(this).css({'background' : 'url(https://www.midtowncomics.com/images/leftnav_arrow_for_search.gif) no-repeat scroll left top'});			
+	});
+	$("div.trigger-1").click(function(){
+		$(this).next(".toggle_container-1").slideToggle("slow,");
+	});
+	
+	
+});
+</script>
+
+       <!-- Additional IE/Win specific style sheet (Conditional Comments) -->
+        <!--[if lte IE 7]>
+        <link type="text/css" rel="stylesheet" href="https://www.midtowncomics.com/css/jquery.tabs2-ie.css"  media="projection, screen">
+        <![endif]-->
+
+
+
+
+
+
+<script language="javascript">
+   jQuery(document).ready(function($) {
+      $('a[rel*=fancybox]').fancybox() 
+    })
+   jQuery(document).ready(function($) {
+      $('a[rel*=fancycart]').fancybox() 
+    })
+	jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmore]').fancybox() 
+	 
+    })
+	jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoreleft]').fancybox() 
+	 
+    })
+	
+	jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmorechtop]').fancybox() 
+	 
+    })
+	jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmorechmiddle]').fancybox() 
+	 
+    })
+	jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmorechleft]').fancybox() 
+	 
+    })	
+		
+	jQuery(document).ready(function($) {
+      $('a[rel*=fancycartemailthis]').fancybox(
+	  {
+	  	type: "iframe",
+		scrolling:"no",
+		//width:"200px",
+		autoScale:true
+		//centerOnScroll:true,
+		
+		
+	  }
+	  )
+	  $.fancybox.resize
+    })
+</script> 
+
+ <script language="javascript">
+ function ReverseContentDisplay(d) {
+ 		strobj="sperrow_"+ d;
+		
+		if(document.getElementById(d).style.display == "none") 
+		{ 
+			document.getElementById(d).style.display = "block"; 
+			if(document.getElementById(strobj)!=null)
+			{
+				document.getElementById(strobj).innerHTML="<img src=\"https://www.midtowncomics.com/images/errow_down.gif\" />";
+			}
+			
+		}
+		else 
+			{ 
+				document.getElementById(d).style.display = "none"; 
+				if(document.getElementById(strobj)!=null)
+				{
+					document.getElementById(strobj).innerHTML="<img src=\"https://www.midtowncomics.com/images/errow_up.gif\" />";
+				}
+			}
+	}
+ </script> 
+ 
+<script type="text/javascript">//<![CDATA[
+
+// Welcome to the HTMLHttpRequest demonstration!
+//
+// This script allows you to make background asynchronous GET and POST requests to a
+// server in an accessible manner that is backwards-compatible with older browsers,
+// mobile devices, screenreaders and search engines.
+//
+// The overall architecture is assembled in 3 layers:
+//
+// 1) A "Transport" object ('HTMLHttpRequest') that makes a request to the server.
+// 2) A "Threading" object ('RemoteFileLoader') that creates and allocates Transports
+//    and provides an easy way of loading content into your existing page.
+// 3) An "Interface" layer of code that captures clicks/submissions on the document.
+//
+// Layers (1) and (2) are objects included in the external .JS file above.
+// Both contain documentation if you are interested in customising the implementation.
+// Otherwise, the code below is the "Interface" layer that will process our document.
+
+
+// First, we create an example object for our document click handler.
+var docClickLoader = new RemoteFileLoader('docClickLoader');
+var docClickLoader2 = new RemoteFileLoader('docClickLoader2');
+
+// At any stage you can call docClickLoader.loadInto('file.html', 'IDOfTarget') to trigger
+// a content load into an element from your script.
+// The example below does this when suitable links in the document are clicked.
+function showPreLoader()
+{
+
+	var browser=navigator.userAgent;
+	if(browser.indexOf("Firefox") > 0)
+	{
+		var scrolly = typeof window.pageYOffset != 'undefined' ? window.pageYOffset : document.documentElement.scrollTop;
+		var destimg =document.getElementById("PreLoaderLayer");
+		destimg.style.top  = scrolly;
+		destimg.style.display = 'block';
+		//window.scrollTo(0,0);
+	}
+}
+function LockPage()
+{
+
+	var browser=navigator.userAgent;
+	//if(browser.indexOf("Firefox") > 0)
+	//{
+		var scrolly = typeof window.pageYOffset != 'undefined' ? window.pageYOffset : document.documentElement.scrollTop;
+		var destimg =document.getElementById("PreLoaderLayer");
+		destimg.style.top  = scrolly;
+		destimg.style.display = 'block';
+		//alert(destimg.style.width)
+		//destimg.style.border="1"
+		//window.scrollTo(0,0);
+	//}
+}
+function unlockPage()
+{
+
+	var browser=navigator.userAgent;
+	//if(browser.indexOf("Firefox") > 0)
+	//{
+		var scrolly = typeof window.pageYOffset != 'undefined' ? window.pageYOffset : document.documentElement.scrollTop;
+		var destimg =document.getElementById("PreLoaderLayer");
+		destimg.style.top  = scrolly;
+		destimg.style.display = 'none';
+		//alert(destimg.style.width)
+		//destimg.style.border="1"
+		//window.scrollTo(0,0);
+	//}
+}
+
+function showheaderimage(val)
+{
+//alert(val)
+ var destimg = document.getElementById("mainheader");
+  if (destimg != null)
+  {
+ 	destimg.innerHTML = "";
+ 	destimg.style.display = 'none';
+ }
+ var destimg = document.getElementById("mainheaderimages");
+  if (destimg != null)
+  {
+ 	destimg.style.display = 'block';
+  	window.location="#"+val;
+   }
+
+ 
+ 
+ 
+}
+
+function loadInto(src, destId, evt)
+{
+
+
+document.getElementById("mainheader").innerHTML = ""
+
+ // Called to when a link with class="loadinto-IdOfTarget" is clicked.
+ // Parameters: src = reference to link, destId = ID of target element, evt = event object.
+ showPreLoader();
+ var ok = docClickLoader.loadInto(src.href || src.getAttribute('href'), destId);
+ if (ok) cancelEvent(evt);
+
+ document.location.href = '#';
+ 
+ var destimg = document.getElementById("mainheaderimages");
+ if (destimg != null)
+ 	destimg.style.display = 'none';
+ var destimg = document.getElementById("mainheader");
+ if (destimg != null)
+ 	destimg.style.display = 'block';
+//alert("hello")
+
+ 
+};
+
+var qsParm = new Array();
+qsParm['PRID'] = null;
+qsParm['Rem'] = null;
+qsParm['PRADV'] = null;
+
+function qs(qry) {
+	var query = qry;
+	var spliturl = qry.split('?');
+	query = spliturl[1];
+	var parms = query.split('&');
+	for (var i=0; i<parms.length; i++) {
+		var pos = parms[i].indexOf('=');
+		if (pos > 0) {
+			var key = parms[i].substring(0,pos);
+			var val = parms[i].substring(pos+1);
+			qsParm[key] = val;
+		}
+	}
+} 
+
+function toggleInto(src, destId, evt)
+{
+
+ 	
+	showPreLoader();	
+	qs(src.href); 
+ 	var ok = docClickLoader.loadInto(src.href || src.getAttribute('href'), destId);
+  	//var blankurl = src.href 
+ 	//var ok = docClickLoader.loadInto(blankurl || src.getAttribute('href'), 'navcartbottom');
+ 	if (ok) cancelEvent(evt);
+
+	
+	 if (qsParm['Rem'] == 'Y'){
+		
+		//alert(qsParm['PRID'])
+		
+		 var destimg = document.getElementById("addtocart" + qsParm['PRID']);
+		 if (destimg != null)
+			destimg.style.display = 'block';	 
+		 var destimg = document.getElementById("outofstock" + qsParm['PRID']);
+		 if (destimg != null)
+			destimg.style.display = 'none';
+			
+	 }else{
+ 			
+			
+					 var destimg = document.getElementById("addtocart" + qsParm['PRID']);				
+					 if (destimg != null)
+						destimg.style.display = 'none';
+					 var destimg = document.getElementById("outofstock" + qsParm['PRID']);
+					 if (destimg != null)
+						destimg.style.display = 'block';		
+			 
+			 
+			 var destimg = document.getElementById("spInbag");
+			 if (destimg != null)
+			 	destimg.style.display = 'block';
+				 	
+			 var destimg = document.getElementById("spos");
+			 if (destimg != null)
+				destimg.style.display = 'none';
+			 var destimg = document.getElementById("div_quickviewcart");
+			 if (destimg != null)
+			 {
+					destimg.innerHTML="<a style=\"font-size:11pt;font-weight:bold\" href=\"https://www.midtowncomics.com/includes/header_quickview.asp?pl=12\" rel=\"fancycartQVC\">Quick View Cart</a>";	
+					 jQuery(document).ready(function($) {
+								  $('a[rel*=fancycartQVC]').fancybox({scrolling:"no",autoScale:true}) 
+									$.fancybox.resize
+								})
+			 }	
+	
+ 	}
+ 
+	 if (qsParm['UPSShipping']=='1'){
+		 var destimg = document.getElementById("UPSShippingResponse");
+		 if (destimg != null)
+		 {
+			destimg.style.display = 'block';
+			destimg = document.getElementById("UPSShippingResponseTable");
+			destimg.style.display = 'block';
+			}
+	 }
+	 else{
+	
+		 var destimg = document.getElementById("UPSShippingResponse");
+		 if (destimg != null)
+			destimg.style.display = 'none';
+	 }
+ 
+	if (qsParm['PRADV'] == '0'){
+		var advtag =document.getElementsByName("AdvItemDiv");
+	}else{
+		var advtag =document.getElementsByName("RegItemDiv");
+	}
+
+	if (qsParm['Rem']=='wl')
+	{
+		var destimg = document.getElementById("editedwl" + qsParm['PRID']);
+		//alert(destimg)
+		if (destimg != null)
+			destimg.style.display = 'block';
+		var destimg = document.getElementById("addtowl" + qsParm['PRID']);
+		//	alert(destimg)
+		if (destimg != null)
+			destimg.style.display = 'none';
+	
+	}
+
+
+	if (qsParm['Rem']=='IDPR')
+	{
+	
+	
+		var straddress=""
+		straddress=straddress+window.location
+		if(straddress.lastIndexOf("#") >-1)
+		{
+		
+			if (straddress.indexOf("#")>0)
+			{
+				window.location=straddress.slice(0,straddress.indexOf("#")+1)+qsParm['PRID'];
+			}
+		
+		}
+		else
+		{
+			 window.location=window.location+"#"+qsParm['PRID'];
+		}
+		qsParm['Rem']=null;
+	}
+	if (qsParm['Wishlist']=='true')
+	{
+	
+		var destimg = document.getElementById("addedtowishlist" + qsParm['PRID']);
+		 if (destimg != null)
+			destimg.style.display = 'block';
+		 var destimg = document.getElementById("addtowishlist" + qsParm['PRID']);
+		 if (destimg != null)
+			destimg.style.display = 'none';
+	}
+
+};
+
+
+// addEvent is defined within htmlhttprequest.js, feel free to reuse :).
+addEvent(document, 'click', function(evt)
+{
+ // Here we capture all clicks on the document, scanning for links with a CLASS
+ // attribute of "loadinto-IdOfTarget" and routing them to loadInto() above.
+ evt = evt || window.event;
+ // Only process left clicks.
+ if (evt.which > 1 || evt.button > 1) return;
+ var src = evt.target || evt.srcElement;
+ if (src.nodeType && src.nodeType != 1) src = src.parentNode;
+ // Loop up the DOM tree scanning all elements to find a matching one.
+ while (src)
+ {
+  var srcName = (src.nodeName||src.tagName||'').toLowerCase();
+  if (srcName == 'a' && src.className && src.className.match(/^(load|toggle)into-(.+)$/))
+  {
+   // Call our load handlers if we have a match; they'll cancel the normal action.
+   if (RegExp.$1 == 'load') return loadInto(src, RegExp.$2, evt);
+   if (RegExp.$1 == 'toggle') return toggleInto(src, RegExp.$2, evt);
+  }
+  src = src.parentNode;
+ }
+}, 1);
+
+
+//]]></script>
+
+
+
+<meta name="description" content="">
+<meta name="keywords" CONTENT=" graphic novel, comic subscriptions , online comic store, online comic shop, apparels, buy comic books, best comic books, spider-man, superman, batman, x-men, manga, midtown comics, online comic books ">
+<meta name="language" content="English">
+<meta name="robots" content="index, follow">
+<meta name="classification" content="Comics">
+<meta name=" Content-Language " content ="en-us, English">
+<meta name="distribution" content ="global">
+ 
+<meta name="author" content="info@midtowncomics.com">
+<meta name="organization-Email" content="info@midtowncomics.com">
+<meta name="identifier" content="https://www.midtowncomics.com/">
+<meta name="copyright" content="2002-2011 Midtown Comics">
+<meta content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<meta name="verify-v1" content="v3nkc+lQLaCW3LBs0Jk4vBSbRVuYX0nRNuzUhk9OMuI=" />
+
+<meta property="al:iphone:url" content="midtowncomics://action/ipd/1734269" />
+<meta property="al:iphone:app_store_id" content="501127099" />
+<meta property="al:iphone:app_name" content="Midtown Comics" />
+<meta property="og:title" content="Ruin Of Thieves A Brigands Story #2 Cover A Regular Sumit Kumar Cover - Midtown Comics" />
+
+
+
+
+
+
+
+
+<title>Ruin Of Thieves A Brigands Story #2 Cover A Regular Sumit Kumar Cover - Midtown Comics</title>
+
+
+
+
+<script language="javascript">
+
+function togglebi(val,element)
+{	
+	MidtownGradeFetcher.obj=element;
+	MidtownGradeFetcher.val=val;
+	MidtownGradeFetcher.getGrades("https://www.midtowncomics.com/store/getproductgrades.asp?pr_id="+val+"&sh_id=263048387")
+
+
+}
+function togglewl(obj,elid,availQty)
+{
+	ele="wl"+elid
+	var odqty=document.getElementById(ele).value;
+	var splitwlurl=obj.href.split('?');
+	var urlqry=splitwlurl[0]
+	urlparem=splitwlurl[1]
+	var urlparemarr=urlparem.split("&")	
+	obj.href=urlqry +"?"+ urlparemarr[0] +"&"+ urlparemarr[1] +"&"+ urlparemarr[2] +"&"+ urlparemarr[3] +"&PRQty=" + odqty;
+	
+}
+
+function toggle(obj,elid,availQty)
+{
+	ele="t"+elid
+	var odqty=document.getElementById(ele).value;
+	
+	if (parseInt(odqty)>parseInt(availQty))
+	{
+		alert("Available Quantity = " + availQty + "\n\n Ordered Quantity = " + odqty + "\n\n Quantity of for the following item(s) have been adjusted according to the available inventory" )
+		odqty=availQty
+		
+	}
+	obj.href=obj.href+"&PRQty=" + odqty;
+}
+
+function reportthis(val)
+{
+	//alert("https://www.midtowncomics.com/store/reportthis.asp?rvid="+val)
+	strReturn=Getdata("https://www.midtowncomics.com/store/reportthis.asp?rvid="+val);
+	if (strReturn=="C")
+	{
+		alert("Post is Reported");
+	}
+
+}
+function report(rvid,sortby)
+{
+	
+	if (sortby=="")
+	{
+	//alert(sortby)
+		strReturn="";
+		var reviewyes="rbyes"+rvid;
+		var reviewno="rbno"+rvid;
+		var ishelpfull="";
+		if (document.getElementById(reviewyes).checked)
+		{
+			ishelpfull="yes";
+		}
+		else
+		{
+			ishelpfull="no";
+		}
+		//document.write("https://www.midtowncomics.com/store/reviewvote.asp?rvid="+rvid+"&ishelpfull=" + ishelpfull + "&sh_id=263048387")
+		strReturn=Getdata("https://www.midtowncomics.com/store/reviewvote.asp?rvid="+rvid+"&ishelpfull=" + ishelpfull + "&sh_id=263048387");
+		//alert(strReturn)
+		if (strReturn=="C")
+		{
+		//var strdiv="dvvote"+rvid;
+		//alert(strdiv)
+		//document.getElementById(strdiv).style.display="none";
+		alert("Your Vote is counted");
+		}
+	}
+	else
+	{
+		//alert("https://www.midtowncomics.com/store/reviewvote.asp?PRID="+rvid+"&sortby=" + sortby + "&sh_id=263048387")
+		//alert(rvid)
+		//document.write("https://www.midtowncomics.com/store/reviewvote.asp?PRID="+rvid+"&sortby=" + sortby + "&sh_id=263048387")
+		strReturn=Getdata("https://www.midtowncomics.com/store/reviewvote.asp?PRID="+rvid+"&sortby=" + sortby + "&sh_id=263048387");
+	//alert(strReturn)
+	document.getElementById("review_page_1").innerHTML="";
+	document.getElementById("review_page_1").innerHTML=strReturn;
+	//alert(rvid)
+	}
+	
+
+
+}
+function checkrating()
+{
+	if (trim(document.getElementById("txtName").value)=="")
+	{
+		alert("please enter your name")
+		document.frmrating.txtName.focus();
+		return false;
+	}
+	if (document.getElementById("chkagree").checked==false)
+	{
+		alert("please select Agree to Terms of Use ")
+		return false;
+	}
+	
+	//return false;
+} 
+
+</script>
+<script src="https://www.midtowncomics.com/sc/jqzoom/js/jqzoom.pack.1.0.1.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+		$(function() {
+			var options =
+			{
+			zoomWidth: 420,
+			zoomHeight: 471,
+            xOffset: 5,
+            yOffset: 0
+						}
+			$(".jqzoom").jqzoom(options);
+		});
+
+	/*var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+		  if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+		  {
+			
+			(function() {
+				var app = { 
+								launchApp: function() {
+		  												var PRID = '1734269';
+		  												window.location.replace("midtowncomics://action/ipd/" + PRID);
+			   											this.timer = setTimeout(this.openWebApp, 1000);
+							 	},
+			 					openWebApp: function() {
+		 												 window.location.replace("https://itunes.apple.com/us/app/id501127099");
+								}
+		   	};
+		   app.launchApp();
+		 })();
+		 
+		  }*/
+
+
+
+	});		
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://www.midtowncomics.com/sc/jqzoom/css/jqzoom.css" />
+
+<script type="text/javascript">
+    $(document).ready(function() {
+            $("#zoombox1").css({'margin-top':'0','z-index':'20'});
+            $("#zoombox2").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox3").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox4").css({'margin-top':'-2000px','z-index':'10'});			
+        $(".zoom1").hover(function(){
+            $("#zoombox1").css({'margin-top':'0','z-index':'20'});
+            $("#zoombox2").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox3").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox4").css({'margin-top':'-2000px','z-index':'10'});			
+			 },function () {
+			 });
+        $(".zoom2").hover(function(){
+			$("#zoombox2").css({'margin-top':'0','z-index':'20'});
+            $("#zoombox1").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox3").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox4").css({'margin-top':'-2000px','z-index':'10'});			
+			 },function () {
+			 });
+        $(".zoom3").hover(function(){
+			$("#zoombox3").css({'margin-top':'0','z-index':'20'});
+            $("#zoombox1").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox2").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox4").css({'margin-top':'-2000px','z-index':'10'});			
+			 },function () {
+			 });
+        $(".zoom4").hover(function(){
+			$("#zoombox4").css({'margin-top':'0','z-index':'20'});
+            $("#zoombox1").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox2").css({'margin-top':'-2000px','z-index':'10'});
+            $("#zoombox3").css({'margin-top':'-2000px','z-index':'10'});			
+			 },function () {
+			 });			 
+    });
+</script>
+
+<meta property="og:image" content="https://www.midtowncomics.com/images/PRODUCT/FUL/1734269_ful.jpg" />
+<link rel="image_src" type="image/jpeg" href="https://www.midtowncomics.com/images/PRODUCT/FUL/1734269_ful.jpg" />
+<meta property="og:description" content="The past and the present collide as our Brigands attempt to find a way off the Island of Rekik, now under Krantali martial law. But an attack of conscience will turn an assassin into a revolutionary. And, an act of rebellion into an act of war. Old lessons will be learned anew. The cost of freedom is paid in blood and so it must always be defended, especially in the darkest hour and against unlikely odds.">
+ <div id="ajax-panel"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=230019487011610";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<link type="text/css" rel="stylesheet" href="https://www.midtowncomics.com/addbtn.css?a=b"  media="print, projection, screen">
+ 
+</head>
+
+<body>
+
+<!-- clickable skin link -->
+<!--<a name="pl=635" href="https://www.midtowncomics.com/store/search.asp?q=cdw_0502&utm_source=site&utm_medium=banner&utm_campaign=635&pl=635" id="clickme">&nbsp;</a>-->
+
+<!-- start: account links-->
+<div style="width:965px;margin: 0 auto;padding:0;">
+<div style="float:left;position:absolute;z-index:100;width:127px;height:181px">
+	<div style="width:127px;height:60px;padding:0;margin:0;"><a style="padding:0;margin:0" href="https://www.midtowncomics.com/info.asp?page=faq&q=free&pl=15"><img style="padding:0;margin:0" src="https://www.midtowncomics.com/images/jn/2013/site/home-free.png" title="Free Shipping" alt="Free Shipping"></a></div> <!-- holidays 2014/1203/home-free; regular 2013/site/home-free -->
+	<div style="width:127px;height:121px;padding:0;margin:0;"><a style="padding:0;margin:0" href="https://www.midtowncomics.com/?pname=&lnkname=Top%5FMidtown+comics%5Fimage"><img style="padding:0;margin:0" src="https://www.midtowncomics.com/images/jn/2013/site/home-logo.png" title="Midtown Comics" alt="Midtown Comics"></a></div>
+</div>
+<div style="width:955px;margin:0;padding:0px 10px;">
+<div class="roundbottom" style="width:800px;background-color:#fff;margin-bottom:0;padding:8px 10px;float:right">
+
+			<table width=800 cellpadding="0" cellspacing="0" border="0"><tr>
+		        <td align="left" valign=middle>
+    				<div style="font-size:11pt;font-weight:bold">
+                        <span style="padding:0 5px">
+                        	Hi, Guest !           
+						</span>
+					</div>
+				</td>					
+		        <td align="center" valign=middle>
+    				<div style="font-size:11pt;font-weight:bold">
+                        	<a style="font-size:11pt;font-weight:bold" href="https://www.midtowncomics.com/login.asp?pl=5">Log In</a><a style="font-size:11pt;font-weight:bold" href="https://www.midtowncomics.com/login.asp?pl=6"><span style="padding:0 5px"><img src='https://www.midtowncomics.com/images/header-lock.png' title='My Account' alt='My Account' border='0'></span>My Account</a>
+                    	<span style="margin:0 2px">&middot;</span>
+                            <span style=""><a style="font-size:11pt;font-weight:bold" href="https://www.midtowncomics.com/login.asp?WhereFrom=orderstatus&pl=9">Track Order</a></span>
+                                              
+
+                    	<span style="margin:0 2px">&middot;</span>                   
+						<span style=""><a style="font-size:11pt;font-weight:bold" href="https://www.midtowncomics.com/info.asp?page=faq&pl=10">Help</a></span>  												
+                    	<span style="margin:0 2px">&middot;</span>
+						<span style=""><a style="font-size:11pt;font-weight:bold" href="https://www.midtowncomics.com/info.asp?page=store-info&pl=11">Stores</a></span>  						
+						
+                        </div>
+				</td>
+			  <script language="javascript">
+                	 jQuery(document).ready(function($) {
+						  $('a[rel*=fancycartQVC]').fancybox({scrolling:"no",autoScale:true}) 
+							$.fancybox.resize
+						})
+                	jQuery(document).ready(function($) {
+						  $('a[rel*=fancycartQVCIMG]').fancybox({scrolling:"no",autoScale:true})
+						$.fancybox.resize 
+						})
+                
+                </script>
+		 
+		        <td align="right" valign=middle>
+    				<div style="font-size:11pt;font-weight:bold">
+
+                    <span>
+			
+			<a style="font-size:11pt;font-weight:bold" href="https://www.midtowncomics.com/includes/header_quickview.asp?pl=12" data-fancybox data-type="ajax" data-src="https://www.midtowncomics.com/includes/header_quickview.asp?pl=12">Quick View Cart</a>
+	             
+                        	<!--<a style="font-size:11pt;font-weight:bold" href="#">Quick View Cart</a>-->
+                        
+			</span>  
+                 	
+		    <span style="margin:0 5px"><a href="https://www.midtowncomics.com/includes/header_quickview.asp?pl=13" data-fancybox data-type="ajax" data-src="https://www.midtowncomics.com/includes/header_quickview.asp?pl=13" ><img src="https://www.midtowncomics.com/images/header-cart.png" title="Checkout" alt="Checkout" /></a></span>
+                    <span style="padding-right:10px"><a style="font-size:11pt;font-weight:bold"  href="https://www.midtowncomics.com/store/checkout.asp?pl=14">Checkout</a></span>
+					</div>
+				</td>				
+			</tr></table>
+</div>			
+</div>
+
+<!--HOMPAGE skins banner-->
+<div style="float:right;margin:0;padding:5px 0"><a id="pl=635" href="https://www.midtowncomics.com/store/search.asp?q=captain+america+%231+midtown+exclusive+coates&utm_source=site&utm_medium=banner&utm_campaign=635&pl=635"><img src="https://www.midtowncomics.com/images/jn/2018/0620/skin-bnr.png"></a></div>
+<div style="clear:both"></div>
+<!--skins banner-->
+
+</div>
+			<!-- end: account links-->			
+<style>
+.autocomplete {
+    font-family: Tahoma;
+    font-size: 8pt;
+    background-color: white;
+    border: 1px solid black;
+    position: absolute;
+    cursor: default;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.autocomplete_item {
+    padding: 1px;
+    padding-left: 5px;
+    color: black;
+    width: 100%;
+}
+
+.autocomplete_item_highlighted {
+    padding: 1px;
+    padding-left: 5px;
+    color: white;
+    background-color: #0A246A;
+}
+</style>
+
+<script language="javascript">
+
+var midtownSearchSugg=
+{
+	__AutoComplete:[]
+	,isIE : document.all ? true : false
+	,isGecko : navigator.userAgent.toLowerCase().indexOf('gecko') != -1
+    ,isOpera : navigator.userAgent.toLowerCase().indexOf('opera') != -1
+	,initialize:function(id)
+	{
+		this.__AutoComplete[id]={ 'data':null,
+								  'isVisible':false,
+								  'element':document.getElementById(id),
+								  'dropdown':null,
+								  'highlighted':null};
+	}
+	,hideDropdown:function(id)
+	{
+		 if (midtownSearchSugg.__AutoComplete[id]['iframe']) {
+            midtownSearchSugg.__AutoComplete[id]['iframe'].style.visibility = 'hidden';
+        }
+
+
+        midtownSearchSugg.__AutoComplete[id]['dropdown'].style.visibility = 'hidden';
+        midtownSearchSugg.__AutoComplete[id]['highlighted'] = null;
+        midtownSearchSugg.__AutoComplete[id]['isVisible']   = false;
+	}
+	,createDropdown:function(id)
+	{
+			 
+		this.__AutoComplete[id]['dropdown'] = document.createElement('div');
+        this.__AutoComplete[id]['dropdown'].className = 'autocomplete'; // Don't use setAttribute()
+    
+        this.__AutoComplete[id]['element'].parentNode.insertBefore(this.__AutoComplete[id]['dropdown'], this.__AutoComplete[id]['element']);
+        // Position it
+        this.__AutoComplete[id]['dropdown'].style.left       = '130px';
+        this.__AutoComplete[id]['dropdown'].style.top        = '59px';
+        this.__AutoComplete[id]['dropdown'].style.width      = '350px';
+        this.__AutoComplete[id]['dropdown'].style.zIndex     = '6000';
+		this.__AutoComplete[id]['dropdown'].style.visibility = 'hidden';
+		 if (this.isIE)
+		 {
+		 	this.__AutoComplete[id]['iframe'] = document.createElement('iframe');
+            this.__AutoComplete[id]['iframe'].id = id +'_iframe';
+            this.__AutoComplete[id]['iframe'].style.position = 'absolute';
+            this.__AutoComplete[id]['iframe'].style.top = '0';
+            this.__AutoComplete[id]['iframe'].style.left = '0';
+            this.__AutoComplete[id]['iframe'].style.width = '0px';
+            this.__AutoComplete[id]['iframe'].style.height = '0px';
+            this.__AutoComplete[id]['iframe'].style.zIndex = '6000';
+            this.__AutoComplete[id]['iframe'].style.visibility = 'hidden';
+            this.__AutoComplete[id]['element'].parentNode.insertBefore(this.__AutoComplete[id]['iframe'],this.__AutoComplete[id]['element']);
+				 
+		 }
+		 
+		 // Hides the dropdowns when document clicked
+        var docClick = function()
+        {
+			//alert(midtownSearchSugg.__AutoComplete)
+           for (id in midtownSearchSugg.__AutoComplete) {
+		   		 midtownSearchSugg.hideDropdown(id);
+           }
+        }
+		// alert(docClick)
+		 if (document.addEventListener) {
+		    document.addEventListener('click', docClick, false);
+        } else if (document.attachEvent) {
+			document.attachEvent('onclick', docClick, false);
+        }
+	
+	}
+	,setEvents:function(id)
+	{
+		this.__AutoComplete[id]['element'].setAttribute('autocomplete', 'off');
+		this.__AutoComplete[id]['element'].onkeydown  = function(e) {return midtownSearchSugg.AutoComplete_KeyDown(this.getAttribute('id'), e);}
+        this.__AutoComplete[id]['element'].onkeyup    = function(e) {return midtownSearchSugg.AutoComplete_KeyUp(this.getAttribute('id'), e);}
+        this.__AutoComplete[id]['element'].onkeypress = function(e) {if (!e) e = window.event; if (e.keyCode == 13 /*|| midtownSearchSugg.isOpera*/) return false;}
+       // this.__AutoComplete[id]['element'].ondblclick = function() {midtownSearchSugg.AutoComplete_ShowDropdown(this.getAttribute('id'));}
+        this.__AutoComplete[id]['element'].onclick    = function(e) {if (this.value=="Search by title, character, or creator")this.value="";if (!e) e = window.event; e.cancelBubble = true; e.returnValue = false;}
+	}
+	,AutoComplete_KeyDown:function(id)
+	{
+		
+		     // Mozilla
+        if (arguments[1] != null) {
+            event = arguments[1];
+        }
+
+        var keyCode = event.keyCode;
+		
+		//document.getElementById("error_display").innerHTML=keyCode
+		
+//alert(keyCode)
+        switch (keyCode) {
+
+            // Return/Enter
+            case 13:
+                if (midtownSearchSugg.__AutoComplete[id]['highlighted'] != null) {
+                    midtownSearchSugg.AutoComplete_SetValue(id);
+                    midtownSearchSugg.AutoComplete_HideDropdown(id);
+					document.getElementById("frmsearchtop").submit();
+                }
+				else
+				{
+					document.getElementById("frmsearchtop").submit();
+				}
+                
+                event.returnValue = false;
+                event.cancelBubble = true;
+                break;
+
+            // Escape
+            case 27:
+                midtownSearchSugg.AutoComplete_HideDropdown(id);
+                event.returnValue = false;
+                event.cancelBubble = true;
+                break;
+            
+            // Up arrow
+            case 38:
+                if (!midtownSearchSugg.__AutoComplete[id]['isVisible']) {
+                    //midtownSearchSugg.AutoComplete_ShowDropdown(id);
+                }
+                
+                midtownSearchSugg.AutoComplete_Highlight(id, -1);
+                midtownSearchSugg.AutoComplete_ScrollCheck(id, -1);
+                return false;
+                break;
+            
+            // Tab
+            case 9:
+                if (midtownSearchSugg.__AutoComplete[id]['isVisible']) {
+                    midtownSearchSugg.AutoComplete_HideDropdown(id);
+                }
+                return;
+            
+            // Down arrow
+            case 40:
+                if (!midtownSearchSugg.__AutoComplete[id]['isVisible']) {
+                   // midtownSearchSugg.AutoComplete_ShowDropdown(id);
+                }
+                
+                midtownSearchSugg.AutoComplete_Highlight(id, 1);
+                midtownSearchSugg.AutoComplete_ScrollCheck(id, 1);
+                return false;
+                break;
+        }
+	}
+	,AutoComplete_KeyUp:function(id)
+	{
+		// Mozilla
+        if (arguments[1] != null) {
+            event = arguments[1];
+        }
+		var keyCode = event.keyCode;
+		
+        switch (keyCode) {
+            case 13:
+                event.returnValue = false;
+                event.cancelBubble = true;
+                break;
+
+            case 27:
+                midtownSearchSugg.AutoComplete_HideDropdown(id);
+                event.returnValue = false;
+                event.cancelBubble = true;
+                break;
+            
+            case 38:
+            case 40:
+                return false;
+                break;
+			default:
+				midtownSearchSugg.AutoComplete_ShowDropdown(id);
+                break;
+        }
+	
+	}
+	,AutoComplete_ShowDropdown : function(id)
+	{
+        var value = midtownSearchSugg.__AutoComplete[id]['element'].value;
+		value=value.replace(/#/, "%23")
+		if (value!="")
+		{
+      		midtownSearchSugg.get_suggestions("https://www.midtowncomics.com/store/rpc.asp?q=" + value,id);
+		}
+		else
+		{
+			midtownSearchSugg.hideDropdown("q");
+		}
+	}
+	,get_suggestions:function(url,id){
+			
+			var sc=ServerConnectionFactory.getConnection();				
+			sc.returnType=ServerConnection.RETURN_TEXT;
+			sc.successCallback=function(_6){
+					
+												 midtownSearchSugg.load_suggestions(_6,id);
+											   };
+			sc.execute(url);
+	}
+	,load_suggestions:function(_7,id)
+	{			
+		
+		var toDisplay = new Array();
+        var newDiv    = null;
+        var text      = null;
+        var numItems  = midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes.length;
+
+        // Remove all child nodes from dropdown
+        while (midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes.length > 0) {
+            midtownSearchSugg.__AutoComplete[id]['dropdown'].removeChild(midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[0]);
+        }
+		
+		if (_7!="")
+		{
+			midtownSearchSugg.__AutoComplete[id]['data']=eval("("+_7+")");			
+			var objclass=midtownSearchSugg.__AutoComplete[id]['data'];
+			//var strseries=""
+			var data
+			var i=0
+			for( var sIndex in objclass ) {
+				data=objclass[sIndex]
+				
+				newDiv = document.createElement('div');
+				newDiv.className = 'autocomplete_item'; // Don't use setAttribute()
+				newDiv.setAttribute('id', 'autocomplete_item_' + i);
+				newDiv.setAttribute('index', i);
+				newDiv.style.zIndex = '6010';
+				
+				newDiv.onmouseover = function() {
+													midtownSearchSugg.AutoComplete_HighlightItem(midtownSearchSugg.__AutoComplete[id]['element'].getAttribute('id'), this.getAttribute('index'));
+												};
+           		newDiv.onclick     = function() {
+													midtownSearchSugg.AutoComplete_SetValue(midtownSearchSugg.__AutoComplete[id]['element'].getAttribute('id')); 
+													midtownSearchSugg.AutoComplete_HideDropdown(midtownSearchSugg.__AutoComplete[id]['element'].getAttribute('id'));
+												
+document.getElementById("frmsearchtop").submit();									
+}
+            
+				
+				text   = document.createTextNode(sIndex);
+				newDiv.appendChild(text);
+				
+				midtownSearchSugg.__AutoComplete[id]['dropdown'].appendChild(newDiv);
+				i=i+1;
+			}
+			// Show dropdown
+			if (!midtownSearchSugg.__AutoComplete[id]['isVisible']) {
+				midtownSearchSugg.__AutoComplete[id]['dropdown'].style.visibility = 'visible';
+				midtownSearchSugg.__AutoComplete[id]['isVisible'] = true;
+			}
+			// If now showing less items than before, reset the highlighted value
+			if (midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes.length != numItems) {
+				midtownSearchSugg.__AutoComplete[id]['highlighted'] = null;
+			}
+			
+		}
+		else
+		{
+			//alert("hell0")
+			midtownSearchSugg.__AutoComplete[id]['dropdown'].style.visibility = 'hidden';
+			midtownSearchSugg.__AutoComplete[id]['isVisible'] = false;
+			midtownSearchSugg.__AutoComplete[id]['highlighted'] = null;
+		}
+			
+	}
+	,AutoComplete_ScrollCheck:function(id)
+	{
+		 // Scroll down, or wrapping around from scroll up
+        if (midtownSearchSugg.__AutoComplete[id]['highlighted'] > midtownSearchSugg.__AutoComplete[id]['lastItemShowing']) {
+            midtownSearchSugg.__AutoComplete[id]['firstItemShowing'] = midtownSearchSugg.__AutoComplete[id]['highlighted'] - (midtownSearchSugg.__AutoComplete[id]['maxitems'] - 1);
+            midtownSearchSugg.__AutoComplete[id]['lastItemShowing']  = midtownSearchSugg.__AutoComplete[id]['highlighted'];
+        }
+        
+        // Scroll up, or wrapping around from scroll down
+        if (midtownSearchSugg.__AutoComplete[id]['highlighted'] < midtownSearchSugg.__AutoComplete[id]['firstItemShowing']) {
+            midtownSearchSugg.__AutoComplete[id]['firstItemShowing'] = midtownSearchSugg.__AutoComplete[id]['highlighted'];
+            midtownSearchSugg.__AutoComplete[id]['lastItemShowing']  = midtownSearchSugg.__AutoComplete[id]['highlighted'] + (midtownSearchSugg.__AutoComplete[id]['maxitems'] - 1);
+        }
+        
+        midtownSearchSugg.__AutoComplete[id]['dropdown'].scrollTop = midtownSearchSugg.__AutoComplete[id]['firstItemShowing'] * 15;
+	}
+	,AutoComplete_HideDropdown:function(id)
+	{
+		 if (midtownSearchSugg.__AutoComplete[id]['iframe']) {
+            midtownSearchSugg.__AutoComplete[id]['iframe'].style.visibility = 'hidden';
+        }
+       midtownSearchSugg.__AutoComplete[id]['dropdown'].style.visibility = 'hidden';
+       midtownSearchSugg.__AutoComplete[id]['highlighted'] = null;
+       midtownSearchSugg.__AutoComplete[id]['isVisible']   = false;
+	}
+	,AutoComplete_Highlight:function(id, index)
+	{
+		// Out of bounds checking
+		   		if (index == 1 && midtownSearchSugg.__AutoComplete[id]['highlighted'] == midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes.length - 1) {
+					midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[midtownSearchSugg.__AutoComplete[id]['highlighted']].className = 'autocomplete_item';
+				   midtownSearchSugg.__AutoComplete[id]['highlighted'] = null;
+				
+				} else if (index == -1 && midtownSearchSugg.__AutoComplete[id]['highlighted'] == 0) {
+					midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[0].className = 'autocomplete_item';
+					midtownSearchSugg.__AutoComplete[id]['highlighted'] = midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes.length;
+				}
+		
+				// Nothing highlighted at the moment
+				if (midtownSearchSugg.__AutoComplete[id]['highlighted'] == null) {
+					midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[0].className = 'autocomplete_item_highlighted';
+					midtownSearchSugg.__AutoComplete[id]['highlighted'] = 0;
+		
+				} else {
+					if (midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[midtownSearchSugg.__AutoComplete[id]['highlighted']]) {
+						midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[midtownSearchSugg.__AutoComplete[id]['highlighted']].className = 'autocomplete_item';
+					}
+		
+					var newIndex = parseInt(midtownSearchSugg.__AutoComplete[id]['highlighted']) + parseInt(index);
+		
+					if (midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[newIndex]) {
+						midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[newIndex].className = 'autocomplete_item_highlighted';
+						
+						midtownSearchSugg.__AutoComplete[id]['highlighted'] = newIndex;
+					}
+				}
+		
+	}
+	,AutoComplete_HighlightItem:function(id, index)
+	{
+		
+		 if (midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[index]) {
+            for (var i=0; i<midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes.length; ++i) {
+                if (midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[i].className == 'autocomplete_item_highlighted') {
+                    midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[i].className = 'autocomplete_item';
+                }
+            }
+            
+            midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[index].className = 'autocomplete_item_highlighted';
+           midtownSearchSugg.__AutoComplete[id]['highlighted'] = index;
+        }
+	}
+	,AutoComplete_SetValue:function(id)
+	{
+		midtownSearchSugg.__AutoComplete[id]['element'].value = midtownSearchSugg.__AutoComplete[id]['dropdown'].childNodes[midtownSearchSugg.__AutoComplete[id]['highlighted']].innerHTML;
+	}
+	,create_suggestion:function(id)
+	{
+		
+		this.initialize(id)
+		this.createDropdown(id)
+		this.setEvents(id)
+	}
+
+}
+function ValidateSearchString()
+{
+	//alert(trim(document.frmsearchtop.q.value.toLowerCase()).substring(0,15));
+	var strsearch;
+	strsearch = trim(document.frmsearchtop.q.value).substring(0,16);
+	strsearch = strsearch.toLowerCase();
+	//alert(strsearch);
+	// return false;
+	if (strsearch != 'search by title,' && strsearch.length >0)
+	{
+		document.frmsearchtop.submit();
+	}
+	else
+	{
+		alert("Blank search not allowed.");
+		return false;
+	}
+}
+</script>
+
+<div class="rounded" id="container" style="clear:both;margin-top:0">	 
+
+<table width="100%" height=70 cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td width=120><img src="https://www.midtowncomics.com/images/0.gif" width=120 height=1></td>
+        <td align="left" valign="middle">
+
+			<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+				<td valign=top valign=top>
+				<div style="clear:both;right:0;padding-right:10px">
+				<form name="frmsearchtop" id="frmsearchtop" action="https://www.midtowncomics.com/store/search.asp" method="get">
+				<input type="hidden" id="pl"  name="pl" value="16">
+                <span id="spq" style="float:left;padding-top:3px;display:inline;">
+					<input id="q" name="q" hint="Search by title, character, or creator" title="Search by title, character, or creator" alt="Search by title, character, or creator" style="height:30px;width:350px;font-size:15pt;padding:6px 0 0 3px;"><br>
+                <span style="color:#999;font-size:11px">&nbsp;for example:  Batman #1, X-Men, Frank Miller, Action Comics, Spider-Man</span>					
+				</span>
+				<span style="float:left;padding-left:5px;display:inline;">
+				 <img  src="https://www.midtowncomics.com/images/header-search.png" onClick="javascript:return ValidateSearchString()" onMouseOver="this.style.cursor = 'pointer';" title="Submit Search" alt="Submit Search">
+				</span>
+				</form>
+				</div>
+                </td>								   
+				<td align="left" valign="top" width=270>
+					<div><a href="https://www.midtowncomics.com/store/gc.asp?utm_source=site&utm_medium=banner&utm_campaign=top_right"><img src="https://www.midtowncomics.com/images/jn/2017/1213/top-right.gif" title="Midtown Gift Cards" alt="Midtown Gift Cards"></a><!-- 2017/1213/top-right.gif --></div>				
+				</td>												   
+				<td align="left" valign="top" width=91 style="padding-left:10px">
+				<!-- BEGIN LivePerson Button Code -->
+				<div>
+								<a id="_lpChatBtn" href='https://server.iad.liveperson.net/hc/69369123/?cmd=file&file=visitorWantsToChat&site=69369123&byhref=1&imageUrl=https://www.midtowncomics.com/images/LivePerson/temp2017' target='chat69369123'  onClick="lpButtonCTTUrl = 'https://server.iad.liveperson.net/hc/69369123/?cmd=file&file=visitorWantsToChat&site=69369123&imageUrl=https://www.midtowncomics.com/images/LivePerson/temp2017&referrer='+escape(document.location); lpButtonCTTUrl = (typeof(lpAppendVisitorCookies) != 'undefined' ? lpAppendVisitorCookies(lpButtonCTTUrl) : lpButtonCTTUrl); lpButtonCTTUrl = ((typeof(lpMTag)!='undefined' && typeof(lpMTag.addFirstPartyCookies)!='undefined')?lpMTag.addFirstPartyCookies(lpButtonCTTUrl):lpButtonCTTUrl);window.open(lpButtonCTTUrl,'chat69369123','width=475,height=400,resizable=yes');return false;" >
+									<img src='https://server.iad.liveperson.net/hc/69369123/?cmd=repstate&site=69369123&channel=web&&ver=1&imageUrl=https://www.midtowncomics.com/images/LivePerson/temp2017' name='hcIcon' alt='Chat Button' border=0>
+								</a>
+				</div><!-- END LivePerson Button code -->
+
+				</td>
+				</tr>
+				</table>
+                
+
+</td>				
+</tr>
+</table>
+
+<script language="javascript">
+
+
+//midtownSearchSugg.create_suggestion("q")
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="mainheader" style="padding:0;margin:0"></div>
+
+<div id="PreLoaderLayer" style="position: absolute; WIDTH: 99%; HEIGHT: 100%;z-index:6000;background-color:#fff;opacity:0.1;filter:alpha(opacity=10); display:none;">
+<div align="left" style="position:absolute; WIDTH: 99%; HEIGHT:100%; z-index:1000;" >
+<img id="testimg1" style="position:absolute;" src="https://www.midtowncomics.com/images/whitespot.gif" width="1" height="250" /><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://www.midtowncomics.com/images/loadingRed.gif" width="150" height="13" /><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Verdana, Arial, Helvetica, sans-serif" size="3" color="#CC0000">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<b><span style="background-color:#FFFFFF">Loading...</span></b></font><br>
+<img id="testimg2" style="position:absolute;" src="https://www.midtowncomics.com/images/whitespot.gif" width="1" height="700" />
+</div>
+</div>
+
+<div style="clear:both;margin-top:5px"></div> 
+<script language="javascript">
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopcomics]').fancybox() 
+	 
+    })
+	
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopbi]').fancybox() 
+	 
+    })	
+	
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopbooks]').fancybox() 
+	 
+    })	
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopmag]').fancybox() 
+	 
+    })	
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopmanga]').fancybox() 
+	 
+    })	
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopstatues]').fancybox() 
+	 
+    })	
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopaf]').fancybox() 
+	 
+    })	
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopcollect]').fancybox() 
+	 
+    })	
+jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmoretopapparel]').fancybox() 
+	 
+    })		
+	jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmorechtopstatues]').fancybox() 
+	 
+    })	
+		jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmorechtopaf]').fancybox() 
+	 
+    })	
+		jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmorechtopcollect]').fancybox() 
+	 
+    })	
+		jQuery(document).ready(function($) {
+      $('a[rel*=fancyviewmorechtopapparel]').fancybox() 
+	 
+    })	
+	
+	
+	
+	
+</script>
+
+<STYLE type="text/css"> 
+.nopad { padding:0;margin:0;}
+</style>
+
+<div id="vmenu">
+	<ul class="main-vmenu" >
+        <li class="comics v-link" style="z-index:5100" >
+
+            <a class="main-link" href="https://www.midtowncomics.com/store/comics.asp?pl=17">Comics</a>
+
+            <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:880px; "   >
+                <ul class="vmenu-dropdown"  >
+                    <li class="col"  >
+                        <ul  >
+
+                            <li >
+                                    <a class="nopad" href="https://www.midtowncomics.com/info.asp?page=faq&q=free&pl=18#shipping"><img class="nopad" src="https://www.midtowncomics.com/images/jn/2011/nav/free-bag-ship_106.gif" width=106 height=143 title="Free Shipping" alt="Free Shipping" border="0"/></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="companies first col" >
+                        <ul >
+                            <li ><h4>New Releases</h4></li>
+                            <li ><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=61&wdate=6/27/2018&pl=19">New Releases for 6/27</a></li>
+                            <li ><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=61&wdate=6/20/2018&pl=281">New Releases for 6/20</a></li>
+                            <li ><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=61&wdate=6/13/2018&pl=282">New Releases for 6/13</a></li>
+                            <li ><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=61&wdate=6/6/2018&pl=283">New Releases for 6/6</a></li>
+                            <li ><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=61&wdate=5/30/2018&pl=468">New Releases for 5/30</a></li>
+			    			<li ><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=61&wdate=5/23/2018&pl=469">New Releases for 5/23</a></li>
+			</ul>
+                    </li>
+
+                    <li class="vr-line"></li>	
+                    <li class="companies first col">
+                        <ul>
+                            <li><h4>Publishers</h4></li>
+							<li><a href="https://www.midtowncomics.com/boom-studios">Boom Studios</a></li>	
+							<li><a href="https://www.midtowncomics.com/dark-horse">Dark Horse</a></li>
+							<li><a href="https://www.midtowncomics.com/dc-comics">DC Comics</a></li>
+							<li><a href="https://www.midtowncomics.com/dynamite-entertainment">Dynamite</a></li>							
+							<li><a href="https://www.midtowncomics.com/idw-publishing">IDW</a></li>							
+							<li><a href="https://www.midtowncomics.com/image-comics">Image Comics</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?cate=61&scat=78&pl=24">Independents</a></li>	
+							<li><a href="https://www.midtowncomics.com/marvel-comics">Marvel Comics</a></li>
+							<li><a href="https://www.midtowncomics.com/valiant-comics">Valiant Comics</a></li>
+							<li><a href="https://www.midtowncomics.com/vertigo-comics">Vertigo</a></li>
+                            <li><a rel="fancyviewmoretopcomics" href="https://www.midtowncomics.com/includes/viewmore.asp?pagename=comics">view more</a></li>	
+                        </ul>
+                    </li>
+                    <li class="vr-line"></li>	
+                    <li class="companies first col">
+                        <ul>		
+                            <li><h4>Categories</h4></li>
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?series=1&cat=61&pl=26">#1s</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?q=genre_alternative&cat=61&pl=27">Alternative</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?q=annual&cat=61&pl=28">Annuals</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=61&pl=30">Best Sellers</a></li>							
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?q=cgc&cat=61&pl=29">CGC Graded</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?q=Midtown+Exclusive+&cat=61&pl=35">Midtown Exclusives</a></li>  							
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?q=one+shot&cat=61&pl=32">One-Shots</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?cat=61&q=Signed+By&pl=33">Signed Books</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/search.asp?cat=61&q=Variant&pl=34">Variants/Incentives</a></li>
+                        </ul>
+                    </li>
+                    <li class="vr-line"></li>	
+                    <li class="companies first col">
+                        <ul>		
+                            <li><h4>Characters</h4></li>
+							<li><a href="https://www.midtowncomics.com/avengers">Avengers</a></li>
+							<li><a href="https://www.midtowncomics.com/batman">Batman</a></li>
+							<li><a href="https://www.midtowncomics.com/black-panther">Black Panther</a></li>							
+							<li><a href="https://www.midtowncomics.com/captain-america">Captain America</a></li>
+							<li><a href="https://www.midtowncomics.com/daredevil">Daredevil</a></li>	
+							<li><a href="https://www.midtowncomics.com/deadpool">Deadpool</a></li>													
+							<li><a href="https://www.midtowncomics.com/doctor-who">Doctor Who</a></li>
+							<li><a href="https://www.midtowncomics.com/the-flash">Flash</a></li>							
+							<li><a href="https://www.midtowncomics.com/guardians-of-the-galaxy">Guardians of the Galaxy</a></li>
+							<li><a href="https://www.midtowncomics.com/green-arrow">Green Arrow</a></li>
+							<li><a href="https://www.midtowncomics.com/green-lantern">Green Lantern</a></li>
+							<li><a href="https://www.midtowncomics.com/hulk">Hulk</a></li>							
+							<li><a href="https://www.midtowncomics.com/justice-league?utm_source=midtowncomics&utm_campaign=Justiceleague_sale&utm_medium=cpc">Justice League</a></li>							
+							<li><a href="https://www.midtowncomics.com/saga">Saga</a></li>							
+							<li><a href="https://www.midtowncomics.com/star-trek">Star Trek</a></li>
+							<li><a href="https://www.midtowncomics.com/spider-man">Spider-Man</a></li>
+							<li><a href="https://www.midtowncomics.com/star-wars">Star-Wars</a></li>
+							<li><a href="https://www.midtowncomics.com/superman">Superman</a></li>													
+							<li><a href="https://www.midtowncomics.com/secret-wars">Secret Wars</a></li>							
+							<li><a href="https://www.midtowncomics.com/suicide-squad">Suicide Squad</a></li>							
+							<li><a href="https://www.midtowncomics.com/teenage-mutant-ninja-turtles">TMNT</a></li>
+							<li><a href="https://www.midtowncomics.com/transformers">Transformers</a></li>
+							<li><a href="https://www.midtowncomics.com/walking-dead">Walking Dead</a></li>
+							<li><a href="https://www.midtowncomics.com/wolverine">Wolverine</a></li>
+							<li><a href="https://www.midtowncomics.com/wonder-woman">Wonder Woman</a></li>
+							<li><a href="https://www.midtowncomics.com/x-men">X-Men</a></li>							
+							<li><a href="https://www.midtowncomics.com/x-files">X-Files</a></li>
+                        </ul>
+                    </li>
+                    <li class="vr-line"></li>						
+                    <li class="companies first col">
+                        <ul>		
+                            <li><h4>Site-to-store</h4></li>
+                            <li><a href="https://www.midtowncomics.com/store/backissues.asp?pl=491">Order back issues for<br />in-store pickup!</a><br />
+							<a href="https://www.midtowncomics.com/store/backissues.asp?pl=491"><img src="https://www.midtowncomics.com/images/jn/2013/site/site2store_nav.png" title="Site to Store" alt="Site to Store" style="padding:0;margin:0" /></a></li>
+                        </ul>
+                    </li>					
+                </ul>
+            </div>
+        </li>
+        <li class="subs v-link" style="z-index:5100">
+            <a class="main-link" href="https://www.midtowncomics.com/store/subs.asp?pl=36">Pull List</a>
+            <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:505px;">
+                <ul class="vmenu-dropdown">
+                    <li class="col">
+                        <ul>
+                            <li>
+                                    <a class="nopad" href="https://www.midtowncomics.com/info.asp?page=faq&q=free&pl=18#shipping"><img class="nopad" src="https://www.midtowncomics.com/images/jn/2011/nav/free-bag-ship_106.gif" width=106 height=143 title="Free Shipping" alt="Free Shipping" border="0"/></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="companies first col">
+                        <ul>				
+                            <li><h4>Pull List</h4></li>
+                            <li><a href="https://www.midtowncomics.com/info.asp?page=faq&pl=40#subs">Pull List FAQ</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/subs.asp?pl=41">Mail Order Pull List</a></li>
+                            <li><a href="https://www.midtowncomics.com/store/subs.asp?rSubMeth=Instore&pl=42">In-Store Pull List</a></li>
+                         </ul>
+                    </li>
+                  </ul>
+            </div>
+          </li>
+        <li class="subs v-link" style="z-index:5100">
+            <a class="main-link" href="https://www.midtowncomics.com/store/previews.asp?pl=36">Previews<br />(Pre-Orders)</a>
+            <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:505px;">
+                <ul class="vmenu-dropdown">
+                    <li class="col">
+                        <ul>
+                            <li>
+                            	<a href="https://www.midtowncomics.com/store/previews.asp?pl=37"><img src="https://www.midtowncomics.com/images/jn/2013/0626/nav-previews-50.gif" title="50% off Select Titles" alt="50% off Select Titles"  border="0"/></a>
+                            </li>
+						</ul>
+                    </li>                     
+                    <li class="vr-line"></li>
+                    <li class="companies first col">
+                        <ul>
+                            <li><h4>Previews</h4></li>
+                            <li><a href="https://www.midtowncomics.com/info.asp?page=faq&pl=38#previews">Previews FAQ</a></li>
+			     			<li><a href="https://www.midtowncomics.com/store/previews.asp?pl=39">Previews</a></li>			
+                        </ul>
+                    </li>                     
+                  </ul>
+            </div>
+          </li>		  
+          <li class="bi v-link" style="z-index:5100">
+                    <a class="main-link" href="https://www.midtowncomics.com/store/backissues.asp?pl=43">Back<br />Issues</a>
+                    <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:670px;">
+                        <ul class="vmenu-dropdown">
+                            <li class="col">
+                                <ul>
+                                    <li>
+                                    	<a href="https://www.midtowncomics.com/store/search.asp?cat=142&USTMP=1&reld=6/19/2018&reld2=6/26/2018&pl=44" style="text-decoration:none">
+                                            <!--
+                                                <img src="https://www.midtowncomics.com/images/PRODUCT/STNL/1691731_sth.jpg" width=90 height=142 alt="Shop Comics" border="0"/>
+                                            
+                                                <img src="https://www.midtowncomics.com/images/PRODUCT/STNL/imagecomingsoon_sth.jpg" width=90 height=142 alt="Shop Comics" border="0"/>
+                                             -->
+					    					<div id="bi-date">
+                                                <div class="rounded4 dateblock" style="float:left;width:100px;height:155px;background-color:#f60">
+                                                    <img src="https://www.midtowncomics.com/images/bi-date.gif" title="Shop Back Issues" alt="Shop Back Issues">
+                                                    <div style="font-size:9pt">UPDATED</div>
+                                                    <div class="dateblockmm" style="font-size:9pt">Wednesday</div>
+                    				    			<div class="dateblockmm" style="font-size:32px">JUN</div>
+                                                    <div class="dateblockdd" style="font-size:44px">20</div>
+                                                </div>
+                                            </div>
+                                    		
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        <li class="vr-line"></li>	
+                        <li class="companies first col">
+                            <ul>			
+                                <li><h4>Publishers</h4></li>                                
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&mfg=474&pl=49">Archie</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&mfg=1660&pl=50">Charlton</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&scat=147&pl=51">Dark Horse</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&scat=143&pl=52">DC Comics</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&mfg=1657&pl=53">Dell</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&scat=250&pl=487">Dynamite</a></li>								
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&mfg=1706&pl=54">Gold Key</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&scat=150&pl=55">IDW Publishing</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&scat=144&pl=56">Image Comics</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&scat=148&pl=57">Independents</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&scat=145&pl=58">Marvel Comics</a></li>
+                                <li><a rel="fancyviewmoretopbi" href="https://www.midtowncomics.com/includes/viewmore.asp?pagename=backissues">view more</a></li>
+                            </ul>
+                        </li>
+                        <li class="vr-line"></li>
+                        <li class="companies first col">
+                            <ul>			
+                                <li><h4>Categories</h4></li>
+                                 <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&series=1&pl=59">#1s</a></li>
+                                 <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&q=genre_alternative&pl=60">Alternative</a></li>
+                                 <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&q=annual&pl=61">Annuals</a></li>
+                                 <li><a href="https://www.midtowncomics.com/store/search.asp?cat=61&q=CGC&pl=62">CGC Graded</a></li>
+                                 <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&q=one+shot&pl=63">One-Shots</a></li>
+                                 <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&q=signed+by&pl=64">Signed Books</a></li>
+                                 <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&q=incentive_df&pl=65">Variants/Incentives</a></li>
+                                 <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&q=genre_young_readers&pl=66">Young Readers</a></li>
+                            
+                            </ul>
+                        </li>
+                        <li class="vr-line"></li>
+                        <li class="companies first col">
+                            <ul>				
+                                <li><h4>Recently Added</h4></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&USTMP=1&reld=6/19/2018&reld2=6/26/2018&pl=67">Recently Added Past Week</a></li>
+                                <li><a href="https://www.midtowncomics.com/store/search.asp?cat=142&USTMP=1&reld=5/26/2018&reld2=6/26/2018&pl=68">Recently Added Past Month</a></li>
+								<li><br /><h4>Site-to-store</h4></li>
+								<li><a href="https://www.midtowncomics.com/store/backissues.asp?pl=491">Order back issues for<br />in-store pickup!</a><br />
+								<a href="https://www.midtowncomics.com/store/backissues.asp?pl=491"><img src="https://www.midtowncomics.com/images/jn/2013/site/site2store_nav.png" title="Recently Added Back Issues" alt="Recently Added Back Issues" style="padding:0;margin:0" /></a></li>
+                            </ul>
+                         </li>
+                    </ul>
+                </div>
+        	</li>
+            <li class="gn v-link" style="z-index:5100">
+            		<a class="main-link" href="https://www.midtowncomics.com/store/graphicnovels.asp?pl=69" >Graphic<br />Novels</a>
+                    <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:720px;">
+                        <ul class="vmenu-dropdown">
+                            <li class="col">
+                                <ul>
+                                    <li>
+                                    	<a href="https://www.midtowncomics.com/store/graphicnovels.asp?pl=70" >
+                                    		
+                                                <img src="https://www.midtowncomics.com/images/PRODUCT/STNL/1583058_sth.jpg" width=90 height=142 title="Shop Graphic Novels" alt="Shop Graphic Novels" border="0"/>
+                                             
+                                        </a>
+                                     </li>
+                                </ul>
+                            </li>                
+                    		<li class="companies first col">
+                                <ul>	
+                                    <li><h4>New Releases</h4></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=62&wdate=6/27/2018&pl=71">New Releases for 6/27</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=62&wdate=6/20/2018&pl=284">New Releases for 6/20</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=62&wdate=6/13/2018&pl=285">New Releases for 6/13</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=62&wdate=6/6/2018&pl=286">New Releases for 6/6</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=62&wdate=5/30/2018&pl=470">New Releases for 5/30</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=62&wdate=5/23/2018&pl=471">New Releases for 5/23</a></li>
+                                
+				</ul>
+                            </li>                
+                    		<li class="vr-line"></li>                    
+                   			<li class="companies first col">
+                                <ul>			
+                                    <li><h4>Publishers</h4></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=127&pl=72">Dark Horse</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=105&pl=73">DC</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=251&pl=459">Dynamite</a></li>									
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=141&pl=74">IDW Publishing</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=112&pl=75">Image</a></li>                                   
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=110&pl=76">Marvel</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=113&pl=77">Independents</a></li>	
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&pl=78">All Publishers</a></li>	
+                                </ul>
+                            </li>                
+                    <li class="vr-line"></li>	
+                    <li class="companies first col">
+                        <ul>		
+                            <li><h4>Characters</h4></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=avengers">Avengers</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=batman">Batman</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=captain+america">Captain America</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=doctor+who">Doctor Who</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=the+flash">Flash</a></li>							
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=guardians+of+the+galaxy">Guardians of the Galaxy</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=hulk">Hulk</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=secret+wars">Secret Wars</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=deadpool">Deadpool</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=green+arrow">Green Arrow</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=green+lantern">Green Lantern</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=my+little+pony">My Little Pony</a></li> 							
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=star+trek">Star Trek</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=spider+man">Spider+Man</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=star+wars">Star+Wars</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=superman">Superman</a></li>													
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=saga">Saga</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=teenage+mutant+ninja+turtles">TMNT</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=transformers">Transformers</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=walking+dead">Walking Dead</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=wolverine">Wolverine</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=wonder+woman">Wonder Woman</a></li>
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=x+men">X-Men</a></li>							
+							<li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=x+files">X-Files</a></li>
+                        </ul>
+                    </li>
+                    <li class="vr-line"></li>													
+                    		<li class="vr-line"></li>                    
+                    		<li class="companies first col">
+                                <ul>				
+                                    <li><h4>Categories</h4></li>                                        
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=genre_alternative&pl=79">Alternative</a></li>
+		                            <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=62&pl=80">Best Sellers</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=183">DVD-Rom</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&pl=81">Manga</a></li>	
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=strip_collections&pl=82">Strip Collections</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&q=genre_young_readers&pl=83">Young Readers</a></li>                                    																												
+                                 </ul>
+                			</li>
+                		</ul>
+                	</div>
+                </li>
+                <li class="books v-link" style="z-index:5100">
+                	<a class="main-link" href="https://www.midtowncomics.com/store/books.asp?pl=84">Books &<br />Magazines</a>
+                    <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:600px;">
+                        <ul class="vmenu-dropdown">
+                    		<li class="companies first col">
+                                <ul>
+                                    <li><h4>New Releases</h4></li>                                    
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=202&page=2&wdate=6/27/2018&pl=86">New Books for 6/27</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=202&page=2&wdate=6/20/2018&pl=287">New Books for 6/20</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=202&page=2&wdate=6/13/2018&pl=288">New Books for 6/13</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=202&page=2&wdate=6/6/2018&pl289">New Books for 6/6</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=202&page=2&wdate=5/30/2018&pl=472">New Books for 5/30</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=202&page=2&wdate=5/23/2018&pl=473">New Books for 5/23</a></li>
+                                
+								</ul>
+                            </li>                
+                    		<li class="vr-line"></li>                    
+                            <li class="companies first col">
+                                <ul>			
+                                    <li><h4>Publishers</h4></li>		
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&mfg=2344&pl=87">Hachette</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&mfg=594&pl=88">Harper Collins</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&mfg=791&pl=89">Penguin</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&mfg=806&pl=90">Random House</a></li>
+                                    <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&mfg=848&pl=91">Simon & Schuster</a></li>
+                                    <li><a rel="fancyviewmoretopbooks" href="https://www.midtowncomics.com/includes/viewmore.asp?pagename=books">view more</a></li>					
+                                </ul>
+                            </li>                
+                    		<li class="vr-line"></li>
+                            <li class="companies first col">
+                                <ul>				
+                                    <li><h4>Categories</h4></li> 
+                                    	<li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&scat=166&pl=92">Art Books</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&scat=207">Audio Books</a></li>
+			                            <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=202&pl=97">Best Sellers</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&scat=167&pl=94">Fiction</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&scat=168&pl=95">How-To</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&scat=172&pl=96">Non-Fiction</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&scat=169">Stationery</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&q=signed+by&pl=98">Signed Books</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=202&q=genre_young_readers&pl=99">Young Readers</a></li>
+                                 </ul>
+               				</li>
+							<li class="vr-line"></li>	
+							<li class="companies first col">
+								<ul>
+									<li><h4 style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;"><a style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;" href="https://www.midtowncomics.com/store/magazines.asp?pl=102">Magazines</a></h4></li>
+									<li><a href="https://www.midtowncomics.com/store/search.asp?cat=194&scat=195&pl=111">Art &amp; Entertainment</a></li>
+		                            <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=194&pl=93">Best Sellers</a></li>									
+									<li><a href="https://www.midtowncomics.com/store/search.asp?cat=194&scat=196&pl=112">Comic-related</a></li>
+									<li><a href="https://www.midtowncomics.com/store/search.asp?cat=194&scat=197&pl=113">Computer Games</a></li>
+									<li><a href="https://www.midtowncomics.com/store/search.asp?cat=194&scat=198&pl=114">Craft &amp; Hobby</a></li>
+									<li><a href="https://www.midtowncomics.com/store/search.asp?cat=194&scat=199&pl=115">Lifestyle</a></li>
+									<li><a href="https://www.midtowncomics.com/store/search.asp?cat=194&scat=200&pl=116">Literary</a></li>
+									<li><a href="https://www.midtowncomics.com/store/search.asp?cat=194&scat=201&pl=117">Sports &amp; Fitness</a></li>
+								</ul>
+							</li>                    															
+                		</ul>
+                	</div>
+                </li>
+                    <li class="manga v-link" style="z-index:5100">
+                    	<a class="main-link" href="https://www.midtowncomics.com/store/manga.asp?pl=118">Manga</a>
+                        <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:445px;">
+                            <ul class="vmenu-dropdown">
+                                <li class="col">
+                                    <ul>
+                                        <li>
+                                        	<a href="https://www.midtowncomics.com/store/manga.asp?pl=119">
+                                        		
+                                                    <img src="https://www.midtowncomics.com/images/PRODUCT/STNL/1718661_sth.jpg" width=90 height=142 title="Shop Manga" alt="Shop Manga" border="0"/>
+                                                 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="companies first col">
+                                    <ul>
+                                        <li><h4>New Releases</h4></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=173&page=1&wdate=6/27/2018&pl=120">New Manga for 6/27</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=173&page=1&wdate=6/20/2018&pl=121">New Manga for 6/20</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=173&page=1&wdate=6/13/2018&pl=122">New Manga for 6/13</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=173&page=1&wdate=6/6/2018&pl=123">New Manga for 6/6</a></li>
+                                    	<li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=173&page=1&wdate=5/30/2018&pl=476">New Manga for 5/30</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=173&page=1&wdate=5/23/2018&pl=477">New Manga for 5/23</a></li>
+                                   
+				    				</ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Publishers</h4></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&mfg=532&pl=124">Dark Horse</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&mfg=1208&pl=125">Digital Manga</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&mfg=703&pl=126">Tokyopop</a></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&mfg=719&pl=127">Viz Media</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&mfg=2585&pl=128">Yen Press</a></li>
+                                         <li><a rel="fancyviewmoretopmanga" href="https://www.midtowncomics.com/includes/viewmore.asp?pagename=manga">view more</a></li>	
+                                        
+                                    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                        		<li class="companies first col">
+                                    <ul>				
+                                        <li><h4>Categories</h4></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&q=genre_manhwa&pl=129">Manhwa</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&q=genre_shojo&pl=130">Shojo</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&q=genre_shonen&pl=131">Shonen</a></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&q=genre_yaoi&pl=132">Yaoi</a></li>			
+                                       <!-- <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=173">Best Sellers</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173&adv=1">Advance Order</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=194&clr=1">Clearance</a></li>																				
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=62&scat=173">All Manga</a></li>-->	
+                                    </ul>
+                    			</li>
+                    		</ul>
+                    	</div>
+                    </li>
+
+                    <li class="statues flip v-link" style="z-index:5100">
+                    	<a class="main-link" href="https://www.midtowncomics.com/store/statues.asp?pl=133">Statues</a>
+                        <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:640px;">
+                            <ul class="vmenu-dropdown">
+                                <li class="col">
+                                    <ul>
+                                        <li>
+                                        	<a href="https://www.midtowncomics.com/store/statues.asp?pl=134">
+                                            	
+                                                    <img src="https://www.midtowncomics.com/images/PRODUCT/STNL/1666900_sth.jpg" width=90 height=142 title="Shop Statues" alt="Shop Statues" border="0"/>
+                                                 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                        		<li class="companies first col">
+                                    <ul>
+                                        <li><h4>New Releases</h4></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=63&page=3&wdate=6/27/2018&pl=135">New Statues for 6/27</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=63&page=3&wdate=6/20/2018&pl=136">New Statues for 6/20</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=63&page=3&wdate=6/13/2018&pl=137">New Statues for 6/13</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=63&page=3&wdate=6/6/2018&pl=138">New Statues for 6/6</a></li>
+                                    	<li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=63&page=3&wdate=5/30/2018&pl=478">New Statues for 5/30</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=63&page=3&wdate=5/23/2018&pl=479">New Statues for 5/23</a></li>
+                                   
+				    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Characters</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Batman&cat=63&pl=139">Batman</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Captain+America&cat=63&pl=140">Captain America</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Flash&cat=63&pl=141">Flash</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=GI+Joe&cat=63&pl=142">GI Joe</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Green+Lantern&cat=63&pl=143">Green Lantern</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Hulk&cat=63&pl=144">Hulk</a></li>										
+										<li><a href="https://www.midtowncomics.com/store/search.asp?q=Iron+Man&cat=63&pl=145">Iron Man</a></li>
+										<li><a href="https://www.midtowncomics.com/store/search.asp?q=Spider%2DMan&cat=63&pl=146">Spider-Man</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Star+Trek&cat=63&pl=147">Star Trek</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Star+Wars&cat=63&pl=148">Star Wars</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Superman&cat=63&pl=149">Superman</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Transformers&cat=63&pl=150">Transformers</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=X%2DMen&cat=63&pl=151">X-Men</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Wonder+Woman&cat=63&pl=152">Wonder Woman</a></li>										
+                                        <li><a rel="fancyviewmorechtopstatues" href="https://www.midtowncomics.com/includes/viewmorech.asp?pagename=statues">view more</a></li>	
+                                    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Manufacturers</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&mfg=500&pl=153">Bowen Designs</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&mfg=537&pl=154">DC Direct</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&mfg=551&pl=155">Diamond Select</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&mfg=985&pl=156">Kotobukiya</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&mfg=686&pl=157">Sideshow</a></li>
+                                         <li><a rel="fancyviewmoretopstatues" href="https://www.midtowncomics.com/includes/viewmore.asp?pagename=statues">view more</a></li>	
+                                        <!--<li><a href="https://www.midtowncomics.com/store/search.asp?cat=63">View More</a></li>-->
+                                    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>				
+                                        <li><h4>Categories</h4></li>                                
+			                            <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=63&pl=490">Best Sellers</a></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&scat=70&pl=158">Busts</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&scat=122&pl=159">Props & Replicas</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&scat=93&pl=160">PVC Statues</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=63&scat=69&pl=161">Statues</a></li>
+                                    </ul>
+                                </li>
+                   			 </ul>
+                    	</div>
+                    </li>                    
+                    <li class="action flip v-link" style="z-index:5100">
+                    	<a class="main-link" href="https://www.midtowncomics.com/store/actionfigures.asp?pl=162">Action<br />Figures</a>
+                        <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:690px;">
+                            <ul class="vmenu-dropdown">
+                                <li class="col">
+                                    <ul>
+                                        <li>
+                                        	<a href="https://www.midtowncomics.com/store/actionfigures.asp?pl=163">
+                                            	
+                                                    <img src="https://www.midtowncomics.com/images/PRODUCT/STNL/1657466_sth.jpg" width=90 height=142 title="Shop Action Figures" alt="Shop Action Figures" border="0"/>
+                                                 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="companies first col">
+                                    <ul>
+                                        <li><h4>New Releases</h4></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=65&page=3&wdate=6/27/2018&pl=164">New Action Figures for 6/27</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=65&page=3&wdate=6/20/2018&pl=165">New Action Figures for 6/20</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=65&page=3&wdate=6/13/2018&pl=166">New Action Figures for 6/13</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=65&page=3&wdate=6/6/2018&pl=167">New Action Figures for 6/6</a></li>
+                                    	<li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=65&page=3&wdate=5/30/2018&pl=480">New Action Figures for 5/30</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=65&page=3&wdate=5/23/2018&pl=481">New Action Figures for 5/23</a></li>
+                                 
+				    				</ul>
+                                </li>                    
+                        		<li class="vr-line"></li>
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Characters</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Batman&cat=65&pl=168">Batman</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Captain+America&cat=65&pl=169">Captain America</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Flash&cat=65&pl=170">Flash</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=GI+Joe&cat=65&pl=171">GI Joe</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Green+Lantern&cat=65&pl=172">Green Lantern</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Hulk&cat=65&pl=173">Hulk</a></li>										
+										<li><a href="https://www.midtowncomics.com/store/search.asp?q=Iron+Man&cat=65&pl=174">Iron Man</a></li>
+										<li><a href="https://www.midtowncomics.com/store/search.asp?q=Spider%2DMan&cat=65&pl=175">Spider-Man</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Star+Trek&cat=65&pl=176">Star Trek</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Star+Wars&cat=65&pl=177">Star Wars</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Superman&cat=65&pl=178">Superman</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Transformers&cat=65&pl=179">Transformers</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=X%2DMen&cat=65&pl=180">X-Men</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Wonder+Woman&cat=65&pl=181">Wonder Woman</a></li>										
+                                        <li><a rel="fancyviewmorechtopaf" href="https://www.midtowncomics.com/includes/viewmorech.asp?pagename=actionfigures">view more</a>	</li>	
+                                    </ul>
+                                 </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Manufacturers</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=537&pl=182">DC Direct</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=551&pl=183">Diamond Select</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=1648&pl=184">Eaglemoss</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=1291&pl=194">Funko</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=596&pl=185">Hasbro</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=1109&pl=186">McFarlane</a></li>
+                                        <li><a rel="fancyviewmoretopaf" href="https://www.midtowncomics.com/includes/viewmore.asp?pagename=actionfigures">view more</a></li>	
+                                        <li><h4 style="padding-top:5px">Japanese Imports</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=4074">Bandai Hobby</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=4076">Bandai Shokugan</a></li>																				
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=4077">Bandai Tamashii Nations</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=985">Kotobukiya</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=2527">Good Smile</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&mfg=2964">Square Enix</a></li>										
+                                        <!--<li><a href="https://www.midtowncomics.com/store/search.asp?cat=63">View More</a></li>-->																				
+                                    </ul>
+                                </li>                    
+                                <li class="vr-line"></li>                                
+                                <li class="companies first col">
+                                    <ul>	
+                                        <li><h4>Categories</h4></li>                                                
+			                            <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=65&pl=220">Best Sellers</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&q=asst&pl=187">Case Assortments</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&scat=85&pl=188">Mini Figures</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&scat=82&pl=189">Oversized</a></li>	
+										<li><a href="https://www.midtowncomics.com/funko-pop-vinyls">Funko Pop Vinyls</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=pop+vinyl&cat=65&pl=193">Pop Vinyl</a></li>																					
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&scat=90&pl=191">Standard Size</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=65&q=set&pl=192">Complete Sets</a></li>
+                                   </ul>
+                            	</li>
+                    		</ul>
+                    	</div>
+                    </li>                    
+                    <li class="collect flip v-link" style="z-index:5100">
+                    	<a class="main-link" href="https://www.midtowncomics.com/store/collectibles.asp?pl=193">Collectibles</a>
+                        <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:700px;">
+                            <ul class="vmenu-dropdown">
+                                <li class="col">
+                                    <ul>
+                                        <li>
+                                        	<a href="https://www.midtowncomics.com/store/collectibles.asp?pl=194">
+                                            	
+                                                    <img src="https://www.midtowncomics.com/images/PRODUCT/STNL/1672507_sth.jpg" width=90 height=142 title="Shop Collectibles" alt="Shop Collectibles" border="0"/>
+                                                 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                       	 		<li class="companies first col">
+                                    <ul>
+                                        <li><h4>New Releases</h4></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=181&page=3&wdate=6/27/2018&pl=195">New Collectibles for 6/27</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=181&page=3&wdate=6/20/2018&pl=196">New Collectibles for 6/20</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=181&page=3&wdate=6/13/2018&pl=197">New Collectibles for 6/13</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=181&page=3&wdate=6/6/2018&pl=198">New Collectibles for 6/6</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=181&page=3&wdate=5/30/2018&pl=482">New Collectibles for 5/30</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=181&page=3&wdate=5/23/2018&pl=483">New Collectibles for 5/23</a></li>
+                                 
+				    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Characters</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Batman&cat=181&pl=199">Batman</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Captain+America&cat=181&pl=200">Captain America</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Flash&cat=181&pl=201">Flash</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=GI+Joe&cat=181&pl=202">GI Joe</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Green+Lantern&cat=181&pl=203">Green Lantern</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Hulk&cat=181&pl=204">Hulk</a></li>										
+										<li><a href="https://www.midtowncomics.com/store/search.asp?q=Iron+Man&cat=181&pl=205">Iron Man</a></li>
+										<li><a href="https://www.midtowncomics.com/store/search.asp?q=Spider%2DMan&cat=181&pl=206">Spider-Man</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Star+Trek&cat=181&pl=207">Star Trek</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Star+Wars&cat=181&pl=208">Star Wars</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Superman&cat=181&pl=209">Superman</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Transformers&cat=181&pl=210">Transformers</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=X%2DMen&cat=181&pl=211">X-Men</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Wonder+Woman&cat=181&pl=212">Wonder Woman</a></li>										
+                                    <li><a rel="fancyviewmorechtopcollect" href="https://www.midtowncomics.com/includes/viewmorech.asp?pagename=collectibles">view more</a></li>		
+                                    </ul>
+                                 </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Manufacturers</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&mfg=971&pl=213">Ata Boy</a></li>
+                                        <li> <a href="https://www.midtowncomics.com/store/search.asp?cat=181&mfg=532&pl=214" >Dark Horse</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&mfg=1291&pl=215">Funko</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&mfg=891&pl=216">Neca</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&mfg=2391&pl=217">Popfun</a></li>
+                                        <li><a rel="fancyviewmoretopcollect" href="https://www.midtowncomics.com/includes/viewmore.asp?pagename=collectibles">view more</a></li>	
+                                       
+                                    </ul>
+                                 </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>				
+                                        <li><h4>Categories</h4></li>                                                
+                                        <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=181&pl=224">Best Sellers</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=210&pl=218">Bobbleheads</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=182&pl=219">Drinkware</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=183">DVD-ROM</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=184&pl=221">Gaming Miniatures</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=221">Halloween</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=185&pl=222">Magnets</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=cdw_midtown_souvenirs&pl=223">Midtown Souvenirs</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=182">Other Collectibles</a></li>
+										<li><a href="https://www.midtowncomics.com/funko-pop-vinyls">Funko Pop Vinyls</a></li>											
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=pop+vinyl&cat=1814&pl=454">Pop Vinyl</a></li>																															
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=187&pl=225">Plush Collectibles</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=188&pl=226">Tin Collectibles</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=181&scat=215&pl=486">Posters & Prints</a></li>
+                                    </ul>
+                            	</li>
+                    		</ul>
+                    	</div>
+                    </li>
+                    
+                    <li class="apparel flip v-link" style="z-index:5100">
+                    	<a class="main-link" href="https://www.midtowncomics.com/store/apparel.asp?pl=227">T-Shirts<BR>& Apparel</a>
+                        <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:650px;">
+                            <ul class="vmenu-dropdown">
+                                <li class="col">
+                                    <ul>
+                                        <li>
+                                        	<a href="https://www.midtowncomics.com/store/apparel.asp?pl=228">
+                                            	
+                                                     <img src="https://www.midtowncomics.com/images/PRODUCT/STNL/1737884_sth.jpg" width=90 height=142 title="Shop Apparel" alt="Shop Apparel" border="0"/>
+                                                 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                        		<li class="companies first col">
+                                    <ul>
+                                        <li><h4>New Releases</h4></li>                                        
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=66&page=3&wdate=6/27/2018&pl=229">New Apparel for 6/27</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=66&page=3&wdate=6/20/2018&pl=230">New Apparel for 6/20</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=66&page=3&wdate=6/13/2018&pl=231">New Apparel for 6/13</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=66&page=3&wdate=6/6/2018&pl=232">New Apparel for 6/6</a></li>
+                                    	<li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=66&page=3&wdate=5/30/2018&pl=484">New Apparel for 5/30</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?cat=66&page=3&wdate=5/23/2018&pl=485">New Apparel for 5/23</a></li>
+                                  
+				   </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Characters</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Batman&cat=66&pl=233">Batman</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Captain+America&cat=66&pl=234">Captain America</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Flash&cat=66&pl=235">Flash</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=GI+Joe&cat=66&pl=236">GI Joe</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Green+Lantern&cat=66&pl=237">Green Lantern</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Hulk&cat=66&pl=238">Hulk</a></li>										
+										<li><a href="https://www.midtowncomics.com/store/search.asp?q=Iron+Man&cat=66&pl=239">Iron Man</a></li>
+										<li><a href="https://www.midtowncomics.com/store/search.asp?q=Spider%2DMan&cat=66&pl=240">Spider-Man</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Star+Trek&cat=66&pl=241">Star Trek</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Star+Wars&cat=66&pl=242">Star Wars</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Superman&cat=66&pl=243">Superman</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Transformers&cat=66&pl=244">Transformers</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=X%2DMen&cat=66&pl=245">X-Men</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?q=Wonder+Woman&cat=66&pl=246">Wonder Woman</a></li>										
+                                        <li><a rel="fancyviewmorechtopapparel" href="https://www.midtowncomics.com/includes/viewmorech.asp?pagename=apparel">view more</a></li>		
+                                    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>			
+                                        <li><h4>Manufacturers</h4></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&mfg=971&pl=247">Ata Boy</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&mfg=532&pl=248">Dark Horse</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&mfg=586&pl=249">Graphitti Designs</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&mfg=2847&pl=250">Mad Engine</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&mfg=652&pl=251">New Era</a></li>
+                                         <li><a rel="fancyviewmoretopapparel" href="https://www.midtowncomics.com/includes/viewmore.asp?pagename=apparel">view more</a></li>	
+                                       <!--  <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&mfg=652">view more</a></li>-->
+                                       <!-- <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&clr=1">Clearance</a></li>																														
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66">All Apparel</a></li>-->
+                                    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>					
+                                        <li><h4>Categories</h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&scat=175&pl=252">Accessories & Jewelry</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/bestsellers.asp?cat=66&pl=263">Best Sellers</a></li>										
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&scat=108&pl=253">Hats</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&scat=165&pl=254">Long Sleeve T-Shirts</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&q=Midtown Comics&pl=255">Midtown Apparel</a></li>
+                                         <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&q=midtown+exclusive">Midtown Exclusive</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&scat=160&pl=256">Outerwear</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&scat=109&pl=258">T-Shirts - Men</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&scat=246&pl=259">T-Shirts - Women</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=66&scat=247&pl=260">T-Shirts - Youth</a></li>
+                                       <!-- <li><a href="https://www.midtowncomics.com/store/costumes.asp">Costumes & Accessories</a></li>-->
+                                     </ul>
+                            	</li>
+                    		</ul>
+                    	</div>
+                    </li>                    
+                    <li class="supplies flip v-link" style="z-index:5100">
+                    	<a class="main-link" href="https://www.midtowncomics.com/store/supplies.asp?pl=258">Supplies<br />& More</a>
+                        <div class="dropdown-container offscreen-render" style=" padding-left:5px;width:710px;" >
+                            <ul class="vmenu-dropdown">                    
+                        		<li class="col">
+                                    <ul>
+                                        <li><h4 style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;"><a style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;" href="https://www.midtowncomics.com/store/gc.asp?pl=259">Gift Cards</a></h4></li>		
+                                        <li><a href="https://www.midtowncomics.com/store/gc.asp?pl=260"><img src="https://www.midtowncomics.com/images/vnav_gc.gif" title="Shop Gift Card" alt="Shop Gift Card"></a></li>					
+                                    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>	
+                                <li class="companies first col">
+                                    <ul>
+                                        <li><h4 style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;"><a style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;" href="https://www.midtowncomics.com/store/supplies.asp?pl=261">Supplies</a></h4></li>
+                                        <!--<li><a href="https://www.midtowncomics.com/store/search.asp?cat=67">All Supplies</a></li>-->
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=67&scat=124&pl=262">Comic Book Supplies</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=67&scat=203">DVD Supplies</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=67&scat=179&pl=264">Magazine Supplies</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=67&scat=180&pl=265">Trading Card Supplies</a></li>
+                                    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>					
+                                        <li><h4 style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;"><a style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;" href="https://www.midtowncomics.com/store/cards.asp?pl=266">Gaming & Cards</a></h4></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=176&pl=267">All Gaming & Cards</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=176&adv=1&pl=268">Advance Order</a></li>
+                                    </ul>
+                                </li>                    
+                        		<li class="vr-line"></li>                        
+                                <li class="companies first col">
+                                    <ul>	
+                                        <li><h4 style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;"><a style="color:#222;float:left;font-size:10pt;font-weight:bold;margin:0;" href="https://www.midtowncomics.com/store/dvds.asp?pl=277">DVDs</a></h4></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=189&pl=278">All DVDs</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=189&scat=183&pl=279">DVD-ROM</a></li>
+                                        <li><a href="https://www.midtowncomics.com/store/search.asp?cat=189&adv=1&pl=280">Advance Order</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                     </li>      
+	</ul>
+</div>
+<script type="text/javascript">
+var MainNav={init:function(){function show() {/*midtownSearchSugg.hideDropdown("q");*/var menu = $(this);if(!$(menu).children().hasClass("current")){$(menu).children().addClass("current");
+$(menu).children(".dropdown-container").removeClass("offscreen-render")}}function hide() { 
+											var menu = $(this);
+											if($(menu).children().hasClass("current"))
+											{
+												$(menu).children().removeClass("current");
+												$(menu).children(".dropdown-container").addClass("offscreen-render")
+											}
+											// menu.children(".dropdown-container").slideUp();
+								  }
+								
+								  $("#vmenu>ul>li").hoverIntent({
+																  //  sensitivity: 1, // number = sensitivity threshold (must be 1 or higher)
+																   interval: 100,   // number = milliseconds for onMouseOver polling interval
+																   over: show,     // function = onMouseOver callback (required)
+																   timeout: 0,   // number = milliseconds delay before onMouseOut
+																   out: hide       // function = onMouseOut callback (required)
+																  });
+     
+    }
+
+};
+MainNav.init();
+</script>
+<!--This section is used to contain database calls to be used here and other pages-->
+
+
+<!-- End of Section -->
+
+
+<style type="text/css">
+.nav2wr 				{position:relative;z-index:100}
+.nav2wr .more			{display:none;}
+.nav2wr:hover .more    {display:block;position:absolute;z-index:200;width:340px;background-color:#fff;top:55px;border-bottom:1px solid #666;border-right:1px solid #666;}
+
+.nav2nav 				{position:relative;z-index:100}
+.nav2nav .more			{display:none;}
+.nav2nav:hover .more    {display:block;position:absolute;z-index:200;width:610px;left:-1px;background:#fff;border-bottom:1px solid #666;border-left:1px solid #666;}
+
+.nav-wr { cursor: hand; cursor: pointer; }
+</style>
+
+<script type="text/javascript">
+$('.nav-wr').on("click",function(){
+     window.location=$(this).find("a").attr("href"); 
+     return false;
+});
+</script>
+
+<!--NAV2-->
+<div style="width:950px;">
+
+<table width=950 cellpadding=0 cellspacing=0 border=0><tr>
+<td width=340 align=left valign=top style="border-right:1px solid #666;border-bottom:1px solid #666;">
+<div class="nav2wr">
+
+	<div id="date-header" style="width:340px">
+	<div style="margin:10px 10px 0 5px;float:left;width:35px;height:28px;text-align:center;font-size:10pt;font-weight:bold;color:#fff;background-color:#666" class="btn-round">JUN<br>27</div>
+	<div style="float:left:10px;"><img src="https://www.midtowncomics.com/images/jn/2014/0212/nav2wr.gif" title="Weekly Releases Updated Every Wednesday!" alt="Weekly Releases Updated Every Wednesday!"></div>
+	</div>
+	<div style="clear:both"></div>
+
+<div class="more">
+
+<div style="padding-top:5px">
+
+		<!-- HOME -->
+		<div style="background:url(https://www.midtowncomics.com/images/jn/2013/site/nav-wr-bg_01.png);width:333px;height:55px;margin-bottom:10px"/>		
+		<div class="xnav-wr" style="padding:32px 0 0 20px;color:#777">
+		<a style="color:#3583d0;font-size:15px;font-weight:bold" href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?pl=534">6/27</a> &bull;
+		<a style="color:#777;font-size:15px;font-weight:bold" href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?wdate=6/20/9018&pl=535">6/20</a> &bull;
+		<a style="color:#777;font-size:15px;font-weight:bold" href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?wdate=6/13/9018&pl=536">6/13</a> &bull;
+		<a style="color:#777;font-size:15px;font-weight:bold" href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?wdate=6/6/9018&pl=537">6/6</a> &bull;
+		<a style="color:#777;font-size:15px;font-weight:bold" href="https://www.midtowncomics.com/store/weeklyreleasebuy.asp?wdate=5/30/9018&pl=538">5/30</a>
+		</div>
+		</div>
+
+		<!-- IN-STORE -->
+		<div class="nav-wr" style="background:url(https://www.midtowncomics.com/images/jn/2013/site/nav-wr-bg_02.png);width:333px;height:45px;margin-bottom:10px;"/>
+		<a href="https://www.midtowncomics.com/store/weeklyrelease.asp?pl=533" style="color:#3583d0;"><div style="width:333px;height:45px;padding:15px 0 0 280px;font-size:15px;font-weight:bold">6/27</div></a>
+		</div>
+	
+	</div>
+
+	<div><a href="https://www.midtowncomics.com/info.asp?page=faq&q=free&pl=570#shipping"><img src="https://www.midtowncomics.com/images/jn/2013/site/redesign/nav-home_04.gif" title="Free Bag & Board with Every Comic.Free Shipping on qualifying orders" alt="Free Bag & Board with Every Comic.Free Shipping on qualifying orders"/></div>
+
+	<div id="date-header" style="padding-top:8px">
+	<div style="margin:5px 10px 0 5px;float:left;width:35px;height:28px;text-align:center;font-size:10pt;font-weight:bold;color:#fff;background-color:#666" class="btn-round"><a href="https://www.midtowncomics.com/store/search.asp?cat=142&USTMP=1&reld=6/19/2018&reld2=6/26/2018">JUN<br>20</div>
+	<div style="float:left:10px;"><img src="https://www.midtowncomics.com/images/header_nav2bi5.gif" title="Newly Added Back Issues" alt="Newly Added Back Issues"></a></div>
+	</div>
+	<div style="clear:both"></div>
+
+<br>
+
+</div>
+</div>
+</td>
+
+<td width=610 align=left valign=top style="border-bottom:1px solid #666;">
+<!--nav2wr-->
+
+    				<div style="font-size:11pt;font-weight:bold;padding:5px 0 5px 10px">
+					<a style="font-size:11pt;font-weight:bold;color:#555" href="https://www.midtowncomics.com/store/previews.asp?pl=502">Save 25%-50% with Previews</a> <span style="margin:0 2px">&middot;</span>                   					
+					<a style="font-size:11pt;font-weight:bold;color:#555" href="https://blog.midtowncomics.com/we-buy/buy-comics-collectibles/">We Buy Comics!</a> <span style="margin:0 2px">&middot;</span>                   					
+					<a style="font-size:11pt;font-weight:bold;color:#555" href="https://www.midtowncomics.com/store/search.asp?cat=61&q=Variant&pl=504">Variants & Incentives</a> <span style="margin:0 2px">&middot;</span>                   															
+					<a style="font-size:11pt;font-weight:bold;color:#555" href="https://www.midtowncomics.com/store/gc.asp?pl=505">Gift Cards</a>
+					</div>
+
+<div class="nav2nav" style="width:610px">
+
+					<div style="border-top:1px solid #ccc;padding-left:10px">
+    				<table cellpadding=0 border=0 border=0><tr>
+					<td width=125 align=left valign=top>
+					<div style="padding:5px 0">
+					<a style="text-decoration:none;font-size:11pt;color:#090;font-weight:bold;" href="https://www.midtowncomics.com/store/deal-of-the-day.asp?PRID=1283662">Deal of the Day</a></div></td>
+					<td width=370 align=left valign=top style="border-left:1px solid #ccc;border-right:1px solid #ccc;">                				
+					<div style="padding:5px 0 5px 8px;"><span style="font-size:11pt;font-weight:bold;color:#63f">On Sale This Week:</span> <span style="font-size:11pt;color:#63f">Up to 40% off statues!</span></div></td>
+					<td width=125 align=left valign=top>                					
+					<div style="padding:5px 0 5px 5px;">
+					<a style="font-size:11pt;color:#f00;font-weight:bold;text-decoration:none" href="https://www.midtowncomics.com/store/search.asp?clr=1&pl=507">Clearance</a>
+					</div></td>
+					</tr></table>
+					</div>
+
+<div class="more" style="width:610px">
+
+    				<table cellpadding=0 border=0 border=0><tr>
+					<td width=129 align=center valign=top>
+					<!-- DEAL OF THE DAY start -->
+					
+					<div style="width:129px;padding-bottom:5px"><a style="text-decoration:none;color:#090;font-weight:bold;" href="https://www.midtowncomics.com/store/deal-of-the-day.asp?PRID=1283662">					
+					<img src="https://www.midtowncomics.com/images/PRODUCT/STNL/1283662_sth.jpg" title="Justice League Vol 2 #21 Cover E Incentive Gary Frank Sketch Cover" alt="Justice League Vol 2 #21 Cover E Incentive Gary Frank Sketch Cover" width=90>
+
+					<div style="font-size:12pt;">50% OFF</div>
+
+					<div style="padding:0 4px">Justice League Vol 2 #21 Cover E Incentive Gary Frank Sketch Cover</div>
+					</a></div>
+					
+					<!-- DEAL OF THE DAY end -->
+					</td>
+					<td width=370 align=left valign=top style="border-left:1px solid #ccc;border-right:1px solid #ccc;">                				
+					<div style="padding-left:8px;font-size:11pt;font-weight:bold;line-height:16pt">
+					<p>
+<a style="display:block;padding-top:2px;color:#222;font-size:10pt" href="https://www.midtowncomics.com/store/search.asp?q=cdw_0620">&middot;20% off all back issues!</a>
+<a style="display:block;padding-top:2px;color:#222;font-size:10pt" href="https://www.midtowncomics.com/store/search.asp?q=kdw_statue">&middot;Up to 40% off all statues!</a>
+</p>
+					</div>
+					<div style="padding:12px 0 8px 8px;font-size:10pt;">
+					<img align=left src="https://www.midtowncomics.com/images/deals_subscribe.gif">
+					Sign up for our <a href="https://www.midtowncomics.com/custompages/codeword.asp?pl=290"><strong>weekly newsletter</strong></a> to get notified of all our special sales!
+					<div style="padding-top:8px">
+					Subscribe to our <a href="https://www.midtowncomics.com/store/mailsubscriber.asp"><strong>Daily Deals email</strong></a>, follow us on <a target=_blank href="https://www.twitter.com/midtowncomics"><strong>Twitter</strong></a>, or become a fan on <a target=_blank href="https://www.facebook.com/midtowncomics"><strong>Facebook</strong></a> to get notified of every Deal of the Day!
+					</div>
+					</div>
+					<br></td>
+					<td width=125 align=left valign=top>                					
+					<div style="padding:5px 0 5px 5px;font-size:11pt;font-weight:bold;color:#c00">
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=65&clr=1&pl=292">Action Figures</a><br>
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=142&pr1=0.76&pr2=1">Back Issues</a><br>
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=202&clr=1&pl=295">Books</a><br>	
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=181&clr=1&pl=296">Collectibles</a><br>
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=189&clr=1&pl=297">DVDs</a><br>	
+
+						<!--<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=212&scat=214&pl=298">Full Runs</a><br>-->
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=176&clr=1&pl=299">Gaming & Cards</a><br>	
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=62&clr=1&pl=301">Graphic Novels</a><br>	
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=194&clr=1&pl=294">Magazines</a><br>							
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=63&clr=1&pl=302">Statues</a><br>
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?cat=66&clr=1&pl=293">T-Shirts & Apparel</a><br>							
+						<a style="color:#f00;font-weight:bold" href="https://www.midtowncomics.com/store/search.asp?clr=1&pl=303">view all</a><br><br>
+					</div></td>
+					</tr></table>
+
+</div>
+</div>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+<div style="clear:both;margin-bottom:5px"></div>
+<!--deals-->
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.ipd_table tr').click(function() {
+        var href = $(this).find("a").attr("href");
+        if(href) {
+            window.location = href;
+        }
+    });
+});
+</script>
+<script language="javascript">
+	jQuery(document).ready(function($) {
+				  $('a[rel*=fancycartXL]').fancybox({scrolling:"yes",autoScale:true,centerOnScroll:true,titleShow:false})
+				$.fancybox.resize 
+				})
+				</script>
+<style type="text/css">
+  .loading {
+        position: absolute; 
+        WIDTH: 99%; 
+        HEIGHT:500%;
+       z-index:6000;
+        background-color:#dcdddd;
+        text-align:center;
+        background-image: url(https://www.midtowncomics.com/images/results_ajax_loader.gif);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:top;
+        -moz-opacity:.50; 
+        opacity:.50;
+        background-repeat:no-repeat;
+        background-position:center;
+         -moz-opacity:.50; 
+        
+         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+ 
+         }
+
+</style>
+<div class="mb" style="margin: 0 auto;width: 930px; margin-top:20px;position: relative;">
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+	<td width="310px" valign="top">
+		<div style="padding-right:20px">
+		<!-- img -->
+        	 <div id="SP_ProductImage" >
+				<a href="https://www.midtowncomics.com/images/product/xl/1734269_xl.jpg" rel="fancycartXL"><img src="https://www.midtowncomics.com/images/PRODUCT/FUL/1734269_ful.jpg" border=0  width="300px" title="Ruin Of Thieves A Brigands Story #2 Cover A Regular Sumit Kumar Cover" alt="Ruin Of Thieves A Brigands Story #2 Cover A Regular Sumit Kumar Cover"></a>
+            </div>
+
+<!-- series -->        	
+		
+
+            <div id="series-sub" style="width:300px;text-align:center;margin-top:10px">
+                
+                <div style="font-size:14px"><a style="color:#222;" href="https://www.midtowncomics.com/store/search.asp?cat=&scat=78&st=Ruin+Of+Thieves+A+Brigands+Story+%23">more <strong>Ruin Of Thieves A Brigands Story </strong></a></div>
+                
+                    <a id="sublink" href="https://www.midtowncomics.com/store/subs.asp?op=a&suid=20329"><img src='https://www.midtowncomics.com/images/jn/2013/site/btn_sub-xl.gif' title="Add to Pull List" alt="Add to Pull List" vspace=5></a>
+                
+                <div style="font-size:12px;font-weight:bold">
+                	
+                    	<a style="font-size:12px;color:#222" href="https://www.midtowncomics.com/store/dp.asp?prid=1726966"><span style="padding-top:2px;float:left"><img src='https://www.midtowncomics.com/images/jn/2013/site/btn_series-left.gif'></span> previous issue</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+                    
+                    
+                    <a style="font-size:12px;color:#0081d7" href="https://www.midtowncomics.com/store/search.asp?cat=&scat=78&st=Ruin+Of+Thieves+A+Brigands+Story+%23">view all issues</a>
+                    
+                    
+                    	 &nbsp;&nbsp;|&nbsp;&nbsp; <a style="font-size:12px;color:#222" href="https://www.midtowncomics.com/store/dp.asp?prid=1742548">next issue <span style="padding-top:2px;float:right"><img src='https://www.midtowncomics.com/images/jn/2013/site/btn_series-right.gif'></span></a>
+                    
+
+                    </div>
+                <div style="clear:both"></div>
+            </div>   
+
+		
+        
+<!-- ads -->
+        	  <div id="why" style="width:300px;margin-top:15px;border:1px solid #c6c6c6; border-radius:8px; -moz-border-radius:8px;">
+                  <div style="padding:15px 20px;">
+                        <div style="font-size:16px;color:#666;font-weight:bold">Why Shop Midtown Comics</div>
+                        <a style="font-size:14px;padding-top:7px;display:block;" href="https://www.midtowncomics.com/store/previews.asp">&bull; Big Savings with Advance Previews</a> 
+                        <a style="font-size:14px;padding-top:7px;display:block;" href="https://www.midtowncomics.com/info.asp?page=faq&q=free#shipping">&bull; Free Shipping on Qualified Orders</a> 
+                        <a style="font-size:14px;padding-top:7px;display:block;" href="http://blog.midtowncomics.com/testimonials/">&bull; Testimonials</a> 
+                   </div>
+            </div>
+            <!--<div> <a href="http://itunes.apple.com/us/app/id501127099"><img src="https://www.midtowncomics.com/images/jn/2013/site/side-300_dod-app.gif" vspace=12></a> </div>-->
+          
+
+		</div>
+	</td>
+	<td valign="top">
+		<script type="text/javascript" src="https://www.midtowncomics.com/sc/jquery.shorten.js?1=2"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".shorten").shorten({
+    "showChars" : 500,
+    "moreText"  : "(See More)",
+    "lessText"  : "(Show Less)",
+	});
+});
+</script>
+<script language="javascript">
+	jQuery(document).ready(function($) {
+	  $('a[rel*=fancycartrating1734269]').fancybox(
+		{
+			type: "iframe",
+			scrolling:"no",
+			autoScale:true
+		}
+	  )
+	  $.fancybox.resize
+	})
+</script>
+<script language="javascript">
+	jQuery(document).ready(function($) {
+	  $('a[rel*=fancycartrating11734269]').fancybox(
+		{
+			type: "iframe",
+			scrolling:"no",
+			autoScale:true
+		}
+	  )
+	  $.fancybox.resize
+	})
+</script>
+
+
+
+<style type="text/css">
+#mb {
+	margin: 0 auto;
+	padding-top: 20px;
+	width: 930px; /* Original width of 750px (the total width of the page) - the width of the border (2px)*/
+	position: relative;
+}
+#sidebar {
+	width: 300px; /* Width of your nav column */
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+#mainbody {
+	float: right;
+	width: 600px; /* Width of your content column (560px) - the 2 pixels border - the padding */
+	margin-left: 30px;
+}
+#mb {
+	font-size:12pt;
+	color:#333
+}
+#mb a {
+	font-size:12pt;
+	color:#0081d7
+}
+.ipd_table td {
+	font-size:13px;
+}
+.ipd_table tr:hover td {
+	background:#eee
+}
+td.ipd:hover {
+	cursor: pointer;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.ipd_table tr').click(function() {
+        var href = $(this).find("a").attr("href");
+        if(href) {
+            window.location = href;
+        }
+    });
+});
+</script>
+
+<div style="padding-left:8px;">
+
+<div id="title-left" style="float:left;width:520px">
+
+	<div>
+    		<div style="text-align:left; padding-bottom:8px;">
+				<a href="https://www.midtowncomics.com/store/dp.asp?PRID=1734269" rel="bookmark" style="font-color:#222;text-decoration:none"><H1 class="header1">
+					Ruin Of Thieves A Brigands Story #2 Cover A Regular Sumit Kumar Cover	
+				</H1></a>
+			</div>
+    </div>
+	
+    <div  >
+        	  <div id="ipd_pub-date" style="padding-bottom:10px; font-size:12pt"> Manufacturer/Publisher: <a style="font-size:12pt" href="https://www.midtowncomics.com/store/search.asp?mfg=3813">Danger Zone</a> &nbsp;
+			  
+					(Release Date: <a style="color:#333;font-size:12pt" href="https://www.midtowncomics.com/store/search.asp?reld=6/27/2018&reld2=6/27/2018">6/27/2018</a>*)
+              			
+            </div><div ><a id='divlink' href='#related_products'>See other related products</a></div>
+    </div>
+    
+    <div style="padding-top:8px;font-size:12pt;border-top:solid 1px #e2e2e2">
+    
+    	
+                	Writer: <a style='font-size:12pt' href=https://www.midtowncomics.com/store/search.asp?q=Ram+V%2E>Ram V.</a> &nbsp;&bull;&nbsp;
+                	Artist:  <a style='font-size:12pt' href=https://www.midtowncomics.com/store/search.asp?q=Sumit+Kumar>Sumit Kumar</a>	
+    </div>
+	
+</div>
+
+<div style="float:right">
+	<div class="fb-like" data-href="https://www.midtowncomics.com/store/dp.asp?PRID=1734269" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true"></div>
+	
+</div>
+
+<div style="clear:both"></div>	
+</div>	
+
+    
+    <div>
+    	  
+                    <div id="ipd_variants" class="ipd_table">
+<form id="frmPRSeriesTitle" name="frmPRSeriesTitle" method="post" action="dp.asp">
+
+ <table class="ipd_table" width=100% cellpadding="0" cellspacing="0" border="0" style="margin-top:20px">		
+	<tr>
+		<td style="padding:5px 10px;border-bottom: 1px solid #cdcdcd;" width="*" align=left valign=top>
+			<div style="font-weight:bold;color:#222;text-transform:uppercase">Available in multiple covers</div>
+		</td>
+		<td style="padding:5px 0;border-bottom: 1px solid #cdcdcd;width:70px" align=center valign=top>
+			<span><strong>Price</strong></span>
+		</td>
+		<td style="padding:5px 0;border-bottom: 1px solid #cdcdcd;width:80px" align=center valign=top>
+			<span><strong>List Price</strong></span>
+		</td>
+		<td style="padding:5px 0;border-bottom: 1px solid #cdcdcd;width:60px" align=center valign=top>
+			<span style="color:#ff0e4b;font-weight:bold">Discount</span>
+		</td>
+	</tr>
+
+ 		
+        <tr style='font-weight:bold;'>					
+		  <td class="ipd" style="padding:5px 10px;border-bottom:1px solid #cdcdcd;border-left:1px solid #cdcdcd;" align="left" valign="top">
+					
+                        		<a href="https://www.midtowncomics.com/store/dp.asp?PRID=Ruin+Of+Thieves+A+Brigand_1734269" style='font-size:13px;color:#390;text-decoration:none' >Cover A Regular Sumit Kumar Cover</a>
+					
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;" align=center valign=top>
+					$3.39
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;" align=center valign=top>
+					<div style="color:#999">$3.99</div>
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;border-right: 1px solid #cdcdcd;color:#ff0e4b" align=center valign=top>				
+                15%
+				</td>				
+        </tr>
+        		
+        <tr >					
+		  <td class="ipd" style="padding:5px 10px;border-bottom:1px solid #cdcdcd;border-left:1px solid #cdcdcd;" align="left" valign="top">
+					
+                        		<a href="https://www.midtowncomics.com/store/dp.asp?PRID=Ruin+Of+Thieves+A+Brigand_1734270" style='font-size:13px;color:#222;text-decoration:none' >Cover B Variant Caspar Wijngaard Cover</a>
+					
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;" align=center valign=top>
+					$3.39
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;" align=center valign=top>
+					<div style="color:#999">$3.99</div>
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;border-right: 1px solid #cdcdcd;color:#ff0e4b" align=center valign=top>				
+                15%
+				</td>				
+        </tr>
+        		
+        <tr >					
+		  <td class="ipd" style="padding:5px 10px;border-bottom:1px solid #cdcdcd;border-left:1px solid #cdcdcd;" align="left" valign="top">
+					
+                        		<a href="https://www.midtowncomics.com/store/dp.asp?PRID=Ruin+Of+Thieves+A+Brigand_1734271" style='font-size:13px;color:#222;text-decoration:none' >Cover C Variant Anand Radhakrishnan Cover</a>
+					
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;" align=center valign=top>
+					$3.39
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;" align=center valign=top>
+					<div style="color:#999">$3.99</div>
+				</td>
+				<td class="ipd" style="padding:6px 0;border-bottom: 1px solid #cdcdcd;border-right: 1px solid #cdcdcd;color:#ff0e4b" align=center valign=top>				
+                15%
+				</td>				
+        </tr>
+        
+    </table>
+   </form>
+</div>
+                   
+    
+    </div>
+
+    <div>
+    
+    	<div id="ipd_grade-size" class="ipd_table"> 
+		   <script language="javascript">
+ 
+ var pg_grades={
+	 
+	 _gd:[]
+	 ,pr_id:1734269
+	 ,cg_id:61
+	 ,scg_id:78
+	 ,dis_check_page:"Discount applied at checkout"
+	 ,rounded:false
+	 ,formatDollar:function(num){
+		   
+		    num = num.toString().replace(/\$|\,/g, '');
+			if (isNaN(num)) num = "0";
+			sign = (num == (num = Math.abs(num)));
+			num = Math.floor(num * 100 + 0.50000000001);
+			cents = num % 100;
+			num = Math.floor(num / 100).toString();
+			if (cents < 10) cents = "0" + cents;
+			for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+			num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));
+			return (((sign) ? '' : '-') + '$' + num + '.' + cents);
+		 
+	}
+	,togglebi:function(val){
+		
+		//alert(val)
+		
+		
+		//LockPage();
+		$('#ajax-panel').html('<div class="loading"></div>');	
+		
+		var url="https://www.midtowncomics.com/store/getproductgrades.asp?pr_id="+val+"&sh_id=263048387"
+		
+		
+		
+		var sc=ServerConnectionFactory.getConnection();				
+		sc.returnType=ServerConnection.RETURN_TEXT;
+		var _5=this;
+		sc.successCallback=function(_6){
+											_5.fetch_grades(_6)
+											};
+		sc.execute(url);	
+		
+		
+		setTimeout(function(){$('#ajax-panel').html('')},3000)
+		
+		
+		
+			
+	}
+	,fetch_grades:function(_7){
+		//alert(_7)
+		var container_pr="dv" + pg_grades.pr_id
+		
+		var str="";
+		
+		
+		var clsReturn=eval("("+_7+")");
+		var element=this.obj;
+		var strApplicationPath="https://www.midtowncomics.com/";
+		var userid=263048387;
+		
+		element=container_pr
+		//alert(clsReturn.pre_code)
+		
+		//if (trim(clsReturn.pre_code)<>"")
+		//{
+			$("#diamond_container").html(clsReturn.pre_code);
+		//}
+		//else
+		//{
+		//	$("#diamond_container").html("");
+	//	}		
+		if (clsReturn.pr_id!=null)
+		{
+			$("#itemno_container").html("Item #: " + clsReturn.pr_id);
+		}
+		
+		if (parseInt(clsReturn.Incart)==0)
+		{
+			
+			if (parseInt(clsReturn.pr_qty)>0)
+			{
+				if (parseInt(clsReturn.pr_advord)==0)
+					{
+				
+							document.getElementById(element).innerHTML=["<div id=\"addtocart" + clsReturn.pr_id + "\">",
+								"<div\">",
+									"<span style=\"float:right;margin-left:12px\">",
+										"<input title=\"1\" id=\"t" + clsReturn.pr_id + "\" name=\"t" + clsReturn.pr_id + "\" value=\"1\" style=\"height:40px;width:40px;font-size:18pt;padding:6px 0 0 5px;\" style=\"margin-top:-10px\" onBlur=\"checkNumeric(this,1,'25','','','')\">",
+									"</span>",
+									"<span style=\"float:right;margin-right:3px\">",
+										"<a class=toggleinto-navcarttop id=\"a" + clsReturn.pr_id + "\" onclick=\"javascript:toggle(this," + clsReturn.pr_id + "," + clsReturn.pr_qty + ")\"  href=\"" + strApplicationPath + "store/cart.asp?PRID=" + clsReturn.pr_id + "&CGID=" + clsReturn.CG_ID + "&UsrID=" + userid + "&PRADV=" + clsReturn.pr_advord + "&Rem=N\" style=\"TEXT-DECORATION: none\">",
+											"<img border=0 src='" + strApplicationPath + "images/btn_add-xl.gif' title=\"Add to Cart\" alt=\"Add to Cart\">",
+										"</a>",
+									"</span>",
+								"</div>",
+								"</div>",
+								"<div id=\"outofstock" + clsReturn.pr_id + "\" style=\"display:none;float:right; margin-right:0px\">",
+									"<a  href=\"" + strApplicationPath + "store/checkout.asp\" style=\"TEXT-DECORATION: none\">",
+										"<img src=\"" + strApplicationPath + "images/btn_added-xl.gif\" title=\"Added to Cart\" alt=\"Added to Cart\" />",
+									"</a>",
+								"</div>"].join("");
+					
+					}
+					else
+					{
+					
+						document.getElementById(element).innerHTML=["<div id=\"addtocart" + clsReturn.pr_id + "\">",
+							"<div\">",
+								"<span style=\"float:right;margin-left:12px\">",
+										"<input title=\"1\" id=\"t" + clsReturn.pr_id + "\" name=\"t" + clsReturn.pr_id + "\" value=\"1\" style=\"height:40px;width:40px;font-size:18pt;padding:6px 0 0 5px;\" style=\"margin-top:-10px\" onBlur=\"checkNumeric(this,1,'25','','','')\">",
+								"</span>",
+								"<span style=\"float:right;margin-right:0px\">",
+									"<a class=toggleinto-navcarttop id=\"a" + clsReturn.pr_id + "\" onclick=\"javascript:toggle(this," + clsReturn.pr_id + "," + clsReturn.pr_qty + ")\"  href=\"" + strApplicationPath + "store/cart.asp?PRID=" + clsReturn.pr_id + "&CGID=" + clsReturn.CG_ID + "&UsrID=" + userid + "&PRADV=" + clsReturn.pr_advord + "&Rem=N\" style=\"TEXT-DECORATION: none\">",
+										"<img border=\"0\" src=\"" + strApplicationPath + "images/images/btn_pre-xl.gif\" title=\"Advance Order\" alt=\"Advance Order\">",
+									"</a>",
+								"</span>",
+							"</div>",
+							"</div>",
+							"<div id=\"outofstock" + clsReturn.pr_id + "\" style=\"display:none;float:right; margin-right:0px\">",
+								"<a  href=\"" + strApplicationPath + "store/checkout.asp\" style=\"TEXT-DECORATION: none\">",
+									"<img src=\"" + strApplicationPath + "images/btn_added-xl.gif\" title=\"Added to Cart\" alt=\"Added to Cart\" />",
+								"</a>",
+							"</div>"].join("");
+					}
+				
+			}
+			else
+			{
+				
+				//alert(parseInt(clsReturn.pr_advord))
+				if (parseInt(clsReturn.pr_advord)==0)
+				{
+					
+					if ((parseInt(clsReturn.CG_ID)==61) || (parseInt(clsReturn.CG_ID)==62) || (parseInt(clsReturn.CG_ID)==142) || (parseInt(clsReturn.CG_ID)==202))
+					{
+							if (parseInt(clsReturn.ADDEDTOWL)==0) ///////////////not added to wish list
+							{
+								//alert("hi")
+								
+								document.getElementById(element).innerHTML=[
+		
+											"<div  >",
+						
+												"<span style=\"float:right;margin-left:12px;\">",
+															"<input title=\"1\" id=\"wl" + clsReturn.pr_id + "\" name=\"wl" + clsReturn.pr_id + "\" value=\"1\" style=\"height:40px;width:40px;font-size:18pt;padding:6px 0 0 5px;\" style=\"margin-top:-10px\" onBlur=\"checkNumeric(this,1,'25','','','')\">",
+												"</span><div style=\"float:right;margin-right:0px\" id=\"addtowl" + clsReturn.pr_id + "\">",
+						
+														"<span style=\"float:right;margin-right:3px\">",
+															
+																"<a  href=\"" + strApplicationPath + "login.asp?Referer=%2Fstore%2Fdp%2Easp%3FPRID%3D1734269\" style=\"TEXT-DECORATION: none\">",
+															
+																"<img border=0 src='" + strApplicationPath + "images/btn_wishlist-xl.gif' title=\"Add to Wish List\" alt=\"Add to Wish List\">",
+															"</a>",
+														"</span>",
+												"</div>",
+												"<div id=\"editedwl" + clsReturn.pr_id + "\" style=\"display:none;float:right;margin-right:0px\">",
+														"<span style=\"float:right;margin-right:3px\">",
+															
+																"<a  href=\"" + strApplicationPath + "login.asp?Referer=%2Fstore%2Fdp%2Easp%3FPRID%3D1734269\" style=\"TEXT-DECORATION: none\">",
+															
+																"<img border=0 src='" + strApplicationPath + "images/btn_wish-edit-xl.gif' title=\"On My Wish List\" alt=\"On My Wish List\">",
+															"</a>",
+														"</span>",
+												"</div>",
+												"","<div style=\"font-size:15px; color:#666;\">","OUT OF STOCK","</div>",
+												"</div>",
+												].join("");
+							
+							}
+							else ////////////already added to wish list
+							{
+								//alert("hi")
+								document.getElementById(element).innerHTML=[
+											"<div >",										
+						
+												"<span style=\"float:right;margin-left:12px\">",
+															"<input title=\"1\" id=\"wl" + clsReturn.pr_id + "\" name=\"wl" + clsReturn.pr_id + "\" value=\""+ clsReturn.ADDEDQTYTOWL+"\" style=\"height:40px;width:40px;font-size:18pt;padding:6px 0 0 5px;\" style=\"margin-top:-10px\" onBlur=\"checkNumeric(this,1,'25','','','')\">",
+												"</span><div  style=\"display:none\" id=\"addtowl" + clsReturn.pr_id + "\" >",
+						
+														"<span style=\"float:right;margin-right:3px\">",
+															
+																"<a  href=\"" + strApplicationPath + "login.asp?Referer=%2Fstore%2Fdp%2Easp%3FPRID%3D1734269\" style=\"TEXT-DECORATION: none\">",
+															
+																"<img border=0 src='" + strApplicationPath + "images/btn_wishlist-xl.gif' title=\"Add to Wish List\" alt=\"Add to Wish List\">",
+															"</a>",
+														"</span>",
+												"</div>",
+												"<div id=\"editedwl" + clsReturn.pr_id + "\" style=\"float:right;margin-right:0px\">",
+														"<span style=\"float:right;margin-right:3px\">",
+															
+																"<a  href=\"" + strApplicationPath + "login.asp?Referer=%2Fstore%2Fdp%2Easp%3FPRID%3D1734269\" style=\"TEXT-DECORATION: none\">",
+															
+																"<img border=0 src='" + strApplicationPath + "images/btn_wish-edit-xl.gif' title=\"On My Wish List\" alt=\"On My Wish List\">",
+															"</a>",
+														"</span>",
+												"</div>",
+												"","<div style=\"font-size:15px; color:#666;\">","OUT OF STOCK","</div>",
+												"</div>",
+												].join("");
+							}
+					}
+					else{
+						
+							//document.getElementById(element).innerHTML=["<div>","<span style=\"float:right;margin-right:0px;border:dotted\">","<img border=\"0\" src=\"" + strApplicationPath + "images/btn_wishlist-xl.gif\" onmouseover=\"this.src='" + strApplicationPath + "images/jn/btn_wishlist-xl.gif'\" onMouseOut=\"this.src='" + strApplicationPath + "images/btn_wishlist-xl.gif'\">","<input title=\"1\" id=\"t" + clsReturn.pr_id + "\" name=\"t" + clsReturn.pr_id + "\" value=\"1\" style=\"height:40px;width:40px;font-size:18pt;padding:6px 0 0 5px;\" style=\"margin-top:-10px\" onBlur=\"checkNumeric(this,1,'25','','','')\">","<br>","<div style=\"font-size:10px; color:#666;\">","<img border=0 src='" + strApplicationPath + "images/btn_out-xl.gif'>","</div>","</span>","</div>"].join("");
+							document.getElementById(element).innerHTML=["<div style=\"font-size:10px; color:#666;\">","<img border=0 src='" + strApplicationPath + "images/btn_out-xl.gif' title=\"Out of Stock\" alt=\"Out of Stock\">","</div>"].join("");
+						
+					}
+				}
+				else
+				{
+					document.getElementById(element).innerHTML=["<div>",
+					"<span style=\"float:right;margin-right:0px\">",
+						"<div style=\"font-size:10px; color:#666;\">",
+							"<img border=0 src='" + strApplicationPath + "images/btn_out-xl.gif' title=\"Out of Stock\" alt=\"Out of Stock\">",
+						"</div>",
+					"</span>",
+					"</div>"].join("");
+				}
+			}
+		}
+		else
+		{
+			document.getElementById(element).innerHTML=["<div id=\"addtocart" + strApplicationPath + "\" style=\"display:none;float:right; margin-right:0px\">",
+				"<a class=toggleinto-navcarttop  href=\"" + strApplicationPath + "store/cart.asp?PRID=" + clsReturn.pr_id + "&CGID=" + clsReturn.CG_ID + "&UsrID=" + userid + "&PRADV=" + clsReturn.pr_advord + "&PRtype=" + clsReturn.PR_TYPE + "&Rem=N\" style=\"TEXT-DECORATION: none\">",
+					"<img border=0 src=\"" + strApplicationPath + "images/btn_add-xl.gif\" title=\"Add to Cart\" alt=\"Add to Cart\">",
+				"</a>",
+				"</div>",
+				"<div id=\"outofstock" + clsReturn.pr_id + "\" style=\"float:right; margin-right:0px\">",
+					"<a  href=\"" + strApplicationPath + "store/checkout.asp\" style=\"TEXT-DECORATION: none\">",
+						"<img src=\"" + strApplicationPath + "images/btn_added-xl.gif\" title=\"Added to Cart\" alt=\"Added to Cart\" />",
+					"</a>",
+				"</div>"].join("");
+		}
+				
+		
+		//$("#" + container_pr).html(str);
+		//alert("hi")
+		var str="";
+		//alert(clsReturn.DISPLAY_LPRICE);
+		//clsReturn.DISPLAY_LPRICE="True";
+		//alert(pg_grades.dis_check_page)
+		//alert(pg_grades.rounded)
+		if ((clsReturn.DISPLAY_LPRICE).toLowerCase()==("false").toLowerCase())
+		{
+			//alert("hi")
+			str +="<span style=\"color:#999;font-size:12pt;\">Regular Price: <strike>" + clsReturn.pr_price + "</strike></span> &nbsp;";
+			str +="<span style=\"font-size: 9pt;\">" + pg_grades.dis_check_page + "</span>";
+		}
+		else{
+				//alert(clsReturn.yousavevalue);
+				//alert(parseInt(clsReturn.percentage));
+				if (parseInt(clsReturn.percentage)>0){
+					
+					str +="<span style=\"color:#999;font-size:12pt;\">Regular Price: <strike>" + clsReturn.pr_price + "</strike></span> &nbsp;";
+					str +="<span style=\"color:#000;font-size:12pt;\">Your Price: " + clsReturn.pr_lprice + " &nbsp;</span>";
+					
+					str +=" <span style=\"color:#ff0e4b;font-size:12pt;font-weight:bold\">YOU SAVE: " + clsReturn.yousavevalue + " (" + clsReturn.percentage + "%)</span>";
+				//alert($("#div_dis").parent.show())
+					
+					/*var str_dis=""
+					str_dis +="<div style=\"background-color:#F36; width:210px; height:45px; text-align:center\">";
+                	str_dis +="  <div id=\"div_dis\" style=\"background-color:#fff; width:100%; height:82%; text-align:center; padding-top:8px; color:#F36; font-weight:bold; font-size:24px\">" + clsReturn.percentage + " % OFF</div>";
+                	str_dis +="</div>"
+					*/
+					
+					var str_dis=""
+					str_dis +="<div style=\"border:1px solid #ff0e4b; border-radius:8px; -moz-border-radius:8px; width:210px; height:39px;padding-top:9px; text-align:center\">";
+                	//str_dis +="  <div id=\"div_dis\" style=\"background-color:#fff; width:100%; height:82%; text-align:center; padding-top:8px; color:#F36; font-weight:bold; font-size:24px\">" + clsReturn.percentage + " % OFF</div>";
+                	
+					str_dis +="  <font style=\"text-align:center;  color:#ff0e4b; font-weight:bold; font-size:24px\">" + clsReturn.percentage + " % OFF</font>";
+                
+					str_dis +="</div>"
+					
+					
+					
+					
+					
+					$("#div_dis_container").html(str_dis);
+					
+					
+					
+					//if(pg_grades.rounded==false)					
+					//{
+						//$("#div_dis").corner("round 10px").parent().css('padding', '2px').corner("round 10px")
+					//	pg_grades.rounded=true;
+					//}
+					//$("#div_dis").parent.show();
+					//$("#div_dis").corner("round 10px").parent().css('padding', '2px').corner("round 10px")
+				}
+				else{
+						str +="<span style=\"color:#000; font-size:12pt;\">Your Price: " + clsReturn.pr_lprice + " &nbsp;</span>";
+						$("#div_dis_container").html("");
+				}
+				
+		}	
+		
+		
+		
+		
+		
+		
+		
+		$("#price").html(str);
+		
+		
+		
+	}
+	 ,populate_grades:function(){
+		 //alert(pg_grades._gd)
+		 	var _grades=pg_grades._gd;
+		 	var str="";
+			var _cg_id=pg_grades.cg_id;
+			var _scg_id=pg_grades.scg_id;
+		 
+		 	
+		
+			var type="grade";
+			if(_cg_id=="")
+			{
+				_cg_id=0;
+			}
+			if(_scg_id=="")
+			{
+				_scg_id=0;
+			}
+			
+			if (parseInt(_cg_id)==66 && (parseInt(_scg_id)==109 || parseInt(_scg_id)==246 || parseInt(_scg_id)==247  || parseInt(_scg_id)==165))
+			{
+				type="Size";
+			}
+				
+					
+			if(_grades.length>0){
+				
+				
+				
+				str +="<table width=100% cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin-top:20px\">";		
+					str +="<tr>";
+						str +="<td colspan=\"2\" style=\"border-bottom: 1px solid #390;border-bottom: 1px solid #390;\" width=\"*\" align=left valign=top>";
+							str +="<div style=\"padding-left:8px;font-weight:bold; color:#390;text-transform:uppercase\">Please select a " + type + "</div>";
+						str +="</td>";
+						str +="<td style=\"padding:5px 0;border-bottom:1px solid #390;width:70px\" align=center valign=top>";
+							str +="<strong>Price</strong></span>";
+						str +="</td>";
+						str +="<td style=\"padding:5px 0;border-bottom:1px solid #390;width:80px\" align=center valign=top>";
+							str +="<strong>List Price</strong></span>";
+						str +="</td>";
+						str +="<td style=\"padding:5px 0;border-bottom:1px solid #390;width:60px\" align=center valign=top>";
+							str +="<span style=\"color:#ff0e4b;font-weight:bold\">Discount</span>";
+						str +="</td>";
+					str +="</tr>";
+				
+				
+				var checked="";
+				var QFlag = false;
+				var issue_qty=0;
+				for(x in _grades)
+				{
+					
+					var title="";
+					var stitle="Ruin Of Thieves A Brigands Story #";
+					var pr_price=_grades[x].pr_price;
+					var pr_lprice=_grades[x].pr_lprice;
+					var disc="-";
+					checked="";
+					//alert(stitle)
+					//if (parseInt(_grades[x].pr_id)==parseInt(pg_grades.pr_id))
+					//{
+					//	checked="checked";
+					//}
+					
+					if(parseInt(_grades[x].pr_qty)>0){
+						if (QFlag == false){
+						
+							checked="checked";
+							QFlag=true;
+						}	
+						bgcolor=""
+						issue_qty +=parseInt(_grades[x].pr_qty);
+					}
+					else
+					{
+						bgcolor="bgcolor=\"#F7F7F7\"";
+					}
+					//alert(checked)
+					
+					if (parseInt(_cg_id)==66 && (parseInt(_scg_id)==109 || parseInt(_scg_id)==246 || parseInt(_scg_id)==247  || parseInt(_scg_id)==165))
+					{
+						title= (_grades[x].pr_ttle).substring(stitle.length, (_grades[x].pr_ttle).length);
+					}
+					else{
+						title=_grades[x].condition_name;
+					}
+					
+					
+					if(parseFloat(pr_price)>0 && parseFloat(pr_lprice)>0 )
+					{
+						disc=((parseFloat(pr_price)-parseFloat(pr_lprice)) * 100)/parseFloat(pr_price)
+					}
+					if(parseFloat(disc)>0){
+						disc=Math.round(disc) + "%";	
+					}
+					else{
+						disc="-";
+					}
+					
+									
+					
+					str +="<tr " + bgcolor + ">";
+						  str +="<td width=\"20\" style=\"border-bottom: 1px solid #cdcdcd;border-left: 1px solid #390;padding-left:8px\">";
+							str +="<input type=\"radio\"   name=\"PRID\" id=\"PRID\" " + checked + " value=\"" + _grades[x].pr_id + "\" onclick='pg_grades.togglebi(this.value)'  />";
+						str +="</td>";
+						str +="<td style=\"padding:5px 0;border-bottom:1px solid #cdcdcd;\" align=left valign=top>";
+							str +="<div style=\"padding:0 5px\">" + title  + "</div>";
+						str +="</td>";
+ 						str +="<td style=\"padding:5px 0;border-bottom:1px solid #cdcdcd;\" align=center valign=top>" + pg_grades.formatDollar(pr_lprice) + "</td>";
+						str +="<td style=\"padding:5px 0;border-bottom:1px solid #cdcdcd;\" align=center valign=top><span style=\"color:#999\">" + pg_grades.formatDollar(pr_price) + "</span></td>";
+						
+						str +="<td style=\"color:#ff0e4b;padding:5px 0;border-bottom:1px solid #cdcdcd;border-right: 1px solid #390\" align=center valign=top>" + disc + "</td>";
+					str +="</tr>";
+					
+					
+					
+					
+				}
+				
+				str +="</table>";
+				str +="<div id=\"price\" style=\"padding-top:15px;text-align:right\"></div>";
+				if (parseInt(issue_qty)>0)
+				{
+					$("#site_to_store_container").show();
+					
+				}
+				else{
+					$("#site_to_store_container").hide();
+				}
+				
+				
+			}
+			else{
+				str +="<div id=\"price\" style=\"padding-top:15px;text-align:right\">";
+						
+									str +="<span style=\"color:#999;font-size:12pt;\">Regular Price: <strike>$3.99</strike></span> &nbsp;";
+									str +="<span style=\"color:#000;font-size:12pt;\">Your Price: $3.39 &nbsp;</span>";
+								
+								   str +=" <span style=\"color:#ff0e4b;font-size:12pt;font-weight:bold\">YOU SAVE: $0.60 (15%)</span>";
+									
+									$(document).ready(function(){
+										
+										var str_dis="";
+										
+										/*str_dis +="<div style=\"background-color:#F36; width:210px; height:45px; text-align:center\">";
+										str_dis +="  <div id=\"div_dis\" style=\"background-color:#fff; width:100%; height:82%; text-align:center; padding-top:8px; color:#F36; font-weight:bold; font-size:24px\">15 % OFF</div>";
+										str_dis +="</div>"
+										*/
+											str_dis +="<div style=\"border:1px solid #ff0e4b; border-radius:8px; -moz-border-radius:8px; width:210px; height:39px;padding-top:9px; text-align:center\">";
+											//str_dis +="  <div id=\"div_dis\" style=\"background-color:#fff; width:100%; height:82%; text-align:center; padding-top:8px; color:#F36; font-weight:bold; font-size:24px\">" + clsReturn.percentage + " % OFF</div>";
+											
+											str_dis +="  <font style=\"text-align:center;  color:#ff0e4b; font-weight:bold; font-size:24px\">15 % OFF</font>";
+										
+											str_dis +="</div>"
+					
+					
+										
+										
+										$("#div_dis_container").html(str_dis);
+										//$("#div_dis").corner("round 10px").parent().css('padding', '2px').corner("round 10px")
+														
+									});
+									
+									
+									
+									
+								
+								
+									
+				str +="</div>";	
+			}			
+			$("#container_grades").html(str);
+			
+			if($("input[name=PRID]:checked").val()!=null){
+				
+				//alert($("input[@name=PRID]:checked").val())
+				
+				if($("input[name=PRID]:checked").val()!="")
+				{
+					//alert($("input[@name=PRID]:checked").val())
+					pg_grades.togglebi($("input[name=PRID]:checked").val())
+				}
+			}
+			else{
+			//alert("hi")
+				//alert();
+				//$("#PRID").attr("checked","checked");
+				//pg_grades.togglebi($("input[@name=PRID]:checked").val())
+			
+			}
+			
+		
+		 
+		 }
+	 }
+ 
+ 
+ 
+ </script>
+ 
+  <script language="javascript">
+	jQuery(document).ready(function($) {
+	  $('a[rel*=fancycartrating1734269]').fancybox(
+		{
+			type: "iframe",
+			scrolling:"no",
+			autoScale:true
+		}
+	  )
+	  $.fancybox.resize
+	})
+</script>
+
+<div id="tables">
+    
+    <div id="container_grades"></div>
+	
+	<style type="text/css">
+	/*#div_dis {border:1px solid #ff0e4b; border-radius:8px; -moz-border-radius:8px;color:#ff0e4b;}*/
+	</style>
+                
+	<script language="javascript">
+       //	LockPage();
+	   $(document).ready(function(){	   
+	    		pg_grades.populate_grades(); 
+				//$("#div_dis").corner("round 10px").parent().css('padding', '2px').corner("round 10px")
+	//setTimeout("unlockPage()",3000)   
+	});
+    </script>           
+				
+														
+
+</div>											
+ 
+        </div>
+    
+    
+    </div>
+    
+    <div>
+    
+    	<div id="buttons" style="padding:10px 0 8px 0">
+          <div style="float:right;"> 
+            
+
+
+<div id="dv1734269"  >
+
+
+																																						
+
+            <div id="addtocart1734269">
+            
+                
+                
+                    <span style="float:right;margin-left:12px">
+                    	<input title="Enter Quantity" alt="Enter Quantity" id="t1734269" name="t1734269" value="1" style="height:40px;width:40px;font-size:18pt;padding:6px 0 0 5px;" onBlur="checkNumeric(this,1,'25','','','')">
+                    </span>
+
+
+
+                    <span style="float:right;margin-right:3px">
+                    	<a class=toggleinto-navcarttop onClick="javascript:toggle(this,1734269,4)"  href="https://www.midtowncomics.com/store/cart.asp?PRID=1734269&CGID=61&UsrID=263048387&PRADV=0&Rem=N" style="TEXT-DECORATION: none"><IMG border=0 src='https://www.midtowncomics.com/images/btn_add-xl.gif' title="Add to Cart" alt="Add to Cart"></a>
+                    </span>
+                
+                
+            
+            </div>
+
+            <div id="outofstock1734269" style="display:none;">
+                <span style="float:right;margin-right:0px">
+                	<a  href="https://www.midtowncomics.com/store/checkout.asp" style="TEXT-DECORATION: none"><img src="https://www.midtowncomics.com/images/btn_added-xl.gif" title="Added to Cart" alt="Added to Cart" /></a>
+                </span>
+            </div>																
+			
+
+	
+</div>
+
+<span style="color:#999">*release dates may be subject to change</span>
+
+<div style="clear:both"></div>
+
+ 
+          </div>
+	 <div id="div_dis_container" style="float:left;margin-right:15px; "></div>
+	<div style="clear:both"></div>
+        </div>
+    	
+    </div>
+    <div>
+
+	
+    
+    	
+	<div><div style="padding:20px 0 10px 5px">
+
+</div></div>
+  	
+	
+    	<div>
+<div id="description" style="color:#666;font-size:11pt;">
+  <h2 style="padding:10px 0">Description</h2>
+  <p class="shorten">The past and the present collide as our Brigands attempt to find a way off the Island of Rekik, now under Krantali martial law. But an attack of conscience will turn an assassin into a revolutionary. And, an act of rebellion into an act of war. Old lessons will be learned anew. The cost of freedom is paid in blood and so it must always be defended, especially in the darkest hour and against unlikely odds.</p>
+  <div style="font-size:9px">
+	<span id="itemno_container">Item #: 1734269</span>
+    
+    &nbsp;&bull;&nbsp;Diamond code: <span id="diamond_container">APR181204</span>
+    
+    &nbsp;&bull;&nbsp; UPC: 74584466039200211
+  </div>
+</div>  </div>
+    	
+
+<div id="addthis" style="margin:20px 0">
+<h2 style="color:#222">Share this</h2>		
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+</div>
+    
+    </div>
+</div>
+	</td>
+</tr>
+</table>
+
+
+	<!--include file="../includes/recommended_products.asp" -->	
+
+
+
+		<script type="text/javascript" language="javascript">
+ 			document.getElementById('divlink').style.visibility = 'hidden';
+		</script>
+	
+
+<div id="recent-prods" style="width:930px;margin-top:20px;border-top:solid 1px #ccc;border-bottom:solid 1px #ccc;padding-bottom:25px">
+
+	<div style="background-color:#f2f2f2;border-bottom:solid 1px #ccc;padding:10px;margin-bottom:20px;">
+	<strong>Recently Viewed</strong> 
+	</div>
+
+
+<a id="1734269"></a>
+
+
+<div id="recent-prod6" style="float:left;width:215px;margin-right:15px">
+	
+
+	<div id="recent">
+		
+		<a href="https://www.midtowncomics.com/store/dp.asp?PRID=Ruin+Of+Thieves+A+Brigand_1734269"><img align=left src="https://www.midtowncomics.com/images/PRODUCT/STNL/1734269_sth.jpg" border=0 width="90px" alt='Ruin Of Thieves A Brigands Story #2 Cover A Regular Sumit Kumar Cover'></a>
+		
+		<div style="margin-left:100px;font-size:12px">	
+			<div style="height:60px;overflow:hidden"><a style="font-size:12px" href="https://www.midtowncomics.com/store/dp.asp?PRID=Ruin+Of+Thieves+A+Brigand_1734269">Ruin Of Thieves A Brigands Story #2 Cover A Regular Sumit Kumar Cover</a></div>
+
+			<div class="recent-price" style="height:40px;font-size:11px;padding:5px 0 8px 0">
+			
+					<div style="color:#ccc"><strike>Regular Price $3.99</strike></div>
+					<div>Your Price $3.39</div>
+					<div style="color:#ff0e4b;">You save $0.60 (15%)</div>
+				
+			</div>
+
+<div class="recent-btn">
+	<!-- btns --> 
+	  
+         <div id="addtocart1734269">
+                 
+                        <a class=toggleinto-navcarttop id=a1734269   href="https://www.midtowncomics.com/store/cart.asp?PRID=1734269&CGID=61&UsrID=263048387&PRADV=0&Rem=N" style="TEXT-DECORATION: none"><IMG border=0 src='https://www.midtowncomics.com/images/btn_addto_cart.gif'></a>
+                 
+         </div>	
+         <div id="outofstock1734269" style="display:none;float:right; margin-right:10px">
+             <a  href="https://www.midtowncomics.com/store/checkout.asp" style="TEXT-DECORATION: none"><img src="https://www.midtowncomics.com/images/btn_in-cart.gif" /></a>
+        </div> 
+     	
+
+</div><!-- /btns -->
+
+		</div>
+	</div>
+
+</div><!--/recent-prod-->	
+
+		
+
+<div style="clear:both"></div>
+
+</div><!--/recent prods-->
+
+
+
+
+<!--include file="../includes/seo_text.asp" -->
+
+<div style="clear:both"></div><div style="padding-bottom:4px; text-align:center">
+<img size src="https://www.midtowncomics.com/images/jn/2015/0701/home_app2014_05.gif"><a id="pl-487" href="https://bit.ly/1pDdQqy" target=_blank><img src="https://www.midtowncomics.com/images/jn/2015/0701/home_app2014_06.gif"></a><a target=_blank href="https://itunes.apple.com/us/app/id501127099"><img src="https://www.midtowncomics.com/images/jn/2015/0701/home_app2014_07.gif"></a>
+</div><div style="clear:both"></div>
+
+<div id="footer-social" style="width:930px;margin:20px 0;border-top:solid 1px #0081d7;border-bottom:solid 1px #0081d7;">
+	<div style="float:left;padding:15px 5px 0 0;border-right:solid 1px #0081d7;">
+		<div style="padding-bottom:15px"><a href="https://blog.midtowncomics.com/testimonials" style="color:#0081d7"><strong>Testimonials</strong> (view all)</a></div>
+
+		<div><a href="https://blog.midtowncomics.com/testimonials"><img src="https://www.midtowncomics.com/images/jn/2016/0203/footer_testimonial.gif" title="Midtown Testimonial" alt="Midtown Testimonial"></a></div>
+	</div>
+	<div style="float:left;padding:15px 0 0 20px;">
+		<div style="padding-bottom:15px;color:#0081d7"><strong>Sign up for our newsletters for special savings, or follow us on Facebook & Twitter!</strong></div>
+
+		<div id="footer-social-form">
+			<div style="float:left;">
+
+			<form name="frmnewsletter" id="frmnewsletter" action="https://www.midtowncomics.com/store/mailsubscriber.asp">
+			<span style="float:left;margin:0;display:inline;"><input title="Enter Email Address" alt="Enter Email Address" id="email" name="email" style="height:24px;width:200px;font-size:16px;padding:0"></span>
+
+			<span style="float:left;display:inline;margin:5px 8px 0 5px;"><a class="button" href="javascript:document.getElementById('frmnewsletter').submit();"><span style="font-size:16px">SUBSCRIBE</span></a></span>
+			</form>	
+	
+			</div>
+			<div style="float:left;">			
+			<a href="https://twitter.com/midtowncomics"><img src="https://www.midtowncomics.com/images/jn/2013/site/footer_social-twitter.gif" title="Midtown Twitter" alt="Midtown Twitter" hspace=20></a>
+			<a href="https://facebook.com/midtowncomics"><img src="https://www.midtowncomics.com/images/jn/2013/site/footer_social-fb.gif" title="Midtown Facebook" alt="Midtown Facebook"></a>			
+			</div>
+		</div>
+		<div style="clear:both"></div>
+
+		<div style="padding-top:8px;font-weight:bold;">
+		<a style="color:#333;font-size:13px;" href="https://www.midtowncomics.com/store/mailsubscriber.asp?group=Weekly+Newsletter">Weekly Newsletter</a> &nbsp;&middot;&nbsp;
+		<a style="color:#333;font-size:13px;" href="https://www.midtowncomics.com/store/mailsubscriber.asp?group=Daily+Deals+Newsletter">Daily Deals</a> &nbsp;&middot;&nbsp;
+		<a style="color:#333;font-size:13px;" href="https://www.midtowncomics.com/store/mailsubscriber.asp?group=Action+Figures">Action Figures</a> &nbsp;&middot;&nbsp;
+		<a style="color:#333;font-size:13px;" href="https://www.midtowncomics.com/store/mailsubscriber.asp?group=Back+Issues">Back Issues</a> &nbsp;&middot;&nbsp;
+		<a style="color:#333;font-size:13px;" href="https://www.midtowncomics.com/store/mailsubscriber.asp?group=Previews+and+Pull+List+Newsletter">Previews/Pull List</a> &nbsp;&middot;&nbsp;
+		<a style="color:#333;font-size:13px;" href="https://www.midtowncomics.com/store/mailsubscriber.asp?group=Ebay+Newsletter">Ebay</a> &nbsp;&middot;&nbsp;		
+		<a style="color:#333;font-size:13px;" href="https://blog.midtowncomics.com/newsletter/">Archive</a>
+		</div>
+	</div>	
+	<div style="clear:both"></div>
+</div>	<style type="text/css">
+#footer-2013 {font-size:12px}
+#footer-2013 a {font-size:12px}
+</style>
+
+<div style="margin-top:5px" id="footer">
+
+<div id="footer-2013" style="width:930px;background-color:#f0f0f0;border:1px solid #f0f0f0; border-radius:8px; -moz-border-radius:8px;">
+<table cellpadding="0" cellspacing="0" border="0"><tr>
+<td align="left" valign="top">
+<div style="height:140px;padding:10px 20px">
+<span style="color:#007ece"><strong>About Us</strong></span><br>
+<a style="color:#333" href="https://www.midtowncomics.com/info.asp?page=store-info&pl=451">Contact Information</a><br>
+<a style="color:#333" target="_blank" href="http://blog.midtowncomics.com/testimonials/">Customer Testimonials</a><br>
+<a style="color:#333" target="_blank" href="https://wwww.facebook.com/midtowncomics/events">Signings & Events</a><br>
+</div>
+</td>
+<td align="left" valign="top" nowrap>
+<div style="height:140px;border-left: 1px solid #ddd;padding:10px 20px">
+<span style="color:#007ece"><strong>Our Stores</strong></span><br>
+<a style="color:#333" href="http://www.midtowncomics.com/info.asp?tour=downtown">Downtown</a><br>
+<a style="color:#333" href="http://www.midtowncomics.com/info.asp?tour=grand-central">Grand Central</a><br>
+<a style="color:#333" href="http://www.midtowncomics.com/info.asp?tour=times-square">Times Square</a><br>
+</div>
+</td>
+<td align="left" valign="top">
+<div style="height:140px;border-left: 1px solid #ddd;padding:10px 20px">
+<span style="color:#007ece"><strong>Community</strong></span><br>
+<a style="color:#333" target="_blank" href="http://blog.midtowncomics.com/">Blog</a><br>
+<a style="color:#333" target="_blank" href="https://wwww.facebook.com/midtowncomics">Facebook</a><br>
+<a style="color:#333" target="_blank" href="https://instagram.com/midtowncomics">Instagram</a><br>
+<a style="color:#333" target="_blank" href="http://midtowncomics.tumblr.com/">Tumblr</a><br>
+<a style="color:#333" target="_blank" href="https://twitter.com/midtowncomics">Twitter</a><br>
+<a style="color:#333" target="_blank" href="http://youtube.com/midtowncomicstv/">Youtube</a><br>
+</div>
+</td>
+<td align="left" valign="top">
+<div style="height:140px;border-left: 1px solid #ddd;padding:10px 20px">
+<span style="color:#007ece"><strong>My Account</strong></span><br />
+
+	<a style="color:#333" href="https://www.midtowncomics.com/login.asp?pl=541">Order Status</a><br />
+	<a style="color:#333" href="https://www.midtowncomics.com/login.asp?pl=542">Account Settings</a><br />
+    <a style="color:#333" href="https://www.midtowncomics.com/login.asp?pl=543">Subscription Settings</a><br />
+    
+
+<a style="color:#333" href="javascript: openMyPopUp('https://www.midtowncomics.com/giftcards/CheckBalance.asp','OrderSearch',500,570,300,70)">Check Gift Card Balance</a><br />
+
+<!--		<a style="color:#333" href="https://www.midtowncomics.com/login.asp?WhereFrom=orderstatus" >Track My Order</a>-->
+
+          	<!--<a style="color:#333" href="https://www.midtowncomics.com/includes/track_orders.asp" rel="fancycart">Track My Order</a><br>
+            <form name="footerTrackorder" id="footerTrackorder" method="post" action="https://www.midtowncomics.com/accounts/orderstatus_detail.asp">
+            <input title="Enter Order #" id="OrdID" name="OrdID" style="width:170px"><br />
+            <a class="button" href="javascript: openMyPopUp('https://www.midtowncomics.com/store/OrderTrackingUPS.asp?tnum="><span>TRACK</span></a>
+            </form>  -->
+         
+<a style="color:#333" href="https://www.midtowncomics.com/info.asp?page=faq&pl=544#subs">Pull List FAQ</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/store/subs.asp?pl=545">Pull List</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/info.asp?page=faq&pl=546#previews">Previews FAQ</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/store/previews.asp?page=faq&pl=547">Previews</a><br>
+<a style="color:#333" href="http://www.midtowncomics.com/store/rss.asp">
+<img src="https://www.midtowncomics.com/images/icons/rss_16.png" title="Midtown Rss Feed" alt="Midtown Rss Feed" width=12 height=12/> RSS Feeds</a><br />
+</div>
+</td>
+<td align="left" valign="top">
+<div style="height:140px;border-left: 1px solid #ddd;padding:10px 20px"><span style="color:#007ece"><strong>Customer Service</strong></span><br />
+<a style="color:#333" target="_blank" href="https://blog.midtowncomics.com/in-store-pickup/store-pickup/">In-Store Pick-Up</a><br>
+<a style="color:#333" id="_lpChatBtn" href='https://server.iad.liveperson.net/hc/69369123/?cmd=file&file=visitorWantsToChat&site=69369123&byhref=1&imageUrl=https://www.midtowncomics.com/images/liveperson/temp1' target='chat69369123'  onClick="lpButtonCTTUrl = 'https://server.iad.liveperson.net/hc/69369123/?cmd=file&file=visitorWantsToChat&site=69369123&imageUrl=https://www.midtowncomics.com/images/liveperson/temp1&referrer='+escape(document.location); lpButtonCTTUrl = (typeof(lpAppendVisitorCookies) != 'undefined' ? lpAppendVisitorCookies(lpButtonCTTUrl) : lpButtonCTTUrl); lpButtonCTTUrl = ((typeof(lpMTag)!='undefined' && typeof(lpMTag.addFirstPartyCookies)!='undefined')?lpMTag.addFirstPartyCookies(lpButtonCTTUrl):lpButtonCTTUrl);window.open(lpButtonCTTUrl,'chat69369123','width=475,height=400,resizable=yes');return false;">Live Chat</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/info.asp?page=sitemap&pl=464">Sitemap</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/info.asp?page=faq&pl=465">FAQ</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/info.asp?page=info_Privacy&pl=466">Privacy Policy</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/store/mailunsubscriber.asp">Unsubscribe Newsletter</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/info.asp?page=terms_use&pl=468">Terms & Conditions</a><br>
+<a style="color:#333" href="https://www.midtowncomics.com/info.asp?page=faq#shipping&pl=467">Shipping Information</a><br />
+</div>
+</td>
+<td align="left" valign="top">
+
+<img src="https://www.midtowncomics.com/images/footer_staff2.png">
+</td>
+</tr>
+</table>
+
+<br />
+ 
+<div style="clear:both"></div></div>
+</div><!--/footer-->
+
+<br />
+
+
+
+
+ 
+<div class="xrounded" id="footer3" align=center>
+
+
+
+
+
+
+<!-- START SCANALERT CODE -->
+<a target="_blank" href="https://www.scanalert.com/RatingVerify?ref=midtowncomics.com"><img width="65" height="37" border="0" src="//images.scanalert.com/meter/midtowncomics.com/31.gif" alt="McAfee Secure sites help keep you safe from identity theft, credit card fraud, spyware, spam, viruses and online scams" oncontextmenu="alert('Copying Prohibited by Law - McAfee Secure is a Trademark of McAfee, Inc.'); return false;"></a>
+<!-- END SCANALERT CODE -->	
+
+
+
+
+
+			
+<img hspace=3 src="https://www.midtowncomics.com/images/footer_paypal.gif" title="We Accept Paypal" alt="We Accept Paypal" />
+
+<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=w7lEvzuqwOepKFBuVK5mbJ8u7w8oMxLksCNuWtr2mkAxKckgso2"></script></span>
+
+<a target="_blank" href="http://www.newyorkcomiccon.com/"><img hspace=3 src="https://www.midtowncomics.com/images/logo_nycc.gif" title="New York Comic Con"  alt="New York Comic Con" /></a>
+<a target="_blank" href="http://www.cbldf.org/"><img hspace=3 src="https://www.midtowncomics.com/images/logo_cbldf.gif" /></a>
+<a target="_blank" href="http://www.comicspro.org"><img hspace=3 src="https://www.midtowncomics.com/images/logo_comicspro.gif" title="Comics Pro" alt="Comics Pro" /></a>	
+
+</div>
+	<div style="clear:both"></div>
+ 	</div>
+</div><!--/container-->
+
+<!-- BEGIN LivePerson Monitor. --><script language='javascript'> var lpMTagConfig = {'lpServer' : "server.iad.liveperson.net",'lpNumber' : "69369123",'lpProtocol' : "https"}; function lpAddMonitorTag(src){if(typeof(src)=='undefined'||typeof(src)=='object'){src=lpMTagConfig.lpMTagSrc?lpMTagConfig.lpMTagSrc:'/hcp/html/mTag.js';}if(src.indexOf('http')!=0){src=lpMTagConfig.lpProtocol+"://"+lpMTagConfig.lpServer+src+'?site='+lpMTagConfig.lpNumber;}else{if(src.indexOf('site=')<0){if(src.indexOf('?')<0)src=src+'?';else src=src+'&';src=src+'site='+lpMTagConfig.lpNumber;}};var s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('charset','iso-8859-1');s.setAttribute('src',src);document.getElementsByTagName('head').item(0).appendChild(s);} if (window.attachEvent) window.attachEvent('onload',lpAddMonitorTag); else window.addEventListener("load",lpAddMonitorTag,false);</script><!-- END LivePerson Monitor. -->
+
+
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2127269-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+<script type="text/javascript">
+ /* (function() {
+    var sa = document.createElement('script'); sa.type = 'text/javascript'; sa.async = true;
+    sa.src = ('https:' == document.location.protocol ? 'https://cdn' : 'http://cdn') + '.ywxi.net/js/1.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sa, s);
+  })();*/
+</script>
+
+
+
+
+
+Web Server 10<br>Session ID =263048387===>263048387 
+
+</div><!-- mb -->						
+
+</body>
+</html>
