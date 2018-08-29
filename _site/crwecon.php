@@ -87,6 +87,24 @@
 
 
 <body id="page-top">
+  <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/cs_CZ/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="434506730255602"
+  theme_color="#5C4A72"
+  logged_in_greeting="Ahoj, protřebuješ s něčím pomoct?"
+  logged_out_greeting="Ahoj, protřebuješ s něčím pomoct?">
+</div>  
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -146,25 +164,42 @@
                 <div class="col-md-12">
                     <h2 class="section-heading">Crwecon 2018</h2>
                     <p>Pro všechny kterým se nepodařilo dorazit na Crwecon, nestihli pro samé pivo některou z přednášek, nebo se večer tak upravili, že si nic nepamatují! :)</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-12">
+                    <h3 class="section-heading">Videa</h3>
+                    <p>Pokud si to chcete prožít na vlastní kůži tak tady máte zážitková videa!</p>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <!--iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLBvib_JXV_OqsxlYupHyiFeREgNc4bJCp" frameborder="0" allowfullscreen></iframe>-->
+                            <div class="youtube-player" data-id="PLBvib_JXV_OqsxlYupHyiFeREgNc4bJCp" data-name="Crwecon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-12">
+                    <h3 class="section-heading">Přednášky</h3>
                     <p>Zde máte k nahlédnutí přednášky, které si pro vás kluci připravili.</p>
                 </div>
             </div>
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-md-12">
                     <h3 class="section-heading">TOP 10 US COMICS</h3>
                 </div>
-            </div>
+            </div>-->
             <div class="row">
                 <div class="col-md-12">
                     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQhZysp8xVUF-lXypJ8wfrg_5uWr_xajy1o5o3yeMXxOTvug3OEv1ma8OLUivnxdqjssjsID_CsWQdI/embed?start=false&loop=false&delayms=3000" frameborder="0" width="529" height="426" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width: 100%"></iframe>
                 </div>
             </div>
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-md-12">
                     <h3 class="section-heading">NOIR & CRIME COMICS</h3>
                 </div>
-            </div>
-            <div class="row">
+            </div>-->
+            <div class="row" style="margin-top: 30px;">
                 <div class="col-md-12">
                     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQvxaK1-mJNhJ1ahbn3PtZ8nIUK79YQTAzt3mzA_98E-Y5PtGto4arh03jdD_-ICo5LdUGTzsZdQCuT/embed?start=false&loop=false&delayms=3000" frameborder="0" width="529" height="426" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="max-width: 100%"></iframe>
                 </div>

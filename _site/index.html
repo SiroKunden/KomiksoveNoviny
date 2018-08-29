@@ -89,6 +89,25 @@
 
 <body id="page-top">
     
+    <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/cs_CZ/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="434506730255602"
+  theme_color="#5C4A72"
+  logged_in_greeting="Ahoj, protřebuješ s něčím pomoct?"
+  logged_out_greeting="Ahoj, protřebuješ s něčím pomoct?">
+</div>
+    
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -271,9 +290,34 @@
                         </div>
                         <div class="col-md-6">
                             <div class="feature-item">
-                                <img src="/img/portfolio/halda.jpg"/>
-                                <h3>Halda</h3>
-                                <p class="text-muted">Nejspíš ho do týdne vyhodíme, protože je moc casnej občas až ocasnej. Ale tak někdy něco četl a když nám necpe, že viděl Twin Peaks tak se nim dá i rozumně mluvit. A navíc doba si žádá mít odborníka na Rebirth!</p>
+                                <img src="/img/portfolio/nasta.jpg"/>
+                                <h3>Nancy</h3>
+                                <p class="text-muted">S holkama to nevyšlo tak teď to zkouší jako kluk. Nadávejte si ji jak chcete furt je lepší než někteří z nás, krom Vojty co umí všechno nejlíp no, takže se s ní smiřte a věřte tomu, že na Batflecka lidi taky lidi zprvu nadávali.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-heading">
+                    <h2>Pro své nesplněné sliby vyhozeni</h2>
+                    <p class="text-muted">Když něco několik měsíců slibuješ a neuděláš tak se nediv, že budeš vedle Lhalíře!</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="feature-item">
+                                    <img src="/img/portfolio/halda.jpg"/>
+                                    <h3>Halda</h3>
+                                    <p class="text-muted">Nejspíš ho do týdne vyhodíme, protože je moc casnej občas až ocasnej. Ale tak někdy něco četl a když nám necpe, že viděl Twin Peaks tak se nim dá i rozumně mluvit. A navíc doba si žádá mít odborníka na Rebirth!</p>
+                                    <p class="text-muted">UPDATE: Zatím je prostě vyhozen no.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -390,7 +434,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <!--<div class="col-md-6">
                             <div id="gr_custom_widget_halda">
                                 <div class="gr_custom_container_halda">
                                     <h2 class="gr_custom_header_halda">
@@ -399,7 +443,7 @@
                                     <br style="clear: both"/>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         
                         <script src="https://www.goodreads.com/review/custom_widget/80133743.Jakub?cover_position=left&cover_size=medium&num_books=5&order=d&shelf=read&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=1&show_title=1&sort=date_read&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=jakub&widget_text_color=000000&widget_title_size=medium&widget_width=medium" type="text/javascript" charset="utf-8"></script>
                         
@@ -408,7 +452,9 @@
                         
                         <script src="https://www.goodreads.com/review/custom_widget/78430675.Václav?cover_position=left&cover_size=medium&num_books=5&order=d&shelf=read&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=1&show_title=1&sort=date_read&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=vaclav&widget_text_color=000000&widget_title_size=medium&widget_width=medium" type="text/javascript" charset="utf-8"></script>
                         
+                        <!--
                         <script src="https://www.goodreads.com/review/custom_widget/41650721.Halda?cover_position=left&cover_size=medium&num_books=5&order=d&shelf=read&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=1&show_title=1&sort=date_read&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=halda&widget_text_color=000000&widget_title_size=medium&widget_width=medium" type="text/javascript" charset="utf-8"></script>
+                        -->
                         
                     </div>
                 </div>
@@ -615,7 +661,7 @@
 </section>
 
   <script>
-    var coverAwardsSpreadSheetId = "1IuIQDGvZmxLD2di6X57Usn2K02K9stjBy4OA4HeGufA";
+    var coverAwardsSpreadSheetId = "1nP7N43EJMUA1RTqBn2gTFS7OqZRqPgOY0oayqD_S5wE";
 </script>
 
 <section id="soutez" class="download">
