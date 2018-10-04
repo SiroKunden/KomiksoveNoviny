@@ -1,3 +1,3 @@
-git --git-dir=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/.git --work-tree=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/ add -A
-git --git-dir=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/.git --work-tree=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/ commit -m "covers update"
-git --git-dir=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/.git --work-tree=/Users/ondrejsirek/NetBeansProjects/KomiksoveNoviny/ push
+git --git-dir=/Users/siro/NetBeansProjects/KomiksoveNoviny/.git --work-tree=/Users/siro/NetBeansProjects/KomiksoveNoviny/ add -A
+git --git-dir=/Users/siro/NetBeansProjects/KomiksoveNoviny/.git --work-tree=/Users/siro/NetBeansProjects/KomiksoveNoviny/ commit -m "covers update"
+git --git-dir=/Users/siro/NetBeansProjects/KomiksoveNoviny/.git --work-tree=/Users/siro/NetBeansProjects/KomiksoveNoviny/ push
