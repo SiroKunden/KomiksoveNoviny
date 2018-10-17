@@ -38,7 +38,7 @@
         <script>
 
         var spreadSheetId = "1Q57HU88HkZkwo_uAAsUyDfl2PkSKESYOK6UveE6VQzQ";
-        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok", "Jakubov Mini Komiksár", "DC NEWS", "Součet"];
+        var sheets = ['Komiksové novinky', 'Marvelácké zprávy', 'Černý kůň', 'Jorsskův svět akčních figurek', 'Volejte ředitelům', "US NEWS", "Mudrovanie o komiksoch", "Dobrá Image", "KomiksBox", "Kdo je Doctor Who?", "Anime a Manga blok", "Jakubov Mini Komiksár", "DC NEWS", "Ona v komiksu", "Komiksová zmrtvýchvstání", "Součet"];
         var dataLoaded = 0;
         
         var komiksarData = [];
@@ -56,7 +56,9 @@
             'kdojedoktor': 'rgb(50, 130, 20)',
             'animeamanga': 'rgb(150, 0, 0)',
             'minikomiksar': 'rgb(150, 50, 50)',
-            'dcnews': 'rgb(255, 210, 250)'
+            'dcnews': 'rgb(255, 210, 250)',
+            'onavkomiksu': 'rgb(180, 0, 30)',
+            'komiksovazmrtvychvstani': 'rgb(130, 0, 140)'
         };
         
         var chartColorsDislike = {
@@ -72,7 +74,9 @@
             'kdojedoktor': 'rgb(70, 170, 20)',
             'animeamanga': 'rgb(170, 90, 70)',
             'minikomiksar': 'rgb(130, 70, 50)',
-            'dcnews': 'rgb(235, 230, 250)'
+            'dcnews': 'rgb(235, 230, 250)',
+            'onavkomiksu': 'rgb(160, 20, 30)',
+            'komiksovazmrtvychvstani': 'rgb(110, 20, 30)'
         };
 
         function getColor(showName, type) {
@@ -117,6 +121,12 @@
                     case 'dc news':
                         return chartColorsDislike.dcnews;
                         break;
+                    case 'ona v komiksu':
+                        return chartColorsDislike.onavkomiksu;
+                        break;
+                    case 'komiksová zmrtvýchvstání':
+                        return chartColorsDislike.komiksovazmrtvychvstani;
+                        break;
                 }
             }
             else {
@@ -159,6 +169,12 @@
                         break;
                     case 'dc news':
                         return chartColors.dcnews;
+                        break;
+                    case 'ona v komiksu':
+                        return chartColors.onavkomiksu;
+                        break;
+                    case 'komiksová zmrtvýchvstání':
+                        return chartColors.komiksovazmrtvychvstani;
                         break;
                 }
             }
