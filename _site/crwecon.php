@@ -242,7 +242,7 @@
 </section>
 <footer>
     <div class="container">
-        <p>&copy; 2017 theme by <a rel="nofollow" target="blank" href="https://github.com/jekynewage/jekynewage.github.io">Start Boostrap New Age Theme for Jekyll</a>. All Rights Reserved. Created by Kunden</p>
+        <p>&copy; 2019 theme by <a rel="nofollow" target="blank" href="https://github.com/jekynewage/jekynewage.github.io">Start Boostrap New Age Theme for Jekyll</a>. All Rights Reserved. Created by Kunden</p>
     </div>
 </footer>
 
