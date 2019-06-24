@@ -34,7 +34,10 @@
 <loc>http://localhost:4000/covery-hra/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/crwecon/</loc>
+<loc>http://localhost:4000/crwecon-2018/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/crwecon-2019/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/denik/</loc>
