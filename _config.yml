@@ -8,8 +8,8 @@ url: "http://komiksovenoviny.cz" # the base hostname & protocol for your site
 author: "Ondřej Šírek"
 
 #rewrite
-rewrite: /
-#rewrite: /KomiksoveNoviny/
+#rewrite: /
+rewrite: /KomiksoveNoviny/
 
 google_analytics: 
 addthis_id: 
